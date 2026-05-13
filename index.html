@@ -308,7 +308,7 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    padding: 0 80px 100px;
+    padding: 36px 80px 100px;
     max-width: 1200px;
     animation: fadeUp 1.2s ease both;
   }
@@ -322,14 +322,14 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: #FFFFFF;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     text-shadow: 0 1px 8px rgba(0,0,0,0.5);
   }
   .hero-title {
     font-family: var(--font-display);
-    font-size: clamp(56px, 7vw, 96px);
+    font-size: clamp(44px, 5.5vw, 78px);
     font-weight: 300;
-    line-height: 1.0;
+    line-height: 1.04;
     color: var(--cream);
     margin-bottom: 24px;
     letter-spacing: -0.01em;
@@ -513,7 +513,32 @@
 
   /* ── LAYOUT ── */
   #layout { background: var(--white); }
-  .layout-wings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--stone); margin-top: 64px; }
+  .layout-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(240px, 0.72fr);
+    gap: 48px 64px;
+    align-items: start;
+    margin-bottom: 64px;
+  }
+  .layout-intro-text .section-body { max-width: 560px; margin-bottom: 0; }
+  .layout-intro-frame {
+    margin: 0;
+    padding: 14px;
+    background: linear-gradient(152deg, #fafcfd 0%, #e8eef3 100%);
+    border: 1px solid var(--stone);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.75),
+      0 28px 56px -32px rgba(41, 53, 60, 0.2);
+  }
+  .layout-intro-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid rgba(41, 53, 60, 0.1);
+  }
+  .layout-wings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--stone); margin-top: 0; }
   .wing-card { background: var(--white); padding: 48px 36px; }
   .wing-num { font-family: var(--font-display); font-size: 72px; font-weight: 300; color: var(--stone); line-height: 1; margin-bottom: 20px; }
   .wing-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--deep); margin-bottom: 20px; line-height: 1.2; }
@@ -731,12 +756,12 @@
     /* ── Hero ── */
     #hero { min-height: 100svh; }
     .hero-content {
-      padding: 0 24px 72px;
+      padding: 24px 24px 72px;
       max-width: 100%;
     }
     .hero-title {
-      font-size: clamp(38px, 10vw, 56px);
-      line-height: 1.05;
+      font-size: clamp(30px, 8.5vw, 48px);
+      line-height: 1.06;
     }
     .hero-tagline {
       font-size: 16px;
@@ -783,6 +808,13 @@
     .key-stat-num { font-size: 28px; }
 
     /* ── Layout / Wings ── */
+    .layout-intro {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      margin-bottom: 48px;
+    }
+    .layout-intro-text .section-body { max-width: none; }
+    .layout-intro-frame { max-width: 100%; }
     .layout-wings { grid-template-columns: 1fr; }
     .wing-card { padding: 36px 24px; }
     .wing-num { font-size: 52px; }
@@ -902,11 +934,17 @@
      ════════════════════════════════ */
   @media (min-width: 769px) and (max-width: 1024px) {
     .section-inner { padding: 0 40px; }
-    .hero-content { padding: 0 48px 80px; }
+    .hero-content { padding: 28px 48px 80px; }
     .hero-price-tag { right: 40px; }
-    .hero-title { font-size: clamp(44px, 6vw, 72px); }
+    .hero-title { font-size: clamp(38px, 5vw, 62px); }
     .hero-stats { gap: 28px; }
     .overview-grid { gap: 48px; }
+    .layout-intro {
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 40px;
+      align-items: start;
+    }
+    .layout-intro-text .section-body { max-width: none; }
     .layout-wings { grid-template-columns: 1fr 1fr; }
     .layout-wings .wing-card:last-child { grid-column: span 2; }
     .opp-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -1085,7 +1123,7 @@
       <a href="#" id="snav-cta-investment">Investment Summary</a>
       <div class="dd-divider"></div>
       <a href="#contact">Request a Showing</a>
-      <a href="#contact">Contact Amanda</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </div>
@@ -1121,7 +1159,7 @@
       <a href="#" id="nav-cta-investment">Investment Summary</a>
       <div class="dd-divider"></div>
       <a href="#contact">Request a Showing</a>
-      <a href="#contact">Contact Amanda</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -1241,9 +1279,16 @@
 <!-- ════ PHYSICAL LAYOUT ════ -->
 <section id="layout" class="section-pad" style="background: var(--white);">
   <div class="section-inner">
-    <div class="section-eyebrow">Physical Layout</div>
-    <h2 class="section-title">Three distinct <em>zones</em></h2>
-    <p class="section-body" style="max-width: 600px;">The lodge is thoughtfully divided into private, guest, and venue zones — allowing simultaneous operations or conversion to a single-use model.</p>
+    <div class="layout-intro">
+      <div class="layout-intro-text">
+        <div class="section-eyebrow">Physical Layout</div>
+        <h2 class="section-title">Three distinct <em>zones</em></h2>
+        <p class="section-body">The lodge is thoughtfully divided into private, guest, and venue zones — allowing simultaneous operations or conversion to a single-use model.</p>
+      </div>
+      <figure class="layout-intro-frame">
+        <img src="images/layout-intro.png" alt="Belle View lodge and grounds" width="960" height="720" loading="lazy" decoding="async" />
+      </figure>
+    </div>
     <div class="layout-wings">
       <div class="wing-card">
         <div class="wing-num">01</div>
@@ -1493,7 +1538,7 @@
 <section id="documents" class="section-pad" style="background: var(--white);">
   <div class="section-inner">
     <div class="section-eyebrow">Downloadable Documents</div>
-    <h2 class="section-title">Due diligence <em>resources</em></h2>
+    <h2 class="section-title"><em>Resources</em></h2>
     <div class="docs-grid">
       <a href="#" class="doc-card" id="dl-pdf">
         <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
