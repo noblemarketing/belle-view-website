@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Belle View — Blue Ridge Estate | Amherst County, VA</title>
+
+<!-- ══ SEO META ══ -->
+<meta name="description" content="Privately marketed Blue Ridge mountain estate in Amherst County, VA. 10,600 sq ft lodge on 15 acres with 50+ mile views. Prior use as wedding venue, winery tasting destination, rehabilitation facility, and short-term rental. On the Monticello Wine Trail. $2,600,000." />
+<meta name="keywords" content="winery for sale Virginia, wedding venue for sale Virginia, venue for sale Amherst County, Monticello Wine Trail property, Blue Ridge estate for sale, event venue Virginia, hospitality property Virginia, retreat center for sale, rehabilitation facility for sale Virginia, Amherst VA real estate, mountain estate Virginia, private venue Blue Ridge Parkway" />
+<meta property="og:title" content="1770 Earley Farm Road — Blue Ridge Mountain Estate" />
+<meta property="og:description" content="Privately offered 10,600 sq ft Blue Ridge lodge on 15 acres. Established hospitality infrastructure. Amherst County, VA. $2,600,000." />
+<meta property="og:type" content="website" />
+<meta name="robots" content="index, follow" />
+
+<!-- ══ SCHEMA MARKUP ══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateListing",
+  "name": "Belle View — Blue Ridge Mountain Estate, Amherst VA",
+  "description": "Privately offered 10,600 sq ft lodge on 15 acres with 50+ mile Blue Ridge Mountain views. Prior use as wedding and event venue, winery tasting destination, assisted living, rehabilitation facility, and short-term rental. Zoned A-1 with special use approvals.",
+  "url": "",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1770 Earley Farm Road",
+    "addressLocality": "Amherst",
+    "addressRegion": "VA",
+    "postalCode": "24521",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "addressCountry": "US"
+  },
+  "numberOfRooms": 11,
+  "floorSize": { "@type": "QuantitativeValue", "value": 10600, "unitCode": "FTK" },
+  "price": "2600000",
+  "priceCurrency": "USD"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    /* ── Frosted Palette — high-contrast edition ── */
+    --cream: #FFFFFF;        /* sections: pure white */
+    --stone: #D4DCE3;        /* borders/dividers */
+    --warm-gray: #4A5968;    /* body text on white — AA contrast */
+    --deep: #29353C;         /* darkest navy — dark sections */
+    --charcoal: #29353C;     /* unified dark */
+    --gold: #29353C;         /* accent = dark navy on white */
+    --gold-light: #AAC7D8;   /* sky blue on navy only */
+    --gold-dark: #1C262C;    /* deepest for hover */
+    --muted: #4A5968;        /* readable body text on white */
+    --white: #FFFFFF;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Jost', sans-serif;
+    --nav-h: 72px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--deep);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MAIN NAV — hidden; only section-nav shows after scroll ── */
+  nav {
+    display: none;
+  }
+
+  /* ── SECTION NAV (slides in after hero) ── */
+  #section-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 101;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    background: rgba(41,53,60,0.97);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(170,199,216,0.12);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.36s cubic-bezier(0.4,0,0.2,1), opacity 0.28s ease;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+  }
+  #section-nav.snav-visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .snav-logo {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-right: 24px;
+  }
+  .snav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+  }
+  .snav-link {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: rgba(223,235,246,0.78);
+    text-decoration: none;
+    padding: 8px 14px;
+    white-space: nowrap;
+    transition: color 0.2s, background 0.2s;
+    position: relative;
+  }
+  .snav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 14px; right: 14px;
+    height: 2px;
+    background: var(--gold-light);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+  .snav-link:hover, .snav-link:active { color: #AAC7D8; }
+  .snav-link:hover::after, .snav-link.snav-active::after { transform: scaleX(1); }
+  .snav-link.snav-active { color: #AAC7D8; }
+  #section-nav .nav-cta-wrap { flex-shrink: 0; margin-left: 16px; }
+  #section-nav .nav-cta { padding: 7px 18px; font-size: 11px; }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  /* Dropdown nav */
+  .nav-center {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-item {
+    position: relative;
+  }
+  .nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(223,235,246,0.82);
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .nav-btn:hover { color: var(--gold-light); }
+  .nav-btn .caret {
+    font-size: 9px;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .nav-item:hover .caret { transform: rotate(180deg); }
+  .nav-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(41,53,60,0.98);
+    border: 1px solid rgba(68,87,109,0.3);
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.18s, visibility 0.18s;
+    z-index: 200;
+  }
+  .nav-item:hover .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-dropdown a {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: color 0.15s, background 0.15s;
+  }
+  .nav-dropdown a:last-child { border-bottom: none; }
+  .nav-dropdown a:hover, .nav-dropdown a:active { color: #AAC7D8; background: rgba(170,199,216,0.05); }
+
+  .nav-cta-wrap {
+    position: relative;
+  }
+  .nav-cta {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    padding: 9px 20px;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    font-family: var(--font-body);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .nav-cta:hover, .nav-cta:active { color: #AAC7D8; border-color: #AAC7D8; background: transparent; }
+  .nav-cta-wrap:hover .nav-cta { color: #AAC7D8; border-color: #AAC7D8; background: transparent; }
+  .nav-cta-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: rgba(41,53,60,0.98);
+    border: 1px solid rgba(68,87,109,0.35);
+    min-width: 210px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.18s, visibility 0.18s;
+    z-index: 200;
+  }
+  .nav-cta-wrap:hover .nav-cta-dropdown {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-cta-dropdown a {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: color 0.15s, background 0.15s;
+  }
+  .nav-cta-dropdown a:last-child { border-bottom: none; }
+  .nav-cta-dropdown a:hover, .nav-cta-dropdown a:active { color: #AAC7D8; background: rgba(170,199,216,0.05); }
+  .nav-cta-dropdown .dd-divider {
+    height: 1px;
+    background: rgba(68,87,109,0.2);
+    margin: 4px 0;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--deep);
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #1a2328 0%, #29353C 40%, #2e4050 100%);
+  }
+  .hero-mountain {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 55%;
+    opacity: 0.18;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(41,53,60,0.96) 0%, rgba(41,53,60,0.4) 45%, rgba(41,53,60,0.15) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 80px 100px;
+    max-width: 1200px;
+    animation: fadeUp 1.2s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--cream);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(223,235,246,0.95);
+    max-width: 680px;
+    margin-bottom: 48px;
+    line-height: 1.5;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+  .hero-stat-item { display: flex; flex-direction: column; }
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: rgba(223,235,246,0.78);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+  .hero-divider {
+    width: 1px;
+    background: rgba(68,87,109,0.35);
+    align-self: stretch;
+  }
+  .hero-actions { display: flex; gap: 20px; align-items: center; }
+  .btn-primary {
+    display: inline-block;
+    background: var(--deep);
+    color: #FFFFFF;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    text-decoration: none;
+    border: 1.5px solid var(--deep);
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+  .btn-primary:hover, .btn-primary:active { background: transparent; color: #AAC7D8; border-color: #AAC7D8; transform: translateY(-1px); }
+  /* Hero variant — white border on dark background */
+  .btn-primary--hero { background: transparent; color: #FFFFFF; border-color: #FFFFFF; }
+  .btn-primary--hero:hover, .btn-primary--hero:active { background: transparent; color: #AAC7D8; border-color: #AAC7D8; }
+  #opportunity .btn-primary,
+  #contact .btn-primary {
+    background: transparent;
+    color: #FFFFFF;
+    border: 1.5px solid #FFFFFF;
+  }
+  #opportunity .btn-primary:hover,
+  #opportunity .btn-primary:active,
+  #contact .btn-primary:hover,
+  #contact .btn-primary:active {
+    background: transparent;
+    border-color: #AAC7D8;
+    color: #AAC7D8;
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1.5px solid #FFFFFF;
+    padding: 13px 28px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    cursor: pointer;
+  }
+  .btn-ghost:hover, .btn-ghost:active { color: #AAC7D8; border-color: #AAC7D8; background: rgba(170,199,216,0.06); }
+  .hero-price-tag {
+    position: absolute;
+    top: calc(var(--nav-h) + 40px);
+    right: 64px;
+    text-align: right;
+    animation: fadeUp 1.4s 0.2s ease both;
+    opacity: 0;
+  }
+  .hero-price-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(170,199,216,0.95);
+  }
+  .hero-price-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+  }
+  .hero-address {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: rgba(223,235,246,0.75);
+    margin-top: 8px;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(68,87,109,0.45);
+    padding: 5px 14px;
+    margin-top: 12px;
+  }
+
+  /* ── Hero price mobile block (hidden on desktop) ── */
+  .hero-price-mobile { display: none; }
+
+  /* ── SECTIONS ── */
+  section { width: 100%; }
+  .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 64px; }
+  .section-pad { padding: 120px 0; }
+
+  /* ── OVERVIEW ── */
+  #overview { background: #FFFFFF; }
+  .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .section-eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--deep); margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 300; line-height: 1.1; color: var(--deep); margin-bottom: 28px;
+  }
+  .section-title em { font-style: italic; }
+  .section-body { font-size: 16px; font-weight: 400; color: var(--warm-gray); line-height: 1.8; margin-bottom: 40px; }
+  .key-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--stone); }
+  .key-stat { background: var(--white); padding: 28px 24px; }
+  .key-stat-num {
+    font-family: var(--font-display); font-size: 36px; font-weight: 400;
+    color: var(--gold-dark); line-height: 1; margin-bottom: 6px;
+  }
+  .key-stat-label { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; color: var(--charcoal); text-transform: uppercase; }
+  .features-list { list-style: none; border-top: 1px solid var(--stone); }
+  .features-list li {
+    padding: 18px 0; border-bottom: 1px solid var(--stone);
+    display: flex; gap: 16px; align-items: flex-start;
+    font-size: 15px; font-weight: 400; color: var(--deep);
+  }
+  .features-list li::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--deep); margin-top: 9px; flex-shrink: 0;
+  }
+  .use-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+  .use-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--deep);
+    border: 1.5px solid var(--deep); padding: 7px 16px; background: transparent;
+    cursor: default; transition: color 0.2s, border-color 0.2s;
+  }
+
+  /* ── LAYOUT ── */
+  #layout { background: var(--white); }
+  .layout-wings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--stone); margin-top: 64px; }
+  .wing-card { background: var(--white); padding: 48px 36px; }
+  .wing-num { font-family: var(--font-display); font-size: 72px; font-weight: 300; color: var(--stone); line-height: 1; margin-bottom: 20px; }
+  .wing-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--deep); margin-bottom: 20px; line-height: 1.2; }
+  .wing-features { list-style: none; }
+  .wing-features li { font-size: 14px; font-weight: 300; color: var(--charcoal); padding: 8px 0; border-bottom: 1px solid var(--stone); display: flex; gap: 10px; }
+  .wing-features li:last-child { border-bottom: none; }
+  .wing-features li::before { content: '—'; color: var(--deep); flex-shrink: 0; }
+
+  /* ── GALLERY ── */
+  #gallery { background: var(--deep); }
+  .gallery-header { padding: 80px 64px 40px; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 24px; background: var(--deep); }
+  .gallery-categories { display: flex; gap: 8px; flex-wrap: wrap; }
+  .gallery-cat {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #FFFFFF; border: 1px solid #FFFFFF; padding: 9px 20px;
+    cursor: pointer; background: transparent; transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .gallery-cat:hover, .gallery-cat:active { color: #AAC7D8; border-color: #AAC7D8; background: rgba(170,199,216,0.07); }
+  .gallery-cat.active { color: #FFFFFF; border-color: #FFFFFF; background: rgba(255,255,255,0.1); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    padding: 0 64px 80px;
+    background: var(--deep);
+  }
+  .gallery-slot {
+    aspect-ratio: 4/3;
+    background: #44576D;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.85);
+    cursor: pointer; transition: background 0.2s; position: relative; overflow: hidden;
+  }
+  .gallery-slot:hover { background: #536880; }
+  /* Larger featured slots */
+  .gallery-slot.feature-wide { grid-column: span 2; }
+  .gallery-slot.feature-tall { grid-row: span 2; aspect-ratio: unset; }
+  .gallery-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ── OPPORTUNITY (softened) ── */
+  #opportunity { background: var(--deep); color: var(--cream); }
+  .opp-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 100px; align-items: center; }
+  .opp-left .section-title { color: var(--cream); }
+  .opp-left .section-body { color: rgba(223,235,246,0.9); }
+  .opp-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.06); }
+  .opp-card { background: rgba(255,255,255,0.04); padding: 36px 28px; transition: background 0.2s; }
+  .opp-card:hover { background: rgba(68,87,109,0.1); }
+  .opp-card-icon { width: 36px; height: 36px; margin-bottom: 20px; display: block; }
+  .opp-card-icon svg { width: 36px; height: 36px; stroke: var(--gold-light); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .opp-card-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--gold-light); margin-bottom: 10px; }
+  .opp-card-body { font-size: 14px; font-weight: 400; color: rgba(223,235,246,0.95); line-height: 1.7; }
+
+  /* ── LOCATION + SEO accordion ── */
+  #location { background: #FFFFFF; }
+  .location-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start; }
+  .proximity-list { list-style: none; margin-top: 40px; }
+  .proximity-list li { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--stone); font-size: 15px; font-weight: 400; color: var(--deep); }
+  .proximity-list li:first-child { border-top: 1px solid var(--stone); }
+  .prox-label { font-weight: 500; color: var(--deep); min-width: 160px; }
+  .drive-markets { margin-top: 40px; }
+  .drive-markets h4 { font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .drive-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .drive-tag { font-size: 13px; font-weight: 400; color: var(--deep); background: #FFFFFF; border: 1px solid var(--stone); padding: 8px 18px; }
+  .region-block { background: var(--deep); padding: 48px 40px; color: var(--cream); }
+  .region-block h3 { font-family: var(--font-display); font-size: 26px; font-weight: 300; font-style: italic; margin-bottom: 20px; color: var(--gold-light); }
+  .region-block p { font-size: 15px; font-weight: 300; color: rgba(223,235,246,0.9); line-height: 1.8; margin-bottom: 16px; }
+  .region-block p:last-child { margin-bottom: 0; }
+
+  /* SEO accordion */
+  .seo-accordion { margin-top: 64px; border-top: 1px solid var(--stone); }
+  .seo-accordion-trigger {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 0; border-bottom: 1px solid var(--stone);
+    font-family: var(--font-body); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--deep);
+    transition: color 0.2s;
+  }
+  .seo-accordion-trigger:hover { color: var(--charcoal); }
+  .seo-accordion-trigger .acc-icon { font-size: 18px; transition: transform 0.25s; }
+  .seo-accordion-trigger.open .acc-icon { transform: rotate(45deg); }
+  .seo-accordion-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease;
+    background: var(--white);
+  }
+  .seo-accordion-body.open { max-height: 600px; }
+  .seo-accordion-inner { padding: 40px 48px; }
+  .seo-accordion-inner h3 {
+    font-family: var(--font-display); font-size: 22px; font-weight: 400;
+    color: var(--deep); margin-bottom: 16px;
+  }
+  .seo-accordion-inner p {
+    font-size: 14px; font-weight: 400; color: var(--warm-gray); line-height: 1.8; margin-bottom: 16px;
+  }
+  .seo-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .seo-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+    color: var(--deep); border: 1px solid var(--stone); padding: 6px 14px; background: #F0F4F7;
+  }
+
+  /* ── INSTAGRAM / BEHOLD ── */
+  #instagram { background: var(--white); }
+  .insta-header { text-align: center; padding: 80px 64px 40px; }
+  .behold-placeholder {
+    margin: 0 64px 80px;
+    border: 1px dashed var(--stone);
+    background: var(--cream);
+    padding: 64px 40px;
+    text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .behold-placeholder p {
+    font-family: var(--font-display); font-size: 20px; font-style: italic; color: var(--warm-gray);
+  }
+  .behold-placeholder code {
+    font-size: 12px; font-weight: 400; letter-spacing: 0.06em;
+    color: var(--gold-dark); background: var(--stone); padding: 6px 14px;
+    font-family: monospace;
+  }
+  .behold-placeholder small {
+    font-size: 12px; color: var(--warm-gray); font-weight: 300;
+  }
+
+  /* ── DOCUMENTS ── */
+  #documents { background: var(--white); }
+  .docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--stone); margin-top: 64px; }
+  .doc-card { background: var(--white); padding: 48px 36px; display: flex; flex-direction: column; transition: background 0.2s; text-decoration: none; cursor: pointer; }
+  .doc-card:hover { background: var(--cream); }
+  .doc-icon { width: 32px; height: 32px; margin-bottom: 24px; display: block; }
+  .doc-icon svg { width: 32px; height: 32px; stroke: var(--charcoal); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .doc-title { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--deep); margin-bottom: 10px; line-height: 1.2; }
+  .doc-desc { font-size: 14px; font-weight: 300; color: var(--charcoal); line-height: 1.7; flex: 1; }
+  .doc-link {
+    margin-top: 24px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--deep);
+    border: 1.5px solid var(--deep);
+    padding: 10px 18px;
+    align-self: flex-start;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    cursor: pointer;
+  }
+  .doc-link:hover, .doc-link:active { background: transparent; color: #AAC7D8; border-color: #AAC7D8; }
+  .doc-link::after { content: '→'; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--deep); color: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contact-left .section-title { color: var(--cream); }
+  .contact-left .section-body { color: rgba(223,235,246,0.92); }
+  .contact-info { margin-top: 40px; }
+  .contact-name { font-family: var(--font-display); font-size: 32px; font-weight: 400; color: var(--gold-light); margin-bottom: 16px; }
+  .contact-detail { font-size: 15px; font-weight: 400; color: rgba(223,235,246,0.95); margin-bottom: 8px; }
+  .contact-detail a { color: rgba(223,235,246,0.95); text-decoration: none; transition: color 0.2s; }
+  .contact-detail a:hover { color: var(--gold-light); }
+  .contact-form { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); padding: 48px 40px; }
+  .form-title { font-family: var(--font-display); font-size: 26px; font-weight: 300; font-style: italic; color: var(--cream); margin-bottom: 32px; }
+  .form-group { margin-bottom: 20px; }
+  .form-label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(223,235,246,0.88); margin-bottom: 8px; }
+  .form-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.3); color: var(--cream); font-family: var(--font-body); font-size: 15px; font-weight: 300; padding: 14px 16px; outline: none; transition: border-color 0.2s; }
+  .form-input:focus { border-color: #FFFFFF; }
+  .form-input::placeholder { color: rgba(223,235,246,0.45); }
+  .form-textarea { resize: vertical; min-height: 100px; }
+  .form-submit { width: 100%; background: var(--deep); color: #FFFFFF; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 18px 32px; border: 1.5px solid #FFFFFF; cursor: pointer; margin-top: 8px; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+  .form-submit:hover, .form-submit:active { background: transparent; color: #AAC7D8; border-color: #AAC7D8; }
+
+  /* ── SOCIAL BAR ── */
+  .social-bar { background: #1e2a30; padding: 32px 64px; display: flex; align-items: center; justify-content: center; gap: 40px; }
+  .social-label { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(223,235,246,0.95); }
+  .social-links { display: flex; gap: 24px; }
+  .social-link {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: 1px solid #FFFFFF;
+    padding: 9px 20px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    cursor: pointer;
+  }
+  .social-link:hover, .social-link:active { color: #AAC7D8; border-color: #AAC7D8; background: rgba(170,199,216,0.07); }
+
+  /* ── DISCLOSURE ── */
+  .disclosure { background: var(--deep); border-top: 1px solid rgba(255,255,255,0.08); padding: 40px 64px; }
+  .disclosure p { font-size: 12px; font-weight: 400; color: rgba(223,235,246,0.92); line-height: 1.7; max-width: 900px; margin: 0 auto; text-align: center; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--deep); border-top: 1px solid rgba(68,87,109,0.2); padding: 32px 64px; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 12px; font-weight: 300; color: rgba(223,235,246,0.65); letter-spacing: 0.06em; }
+
+  /* ════════════════════════════════
+     MOBILE — max-width: 768px
+     ════════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* ── Nav ── */
+    nav { display: none; }
+    #section-nav { padding: 0 20px; height: 52px; }
+    .snav-logo { font-size: 17px; }
+    .snav-links { display: none; }
+    #section-nav .nav-cta-wrap { margin-left: 0; }
+    #section-nav .nav-cta { padding: 6px 14px; font-size: 10px; }
+
+    /* ── Hero ── */
+    #hero { min-height: 100svh; }
+    .hero-content {
+      padding: 0 24px 72px;
+      max-width: 100%;
+    }
+    .hero-title {
+      font-size: clamp(38px, 10vw, 56px);
+      line-height: 1.05;
+    }
+    .hero-tagline {
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 0.16em; margin-bottom: 16px; }
+    .hero-price-tag {
+      position: relative;
+      top: auto; right: auto;
+      text-align: left;
+      padding: 0 24px;
+      margin-bottom: 24px;
+      animation: none;
+      opacity: 1;
+    }
+    .hero-price-num { font-size: 32px; }
+    .hero-price-label { font-size: 10px; }
+    .hero-address { font-size: 11px; }
+    .hero-badge { font-size: 9px; padding: 4px 10px; }
+    .hero-stats {
+      gap: 16px 24px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .hero-stat-num { font-size: 24px; }
+    .hero-stat-label { font-size: 10px; }
+    .hero-divider { display: none; }
+    .hero-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .btn-primary, .btn-ghost { width: 100%; justify-content: center; text-align: center; }
+
+    /* ── Section layout ── */
+    .section-inner { padding: 0 24px; }
+    .section-pad { padding: 72px 0; }
+    .section-title { font-size: clamp(28px, 8vw, 40px); }
+
+    /* ── Overview ── */
+    .overview-grid { grid-template-columns: 1fr; gap: 40px; }
+    .key-stats { grid-template-columns: 1fr 1fr; }
+    .key-stat { padding: 20px 16px; }
+    .key-stat-num { font-size: 28px; }
+
+    /* ── Layout / Wings ── */
+    .layout-wings { grid-template-columns: 1fr; }
+    .wing-card { padding: 36px 24px; }
+    .wing-num { font-size: 52px; }
+
+    /* Mechanical inline block */
+    .section-inner > div[style*="padding: 56px 48px"] {
+      padding: 32px 24px !important;
+    }
+
+    /* ── Gallery ── */
+    .gallery-header {
+      padding: 48px 24px 24px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .gallery-categories { gap: 6px; }
+    .gallery-cat { font-size: 10px; padding: 7px 14px; }
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      padding: 0 0 0 0;
+      gap: 2px;
+    }
+    .gallery-slot.feature-wide { grid-column: span 2; }
+    .gallery-slot.feature-tall { grid-row: span 1; aspect-ratio: 4/3; }
+
+    /* ── Opportunity ── */
+    .opp-grid { grid-template-columns: 1fr; gap: 40px; }
+    .opp-cards { grid-template-columns: 1fr; }
+    .opp-card { padding: 28px 24px; }
+
+    /* ── Location ── */
+    .location-grid { grid-template-columns: 1fr; gap: 40px; }
+    .prox-label { min-width: 120px; font-size: 13px; }
+    .proximity-list li { font-size: 14px; gap: 12px; }
+    .region-block { padding: 32px 24px; }
+    .region-block h3 { font-size: 22px; }
+    .seo-accordion-inner { padding: 24px; }
+    .seo-accordion-trigger { font-size: 11px; }
+
+    /* ── Instagram ── */
+    .insta-header { padding: 48px 24px 24px; }
+    #instagram > div[style*="margin: 0 64px"] {
+      margin: 0 24px 48px !important;
+      padding: 40px 24px !important;
+    }
+
+    /* ── Documents ── */
+    .docs-grid { grid-template-columns: 1fr; }
+    .doc-card { padding: 36px 24px; }
+
+    /* ── Contact ── */
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-form { padding: 32px 24px; }
+    .contact-name { font-size: 26px; }
+
+    /* ── Social ── */
+    .social-bar {
+      padding: 24px;
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+    .social-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+    /* ── Disclosure / Footer ── */
+    .disclosure { padding: 32px 24px; }
+    footer {
+      padding: 24px;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+
+    /* ── Scroll-to-top button ── */
+    #scrollTop { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+    #scrollTopSvg { width: 44px; height: 44px; }
+
+    /* ── Hero price tag: hide absolute version, show inline ── */
+    #heroPriceDesktop { display: none; }
+    .hero-price-mobile {
+      display: block;
+      margin-bottom: 20px;
+    }
+    .hero-price-mobile .hero-price-label { font-size: 10px; letter-spacing: 0.16em; }
+    .hero-price-mobile .hero-price-num { font-size: 30px; line-height: 1.1; margin: 4px 0; }
+    .hero-price-mobile .hero-address { font-size: 11px; color: rgba(223,235,246,0.75); }
+
+    /* ── Mechanical systems block ── */
+    #layout .section-inner > div:last-child {
+      padding: 32px 20px !important;
+      margin-top: 40px !important;
+    }
+    #layout .section-inner > div:last-child > div {
+      padding: 16px 20px !important;
+    }
+
+    /* ── Proximity table cells ── */
+    .proximity-list li { flex-direction: column; gap: 4px; }
+    .prox-label { min-width: unset; }
+
+    /* ── Use tags / drive tags wrap cleanly ── */
+    .use-tags, .drive-tags, .seo-tags { gap: 6px; }
+    .use-tag, .drive-tag, .seo-tag { font-size: 10px; padding: 6px 12px; }
+
+    /* ── Property details table ── */
+    .location-right table td { font-size: 12px; padding: 8px 0; }
+    .location-right > div:last-child { padding: 28px 20px; }
+
+    /* ── Form ── */
+    #inquiryForm { width: 100%; }
+    .form-input { font-size: 16px; } /* prevent iOS zoom */
+  }
+
+  /* ════════════════════════════════
+     TABLET — 769px–1024px
+     ════════════════════════════════ */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .section-inner { padding: 0 40px; }
+    .hero-content { padding: 0 48px 80px; }
+    .hero-price-tag { right: 40px; }
+    .hero-title { font-size: clamp(44px, 6vw, 72px); }
+    .hero-stats { gap: 28px; }
+    .overview-grid { gap: 48px; }
+    .layout-wings { grid-template-columns: 1fr 1fr; }
+    .layout-wings .wing-card:last-child { grid-column: span 2; }
+    .opp-grid { grid-template-columns: 1fr; gap: 48px; }
+    .opp-cards { grid-template-columns: 1fr 1fr; }
+    .location-grid { gap: 48px; }
+    .docs-grid { grid-template-columns: 1fr 1fr; }
+    .docs-grid .doc-card:last-child { grid-column: span 2; }
+    .contact-grid { gap: 48px; }
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); padding: 0 40px 64px; }
+    .gallery-slot.feature-wide { grid-column: span 2; }
+    .gallery-header { padding: 64px 40px 32px; }
+    .social-bar { padding: 28px 40px; }
+    .disclosure { padding: 32px 40px; }
+    footer { padding: 28px 40px; }
+    .insta-header { padding: 64px 40px 32px; }
+    #instagram > div[style*="margin: 0 64px"] {
+      margin: 0 40px 64px !important;
+    }
+  }
+
+  /* ── LIGHTBOX ── */
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(20,28,32,0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  #lightbox.lb-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  #lightbox-img-wrap {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #lightbox-img {
+    max-width: 88vw;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    transition: opacity 0.2s ease;
+  }
+  /* Placeholder panel when no real image src yet */
+  #lightbox-placeholder {
+    width: min(72vw, 880px);
+    height: min(52vh, 560px);
+    background: #29353C;
+    border: 1px solid rgba(170,199,216,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  #lightbox-placeholder p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(223,235,246,0.5);
+  }
+  #lightbox-caption {
+    position: absolute;
+    bottom: -40px;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(223,235,246,0.55);
+  }
+  /* Close button */
+  #lb-close {
+    position: fixed;
+    top: 24px; right: 28px;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #FFFFFF;
+    width: 40px; height: 40px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, color 0.2s;
+    z-index: 1001;
+    font-size: 18px;
+    line-height: 1;
+  }
+  #lb-close:hover { border-color: #AAC7D8; color: #AAC7D8; }
+  /* Arrow buttons */
+  .lb-arrow {
+    position: fixed;
+    top: 50%; transform: translateY(-50%);
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #FFFFFF;
+    width: 48px; height: 48px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    z-index: 1001;
+    font-size: 20px;
+  }
+  .lb-arrow:hover { border-color: #AAC7D8; color: #AAC7D8; background: rgba(170,199,216,0.06); }
+  #lb-prev { left: 20px; }
+  #lb-next { right: 20px; }
+  /* Counter */
+  #lb-counter {
+    position: fixed;
+    bottom: 24px; left: 50%; transform: translateX(-50%);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; color: rgba(223,235,246,0.5);
+    z-index: 1001;
+  }
+  /* Thumbnail strip */
+  #lb-thumbs {
+    position: fixed;
+    bottom: 52px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px;
+    z-index: 1001;
+    max-width: 90vw;
+    overflow-x: auto;
+    padding: 4px;
+  }
+  .lb-thumb {
+    width: 44px; height: 32px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    opacity: 0.5;
+    transition: opacity 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+    background: #44576D;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; color: rgba(255,255,255,0.4);
+  }
+  .lb-thumb.lb-thumb-active, .lb-thumb:hover { opacity: 1; border-color: #AAC7D8; }
+  /* Gallery slot cursor hint */
+  .gallery-slot { cursor: zoom-in; }
+  @media (max-width: 768px) {
+    #lb-prev { left: 8px; width: 40px; height: 40px; }
+    #lb-next { right: 8px; width: 40px; height: 40px; }
+    #lb-close { top: 16px; right: 16px; }
+    #lb-thumbs { display: none; }
+    #lightbox-placeholder { width: 90vw; height: 50vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════ SECTION NAV (slides in on scroll) ════ -->
+<div id="section-nav">
+  <a href="#" class="snav-logo">Belle View</a>
+  <div class="snav-links">
+    <a href="#overview" class="snav-link" data-section="overview">Overview</a>
+    <a href="#layout" class="snav-link" data-section="layout">Property</a>
+    <a href="#gallery" class="snav-link" data-section="gallery">Gallery</a>
+    <a href="#opportunity" class="snav-link" data-section="opportunity">Business History</a>
+    <a href="#location" class="snav-link" data-section="location">Location</a>
+    <a href="#documents" class="snav-link" data-section="documents">Documents</a>
+    <a href="#contact" class="snav-link" data-section="contact">Contact</a>
+  </div>
+  <div class="nav-cta-wrap">
+    <button class="nav-cta">More Information <span class="caret">&#9662;</span></button>
+    <div class="nav-cta-dropdown">
+      <a href="#" id="snav-cta-pdf">Download Property PDF</a>
+      <a href="#" id="snav-cta-plans">Floor Plans</a>
+      <a href="#" id="snav-cta-investment">Investment Summary</a>
+      <div class="dd-divider"></div>
+      <a href="#contact">Request a Showing</a>
+      <a href="#contact">Contact Amanda</a>
+    </div>
+  </div>
+</div>
+
+<!-- ════ NAV ════ -->
+<nav>
+  <a href="#" class="nav-logo">Belle View</a>
+
+  <div class="nav-center">
+    <!-- Overview direct link -->
+    <a href="#overview" class="nav-btn">Overview</a>
+
+    <!-- Documents dropdown -->
+    <div class="nav-item">
+      <button class="nav-btn">Documents <span class="caret">▾</span></button>
+      <div class="nav-dropdown">
+        <a href="#" id="nav-pdf">Download PDF</a>
+        <a href="#" id="nav-floorplans">Floor Plans</a>
+        <a href="#" id="nav-investment">Investment Summary</a>
+      </div>
+    </div>
+
+    <a href="#gallery" class="nav-btn">Gallery</a>
+    <a href="#location" class="nav-btn">Location</a>
+    <a href="#contact" class="nav-btn">Contact</a>
+  </div>
+
+  <div class="nav-cta-wrap">
+    <button class="nav-cta">More Information <span class="caret">▾</span></button>
+    <div class="nav-cta-dropdown">
+      <a href="#" id="nav-cta-pdf">Download Property PDF</a>
+      <a href="#" id="nav-cta-plans">Floor Plans</a>
+      <a href="#" id="nav-cta-investment">Investment Summary</a>
+      <div class="dd-divider"></div>
+      <a href="#contact">Request a Showing</a>
+      <a href="#contact">Contact Amanda</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <svg class="hero-mountain" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 400 L0 280 L120 200 L240 260 L360 140 L480 220 L560 100 L640 180 L720 60 L800 160 L900 80 L980 140 L1080 50 L1160 120 L1260 70 L1360 140 L1440 100 L1440 400 Z" fill="#44576D"/>
+    <path d="M0 400 L0 320 L180 240 L300 300 L420 200 L500 260 L600 160 L700 240 L800 180 L920 280 L1040 200 L1160 260 L1280 200 L1440 240 L1440 400 Z" fill="#768A96" opacity="0.6"/>
+  </svg>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <!-- Mobile-only price display (shown instead of absolute positioned version) -->
+    <div class="hero-price-mobile">
+      <span class="hero-price-label">Offered At</span>
+      <div class="hero-price-num">$2,600,000</div>
+      <div class="hero-address">1770 Earley Farm Rd · Amherst, VA</div>
+    </div>
+    <div class="hero-eyebrow">Private Residence · Amherst County, Virginia · On the Monticello Wine Trail</div>
+    <h1 class="hero-title"><em>Belle View</em> —<br>a Blue Ridge estate<br>unlike any other.</h1>
+    <p class="hero-tagline">A privately offered mountain residence with 50+ mile views, 10,600 sq ft of refined living, and a proven track record across hospitality and income-producing ventures.</p>
+    <div class="hero-stats">
+      <div class="hero-stat-item">
+        <span class="hero-stat-num">10,600</span>
+        <span class="hero-stat-label">Sq Ft Lodge</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat-item">
+        <span class="hero-stat-num">15</span>
+        <span class="hero-stat-label">Acres</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat-item">
+        <span class="hero-stat-num">50+</span>
+        <span class="hero-stat-label">Mile Views</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat-item">
+        <span class="hero-stat-num">11</span>
+        <span class="hero-stat-label">Guest Bedrooms</span>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat-item">
+        <span class="hero-stat-num">A-1</span>
+        <span class="hero-stat-label">Zoning w/ SUP</span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary btn-primary--hero">Request a Private Showing</a>
+      <a href="#" class="btn-ghost" id="hero-pdf-link">Download Info Sheet</a>
+    </div>
+  </div>
+
+  <!-- Price tag: absolutely positioned on desktop, hidden on mobile (shown in hero-content-mobile below) -->
+  <div class="hero-price-tag" id="heroPriceDesktop">
+    <div class="hero-price-label">Offered At</div>
+    <div class="hero-price-num">$2,600,000</div>
+    <div class="hero-address">1770 Earley Farm Rd · Amherst, VA</div>
+    <div class="hero-badge">Privately Marketed</div>
+  </div>
+</section>
+
+<!-- ════ OVERVIEW ════ -->
+<section id="overview" class="section-pad">
+  <div class="section-inner">
+    <div class="overview-grid">
+      <div class="overview-left">
+        <div class="section-eyebrow">Property Overview</div>
+        <h2 class="section-title">A home. A legacy.<br><em>Unmatched views.</em></h2>
+        <p class="section-body">Built between 1996 and 2006, Belle View is a 10,600± sq ft mountain residence on 15 private acres with unobstructed 50+ mile Blue Ridge Mountain views. Designed first and foremost as a home, the property also carries a remarkable operating history — having successfully run as a hospitality, lodging, and care facility — with the infrastructure still in place for a buyer who wants to carry that forward.</p>
+        <div class="key-stats">
+          <div class="key-stat">
+            <div class="key-stat-num">10,600<span style="font-size:18px;">±</span></div>
+            <div class="key-stat-label">Sq Ft Main Lodge</div>
+          </div>
+          <div class="key-stat">
+            <div class="key-stat-num">15</div>
+            <div class="key-stat-label">Acres</div>
+          </div>
+          <div class="key-stat">
+            <div class="key-stat-num">11</div>
+            <div class="key-stat-label">Guest Bedrooms</div>
+          </div>
+          <div class="key-stat">
+            <div class="key-stat-num">$5,089</div>
+            <div class="key-stat-label">Annual Taxes</div>
+          </div>
+        </div>
+      </div>
+      <div class="overview-right">
+        <div class="section-eyebrow">Included Improvements</div>
+        <ul class="features-list">
+          <li>10,600± sq ft main lodge — owner's quarters &amp; dedicated guest wing</li>
+          <li>36×24 outbuilding — bar/catering area with bathroom</li>
+          <li>40×60 engineered concrete event slab with integrated tent anchoring</li>
+          <li>14×14 pergola and gazebo</li>
+          <li>Large lit parking lot with handicap ramp</li>
+          <li>50+ mile unobstructed Blue Ridge Mountain views</li>
+          <li>Zoned A-1 Agricultural-Residential with prior special use approvals</li>
+        </ul>
+        <div class="section-eyebrow" style="margin-top: 36px;">Property Type &amp; Historic Uses</div>
+        <div class="use-tags">
+          <span class="use-tag">Wedding &amp; Event Venue</span>
+          <span class="use-tag">Rehabilitation Facility</span>
+          <span class="use-tag">Assisted Living</span>
+          <span class="use-tag">Short-Term Rental</span>
+          <span class="use-tag">Winery Tasting Destination</span>
+          <span class="use-tag">Ministry Retreat</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PHYSICAL LAYOUT ════ -->
+<section id="layout" class="section-pad" style="background: var(--white);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Physical Layout</div>
+    <h2 class="section-title">Three distinct <em>zones</em></h2>
+    <p class="section-body" style="max-width: 600px;">The lodge is thoughtfully divided into private, guest, and venue zones — allowing simultaneous operations or conversion to a single-use model.</p>
+    <div class="layout-wings">
+      <div class="wing-card">
+        <div class="wing-num">01</div>
+        <div class="wing-title">Owner's Residence &amp; Quarters</div>
+        <ul class="wing-features">
+          <li>Master suite with his &amp; her baths</li>
+          <li>Gourmet kitchen</li>
+          <li>Two-sided stone fireplace</li>
+          <li>Private office</li>
+          <li>Wrap-around three-sided covered porch</li>
+        </ul>
+      </div>
+      <div class="wing-card">
+        <div class="wing-num">02</div>
+        <div class="wing-title">Dedicated Guest Accommodations</div>
+        <ul class="wing-features">
+          <li>Private entrance</li>
+          <li>4 bedrooms with private baths (1st floor)</li>
+          <li>ADA-accessible bathroom</li>
+          <li>Event / catering prep kitchen</li>
+          <li>Dedicated laundry room</li>
+          <li>6 bedrooms (2nd floor)</li>
+          <li>Bridal suite — full bath, balcony &amp; private access</li>
+        </ul>
+      </div>
+      <div class="wing-card">
+        <div class="wing-num">03</div>
+        <div class="wing-title">Venue &amp; Event Infrastructure</div>
+        <ul class="wing-features">
+          <li>36×24 bar / catering outbuilding</li>
+          <li>40×60 engineered concrete event slab</li>
+          <li>Integrated tent anchoring &amp; future building potential</li>
+          <li>14×14 pergola &amp; gazebo</li>
+          <li>Large lit parking lot</li>
+          <li>Handicap ramp</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top: 64px; background: #FFFFFF; border: 1px solid var(--stone); padding: 56px 48px;">
+      <div class="section-eyebrow">Mechanical &amp; Systems</div>
+      <h3 style="font-family: var(--font-display); font-size: 28px; font-weight: 300; color: var(--deep); margin-bottom: 32px;">Infrastructure built for <em>commercial-grade</em> operation</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--stone);">
+        <div style="background: #FFFFFF; padding: 20px 24px;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Water</div>
+          <ul style="list-style: none; font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.8;">
+            <li>2 wells</li><li>2,000 gal fire water storage</li><li>400 gal domestic water storage</li>
+            <li>3-stage hospital-grade filtration</li><li>2 jet pumps (15 showers simultaneously)</li><li>On-demand hot water loop</li>
+          </ul>
+        </div>
+        <div style="background: #FFFFFF; padding: 20px 24px;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Heating &amp; Energy</div>
+          <ul style="list-style: none; font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.8;">
+            <li>3 heat pumps (replaced within 3 years)</li><li>3 water heaters (electric + propane backup)</li><li>1,000-gal + 500-gal propane tanks</li>
+          </ul>
+        </div>
+        <div style="background: #FFFFFF; padding: 20px 24px;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Safety &amp; Life-Safety</div>
+          <ul style="list-style: none; font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.8;">
+            <li>Full sprinkler system</li><li>ADT security system</li><li>Intercom system</li><li>Soundproof rooms</li><li>4 septic tanks + grease tank</li>
+          </ul>
+        </div>
+        <div style="background: #FFFFFF; padding: 20px 24px;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Technology</div>
+          <ul style="list-style: none; font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.8;">
+            <li>Cat wiring throughout</li><li>Intercom system</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ GALLERY ════ -->
+<section id="gallery">
+  <div class="gallery-header">
+    <div>
+      <div class="section-eyebrow" style="color: var(--gold-light);">Photography &amp; Imagery</div>
+      <h2 class="section-title" style="margin-bottom: 0; color: #FFFFFF;">The <em>property</em></h2>
+    </div>
+    <div class="gallery-categories">
+      <button class="gallery-cat active" data-cat="all">All</button>
+      <button class="gallery-cat" data-cat="resident">Resident Wing</button>
+      <button class="gallery-cat" data-cat="guest">Guest Wing</button>
+      <button class="gallery-cat" data-cat="event">Event Spaces</button>
+      <button class="gallery-cat" data-cat="grounds">Grounds &amp; Land</button>
+      <button class="gallery-cat" data-cat="aerial">Aerial</button>
+    </div>
+  </div>
+  <!-- Replace .gallery-slot divs with <img> tags when photos are ready -->
+  <!-- Use data-cat attribute to enable category filtering -->
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-slot feature-wide feature-tall" data-cat="aerial">Drone / Hero</div>
+    <div class="gallery-slot" data-cat="resident">Covered Porch</div>
+    <div class="gallery-slot" data-cat="resident">Stone Fireplace</div>
+    <div class="gallery-slot" data-cat="guest">Guest Wing Entry</div>
+    <div class="gallery-slot" data-cat="guest">Bridal Suite</div>
+    <div class="gallery-slot feature-wide" data-cat="event">Event Slab &amp; Tent</div>
+    <div class="gallery-slot" data-cat="event">Outbuilding / Bar</div>
+    <div class="gallery-slot" data-cat="event">Pergola</div>
+    <div class="gallery-slot" data-cat="grounds">Mountain Views</div>
+    <div class="gallery-slot" data-cat="grounds">Grounds</div>
+    <div class="gallery-slot" data-cat="aerial">Aerial Overview</div>
+    <div class="gallery-slot" data-cat="aerial">Aerial Map</div>
+  </div>
+</section>
+
+<!-- ════ OPPORTUNITY ════ -->
+<section id="opportunity" class="section-pad">
+  <div class="section-inner">
+    <div class="opp-grid">
+      <div class="opp-left">
+        <div class="section-eyebrow" style="color: var(--gold-light); font-weight: 600;">Proven Business History</div>
+        <h2 class="section-title">Infrastructure already<br><em>in place</em></h2>
+        <p class="section-body">Belle View's greatest asset is its versatility. Beyond the residence itself, the property has a documented history of successful income-producing operations — each supported by the infrastructure, zoning approvals, and physical layout already in place. A new owner can continue any of these uses, or simply enjoy the estate as a private home.</p>
+        <a href="#documents" class="btn-primary" style="display: inline-block; margin-top: 8px;">Download Investment Summary</a>
+      </div>
+      <div class="opp-cards">
+        <div class="opp-card">
+          <div class="opp-card-icon"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 22V12h6v10"/></svg></div>
+          <div class="opp-card-title">Short-Term Rental</div>
+          <div class="opp-card-body">Guest wing with 8 private accommodations and a separate 3-bedroom apartment. Prior Airbnb operating history.</div>
+        </div>
+        <div class="opp-card">
+          <div class="opp-card-icon"><svg viewBox="0 0 24 24"><path d="M2 19h20"/><path d="M12 3L3 13h18L12 3z"/><path d="M7 13v6"/><path d="M17 13v6"/><path d="M9.5 13v6"/><path d="M14.5 13v6"/></svg></div>
+          <div class="opp-card-title">Event &amp; Gathering Space</div>
+          <div class="opp-card-body">Engineered event slab, bridal suite, catering outbuilding, and ABC-licensed use approval. Prior wedding and event hosting history — infrastructure ready for reactivation.</div>
+        </div>
+        <div class="opp-card">
+          <div class="opp-card-icon"><svg viewBox="0 0 24 24"><path d="M8 2h8l1 8a5 5 0 01-10 0L8 2z"/><path d="M12 15v7"/><path d="M8 22h8"/></svg></div>
+          <div class="opp-card-title">Winery Tasting Destination</div>
+          <div class="opp-card-body">Previously operated as a satellite tasting room on the edge of the Monticello Wine Trail. ABC approval and prior tasting room history make re-establishing or expanding this use a viable path.</div>
+        </div>
+        <div class="opp-card">
+          <div class="opp-card-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><line x1="5" y1="9" x2="19" y2="9"/></svg></div>
+          <div class="opp-card-title">Retreat, Ministry &amp; Care</div>
+          <div class="opp-card-body">Prior approvals for ministry retreat, church use, and recovery &amp; rehabilitation. Hospital-grade water and life-safety systems already operational.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ LOCATION ════ -->
+<section id="location" class="section-pad">
+  <div class="section-inner">
+    <div class="location-grid">
+      <div class="location-left">
+        <div class="section-eyebrow">Location &amp; Market Context</div>
+        <h2 class="section-title">Positioned in Virginia's<br><em>experiential travel</em> corridor</h2>
+        <p class="section-body">Located along Virginia's Blue Ridge with direct access to one of the country's most visited scenic byways. Strong regional draw from multiple major markets — all within day-trip or short-drive distance.</p>
+        <ul class="proximity-list">
+          <li><span class="prox-label">Blue Ridge Parkway</span><span>One of the most visited scenic routes in the U.S.</span></li>
+          <li><span class="prox-label">Liberty University</span><span>Lynchburg, VA — major regional institutional anchor</span></li>
+          <li><span class="prox-label">University of Virginia</span><span>Charlottesville, VA</span></li>
+          <li><span class="prox-label">Sweet Briar College</span><span>Amherst County</span></li>
+          <li><span class="prox-label">Appalachian Trail</span><span>Regional hiking destination draw</span></li>
+          <li><span class="prox-label">Wintergreen Resort</span><span>Adjacent mountain recreation region</span></li>
+          <li><span class="prox-label">George Washington National Forest</span><span>Regional outdoor recreation anchor</span></li>
+        </ul>
+        <div class="drive-markets">
+          <h4>Strong Drive-Market Access From</h4>
+          <div class="drive-tags">
+            <span class="drive-tag">Washington DC / NoVA</span>
+            <span class="drive-tag">Lynchburg</span>
+            <span class="drive-tag">Richmond</span>
+            <span class="drive-tag">Charlottesville</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-right">
+        <div class="region-block">
+          <h3>Virginia Wine Country</h3>
+          <p>Positioned on the edge of the Monticello Wine Trail and within broader Virginia wine country demand corridors — one of the most active agritourism regions on the East Coast.</p>
+          <p>The property's prior ABC license approval and tasting room use history make it a viable candidate for winery partnership or satellite destination use.</p>
+        </div>
+        <div style="background: var(--stone); padding: 40px; margin-top: 2px;">
+          <div class="section-eyebrow">Property Details</div>
+          <table style="width: 100%; font-size: 13px; font-weight: 300; border-collapse: collapse; margin-top: 16px;">
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted); width: 50%;">Status</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">Privately Marketed</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted);">Parcel ID</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">Map # 141-A-6</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted);">Zoning</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">A-1 Agricultural-Residential</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted);">Built</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">1996 (addition 2006)</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted);">Annual Taxes</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">$5,089</td></tr>
+            <tr><td style="padding: 10px 0; color: var(--muted);">Deed Reference</td><td style="padding: 10px 0; color: var(--charcoal);">Book 1189, Pages 483–486</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Accordion -->
+    <div class="seo-accordion">
+      <button class="seo-accordion-trigger" id="seoTrigger" onclick="toggleSeo()">
+        <span>Additional Info</span>
+        <span class="acc-icon">+</span>
+      </button>
+      <div class="seo-accordion-body" id="seoBody">
+        <div class="seo-accordion-inner">
+          <h3>About this property &amp; region</h3>
+          <p>This privately marketed estate is positioned within one of Virginia's most sought-after experiential travel and agritourism corridors. Buyers searching for a winery for sale in Virginia, a wedding venue for sale in Amherst County, or a venue property near the Monticello Wine Trail will find this property uniquely positioned — with zoning approvals, operating history, and infrastructure already in place.</p>
+          <p>The property sits in Amherst County, VA, on the edge of the Blue Ridge and within the broader Monticello Wine Trail region — a corridor that draws visitors from Washington DC, Northern Virginia, Richmond, and Charlottesville year-round. Its prior operating history as an event venue, winery tasting destination, rehabilitation facility, assisted living facility, and short-term rental makes it one of the most versatile hospitality properties currently available in Central Virginia.</p>
+          <div class="seo-tags">
+            <span class="seo-tag">Winery for sale Virginia</span>
+            <span class="seo-tag">Wedding venue for sale Virginia</span>
+            <span class="seo-tag">Venue for sale Amherst County</span>
+            <span class="seo-tag">Monticello Wine Trail property</span>
+            <span class="seo-tag">Blue Ridge estate for sale</span>
+            <span class="seo-tag">Retreat center for sale Virginia</span>
+            <span class="seo-tag">Event venue Virginia</span>
+            <span class="seo-tag">Hospitality property Virginia</span>
+            <span class="seo-tag">Rehabilitation facility for sale</span>
+            <span class="seo-tag">Mountain lodge for sale Virginia</span>
+            <span class="seo-tag">Amherst County VA real estate</span>
+            <span class="seo-tag">Privately marketed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════ INSTAGRAM / BEHOLD ════ -->
+<section id="instagram">
+  <div class="insta-header">
+    <div class="section-eyebrow" style="text-align: center;">Follow Along</div>
+    <h2 class="section-title" style="text-align: center; margin-bottom: 0;">The property on <em>Instagram</em></h2>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       BEHOLD INSTAGRAM WIDGET
+       1. Go to behold.so and get your embed snippet
+       2. Replace the two lines below with your snippet — looks like:
+            <div id="behold-widget-XXXXXXXX"></div>
+            <script src="https://w.behold.so/widget.js" type="module"></script>
+       ═══════════════════════════════════════════════════════════════ -->
+  <div style="padding: 0 64px 80px;">
+    <!-- PASTE BEHOLD EMBED CODE HERE -->
+    <div style="border: 1px dashed var(--stone); background: var(--cream); padding: 64px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+      <p style="font-family: var(--font-display); font-size: 20px; font-style: italic; color: var(--warm-gray);">Behold Instagram widget goes here</p>
+      <code style="font-size: 12px; color: var(--gold-dark); background: var(--stone); padding: 6px 14px; font-family: monospace;">&lt;!-- Replace this block with your Behold snippet --&gt;</code>
+    </div>
+  </div>
+</section>
+
+<!-- ════ DOCUMENTS ════ -->
+<section id="documents" class="section-pad" style="background: var(--white);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Downloadable Documents</div>
+    <h2 class="section-title">Due diligence <em>resources</em></h2>
+    <div class="docs-grid">
+      <a href="#" class="doc-card" id="dl-pdf">
+        <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+        <div class="doc-title">Property Summary PDF</div>
+        <div class="doc-desc">Full property overview, specifications, and photography in a single printable document.</div>
+        <div class="doc-link">Download PDF</div>
+      </a>
+      <a href="#" class="doc-card" id="dl-plans">
+        <div class="doc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18"/><path d="M9 3v6"/><path d="M3 15h10"/><path d="M13 15v6"/></svg></div>
+        <div class="doc-title">Floor Plans</div>
+        <div class="doc-desc">Architectural floor plans for the main lodge including owner's quarters, guest wing, and venue areas.</div>
+        <div class="doc-link">Download Plans</div>
+      </a>
+      <a href="#" class="doc-card" id="dl-investment">
+        <div class="doc-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+        <div class="doc-title">Investment Summary</div>
+        <div class="doc-desc">Revenue model overview, historic use history, and business opportunity analysis for qualified buyers.</div>
+        <div class="doc-link">Download Summary</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section id="contact" class="section-pad">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="section-eyebrow" style="color: var(--gold);">Inquiries &amp; Showings</div>
+        <h2 class="section-title">Schedule a<br><em>private showing</em></h2>
+        <p class="section-body">For additional information, virtual walkthroughs, or to schedule a private showing, please reach out directly or submit an inquiry using the form.</p>
+        <div class="contact-info">
+          <div class="contact-name">Amanda Tyson</div>
+          <div class="contact-detail"><a href="tel:8604284466">(860) 428-4466</a></div>
+          <div class="contact-detail"><a href="mailto:amanda.tyson.trr@gmail.com">amanda.tyson.trr@gmail.com</a></div>
+        </div>
+      </div>
+      <!-- ═══════════════════════════════════════════════════════════
+           FORMSPREE SETUP (one-time, 2 minutes):
+           1. Go to https://formspree.io and sign up (free)
+           2. Create a new form → set email to amanda.tyson.trr@gmail.com
+           3. Copy your form ID (looks like: xpznkgvb)
+           4. Replace YOUR_FORM_ID below with that ID
+           ═══════════════════════════════════════════════════════════ -->
+      <div class="contact-form">
+        <div class="form-title">Request Information</div>
+        <form id="inquiryForm"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST">
+
+          <!-- Routes reply emails back to the submitter -->
+          <input type="hidden" name="_replyto" id="replyto-field" />
+          <!-- Subject line in Amanda's inbox -->
+          <input type="hidden" name="_subject" value="Belle View — New Inquiry" />
+          <!-- Redirect suppressed — we handle success in JS -->
+          <input type="hidden" name="_next" value="about:blank" />
+
+          <div class="form-group">
+            <label class="form-label" for="name">Full Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone</label>
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="(000) 000-0000" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message (Optional)</label>
+            <textarea class="form-input form-textarea" id="message" name="message" placeholder="Questions, preferred showing times, etc."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="formSubmitBtn">Submit Inquiry</button>
+        </form>
+
+        <div id="form-success" style="display:none;">
+          <div style="border: 1.5px solid #FFFFFF; padding: 32px 28px; text-align: center; margin-top: 8px;">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;stroke:#AAC7D8;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin:0 auto 16px;display:block;">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <p style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; font-style:italic; color:#FFFFFF; margin-bottom:8px;">Thank you for reaching out.</p>
+            <p style="font-size:12px; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:#AAC7D8; margin-bottom:0;">We'll be in touch shortly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SOCIAL ════ -->
+<div class="social-bar">
+  <span class="social-label">Follow the Property</span>
+  <div class="social-links">
+    <a href="#" class="social-link" id="link-instagram">Instagram</a>
+    <a href="#" class="social-link" id="link-facebook">Facebook</a>
+    <a href="#" class="social-link" id="link-reels">Video Reels</a>
+  </div>
+</div>
+
+<!-- ════ DISCLOSURE ════ -->
+<div class="disclosure">
+  <p>This information is deemed reliable but not guaranteed. The property is being offered for sale by owner. The marketing party is not acting as a licensed real estate broker or agent in this transaction. All property details should be independently verified by prospective buyers. Prospective buyers are encouraged to conduct their own due diligence.</p>
+</div>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <p>1770 Earley Farm Road · Amherst, VA 24521 · Map # 141-A-6</p>
+  <p>© 2025 Belle View · Offered For Sale By Owner</p>
+</footer>
+
+<script>
+  // Gallery category filter
+  document.querySelectorAll('.gallery-cat').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.gallery-cat').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      document.querySelectorAll('#galleryGrid .gallery-slot').forEach(slot => {
+        if (cat === 'all' || slot.dataset.cat === cat) {
+          slot.style.display = '';
+        } else {
+          slot.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // SEO accordion
+  function toggleSeo() {
+    const trigger = document.getElementById('seoTrigger');
+    const body = document.getElementById('seoBody');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open');
+    trigger.classList.toggle('open');
+    trigger.querySelector('.acc-icon').textContent = isOpen ? '+' : '×';
+  }
+
+  // Form submit
+  // Formspree async submission
+  const inquiryForm = document.getElementById('inquiryForm');
+  if (inquiryForm) {
+    inquiryForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const name  = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      if (!name || !email || !phone) {
+        // Highlight empty required fields
+        [['name',name],['email',email],['phone',phone]].forEach(([id,val]) => {
+          const el = document.getElementById(id);
+          el.style.borderColor = val ? 'rgba(255,255,255,0.3)' : '#e06c6c';
+        });
+        return;
+      }
+
+      // Sync replyto hidden field
+      document.getElementById('replyto-field').value = email;
+
+      const btn = document.getElementById('formSubmitBtn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const data = new FormData(inquiryForm);
+        const res  = await fetch(inquiryForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          inquiryForm.style.display = 'none';
+          const success = document.getElementById('form-success');
+          success.style.display = 'block';
+          success.style.opacity = '0';
+          success.style.transition = 'opacity 0.5s ease';
+          requestAnimationFrame(() => { success.style.opacity = '1'; });
+        } else {
+          btn.textContent = 'Submit Inquiry';
+          btn.disabled = false;
+          alert('Something went wrong. Please email amanda.tyson.trr@gmail.com directly.');
+        }
+      } catch(err) {
+        btn.textContent = 'Submit Inquiry';
+        btn.disabled = false;
+        alert('Network error. Please email amanda.tyson.trr@gmail.com directly.');
+      }
+    });
+  }
+
+  // Section nav scroll behavior
+  const sectionNav = document.getElementById('section-nav');
+  const hero = document.getElementById('hero');
+
+  function onScroll() {
+    const heroBottom = hero.offsetTop + hero.offsetHeight - 80;
+    const scrolled = window.scrollY;
+
+    // Slide in section nav after hero
+    if (scrolled > heroBottom - 120) {
+      sectionNav.classList.add('snav-visible');
+    } else {
+      sectionNav.classList.remove('snav-visible');
+    }
+
+    // Active section highlight
+    const sections = ['overview','layout','gallery','opportunity','location','documents','contact'];
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && scrolled >= el.offsetTop - 80) current = id;
+    });
+    document.querySelectorAll('.snav-link').forEach(a => {
+      a.classList.toggle('snav-active', a.dataset.section === current);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Sync nav dropdown PDF links → documents section links
+  // Update these hrefs to your actual file paths
+  const PDF_URL = 'documents/property-summary.pdf';
+  const PLANS_URL = 'documents/floor-plans.pdf';
+  const INVEST_URL = 'documents/investment-summary.pdf';
+  document.getElementById('nav-pdf').href = PDF_URL;
+  document.getElementById('nav-floorplans').href = PLANS_URL;
+  document.getElementById('nav-investment').href = INVEST_URL;
+  document.getElementById('nav-cta-pdf').href = PDF_URL;
+  if(document.getElementById('snav-cta-pdf')) document.getElementById('snav-cta-pdf').href = PDF_URL;
+  document.getElementById('nav-cta-plans').href = PLANS_URL;
+  if(document.getElementById('snav-cta-plans')) document.getElementById('snav-cta-plans').href = PLANS_URL;
+  document.getElementById('nav-cta-investment').href = INVEST_URL;
+  if(document.getElementById('snav-cta-investment')) document.getElementById('snav-cta-investment').href = INVEST_URL;
+  document.getElementById('hero-pdf-link').href = PDF_URL;
+  document.getElementById('dl-pdf').href = PDF_URL;
+  document.getElementById('dl-plans').href = PLANS_URL;
+  document.getElementById('dl-investment').href = INVEST_URL;
+</script>
+<!-- ════ SCROLL TO TOP ════ -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <svg id="scrollTopSvg" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Track circle (faint) -->
+    <circle cx="26" cy="26" r="23" stroke="rgba(170,199,216,0.18)" stroke-width="1.5" fill="none"/>
+    <!-- Progress ring — drawn by scroll -->
+    <circle id="progressRing" cx="26" cy="26" r="23" stroke="#AAC7D8" stroke-width="1.5" fill="none"
+      stroke-linecap="round"
+      style="transform: rotate(-90deg); transform-origin: 26px 26px;"
+    />
+    <!-- Back mountain (taller, behind) -->
+    <polyline
+      id="mountain-back"
+      points="13,34 22,20 31,34"
+      stroke="#AAC7D8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"
+      opacity="0.45"
+    />
+    <!-- Front mountain (shorter, in front, offset right) -->
+    <polyline
+      id="mountain-front"
+      points="20,34 30,23 40,34"
+      stroke="#AAC7D8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"
+    />
+    <!-- Ground line -->
+    <line x1="12" y1="34" x2="40" y2="34" stroke="#AAC7D8" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+  </svg>
+</button>
+
+<style>
+  #scrollTop {
+    position: fixed;
+    bottom: 36px;
+    right: 36px;
+    width: 52px;
+    height: 52px;
+    background: rgba(41,53,60,0.88);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    z-index: 200;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease, background 0.2s;
+    backdrop-filter: blur(8px);
+  }
+  #scrollTop.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #scrollTop:hover { background: rgba(41,53,60,0.98); }
+  #scrollTop:hover #mountain-back,
+  #scrollTop:hover #mountain-front,
+  #scrollTop:hover line,
+  #scrollTop:hover #progressRing {
+    stroke: #FFFFFF;
+  }
+  #scrollTopSvg { width: 52px; height: 52px; display: block; }
+  #progressRing { transition: stroke-dashoffset 0.05s linear; }
+
+  /* ── LIGHTBOX ── */
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(20,28,32,0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  #lightbox.lb-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  #lightbox-img-wrap {
+    position: relative;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #lightbox-img {
+    max-width: 88vw;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    transition: opacity 0.2s ease;
+  }
+  /* Placeholder panel when no real image src yet */
+  #lightbox-placeholder {
+    width: min(72vw, 880px);
+    height: min(52vh, 560px);
+    background: #29353C;
+    border: 1px solid rgba(170,199,216,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  #lightbox-placeholder p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(223,235,246,0.5);
+  }
+  #lightbox-caption {
+    position: absolute;
+    bottom: -40px;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(223,235,246,0.55);
+  }
+  /* Close button */
+  #lb-close {
+    position: fixed;
+    top: 24px; right: 28px;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #FFFFFF;
+    width: 40px; height: 40px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, color 0.2s;
+    z-index: 1001;
+    font-size: 18px;
+    line-height: 1;
+  }
+  #lb-close:hover { border-color: #AAC7D8; color: #AAC7D8; }
+  /* Arrow buttons */
+  .lb-arrow {
+    position: fixed;
+    top: 50%; transform: translateY(-50%);
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #FFFFFF;
+    width: 48px; height: 48px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    z-index: 1001;
+    font-size: 20px;
+  }
+  .lb-arrow:hover { border-color: #AAC7D8; color: #AAC7D8; background: rgba(170,199,216,0.06); }
+  #lb-prev { left: 20px; }
+  #lb-next { right: 20px; }
+  /* Counter */
+  #lb-counter {
+    position: fixed;
+    bottom: 24px; left: 50%; transform: translateX(-50%);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; color: rgba(223,235,246,0.5);
+    z-index: 1001;
+  }
+  /* Thumbnail strip */
+  #lb-thumbs {
+    position: fixed;
+    bottom: 52px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px;
+    z-index: 1001;
+    max-width: 90vw;
+    overflow-x: auto;
+    padding: 4px;
+  }
+  .lb-thumb {
+    width: 44px; height: 32px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    opacity: 0.5;
+    transition: opacity 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+    background: #44576D;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; color: rgba(255,255,255,0.4);
+  }
+  .lb-thumb.lb-thumb-active, .lb-thumb:hover { opacity: 1; border-color: #AAC7D8; }
+  /* Gallery slot cursor hint */
+  .gallery-slot { cursor: zoom-in; }
+  @media (max-width: 768px) {
+    #lb-prev { left: 8px; width: 40px; height: 40px; }
+    #lb-next { right: 8px; width: 40px; height: 40px; }
+    #lb-close { top: 16px; right: 16px; }
+    #lb-thumbs { display: none; }
+    #lightbox-placeholder { width: 90vw; height: 50vh; }
+  }
+</style>
+
+<script>
+  (function() {
+    const btn = document.getElementById('scrollTop');
+    const ring = document.getElementById('progressRing');
+    const circumference = 2 * Math.PI * 23; // r=23
+
+    ring.style.strokeDasharray = circumference;
+    ring.style.strokeDashoffset = circumference;
+
+    function updateScroll() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+
+      // Draw circle as you scroll
+      ring.style.strokeDashoffset = circumference * (1 - progress);
+
+      // Show button after scrolling 300px
+      if (scrollTop > 300) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    updateScroll();
+  })();
+</script>
+
+
+<!-- ════ LIGHTBOX ════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button id="lb-close" aria-label="Close">&#x2715;</button>
+  <button class="lb-arrow" id="lb-prev" aria-label="Previous image">&#8592;</button>
+  <div id="lightbox-img-wrap">
+    <img id="lightbox-img" src="" alt="" style="display:none;" />
+    <div id="lightbox-placeholder">
+      <svg viewBox="0 0 48 48" fill="none" style="width:40px;height:40px;stroke:rgba(170,199,216,0.35);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;">
+        <rect x="4" y="10" width="40" height="28" rx="2"/>
+        <circle cx="16" cy="20" r="3"/>
+        <path d="M4 32l10-8 8 6 6-5 16 13"/>
+      </svg>
+      <p id="lightbox-slot-label">Photo placeholder</p>
+    </div>
+    <div id="lightbox-caption"></div>
+  </div>
+  <button class="lb-arrow" id="lb-next" aria-label="Next image">&#8594;</button>
+  <div id="lb-counter"></div>
+  <div id="lb-thumbs"></div>
+</div>
+
+<script>
+(function() {
+  // ── Gather all visible gallery slots ──
+  function getVisibleSlots() {
+    return Array.from(document.querySelectorAll('#galleryGrid .gallery-slot'))
+      .filter(s => s.style.display !== 'none');
+  }
+
+  let currentIndex = 0;
+  let activeSlots = [];
+
+  const lb        = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lightbox-img');
+  const lbPH      = document.getElementById('lightbox-placeholder');
+  const lbLabel   = document.getElementById('lightbox-slot-label');
+  const lbCaption = document.getElementById('lightbox-caption');
+  const lbCounter = document.getElementById('lb-counter');
+  const lbThumbs  = document.getElementById('lb-thumbs');
+
+  function openLightbox(index) {
+    activeSlots = getVisibleSlots();
+    currentIndex = Math.max(0, Math.min(index, activeSlots.length - 1));
+    showSlide(currentIndex);
+    lb.classList.add('lb-open');
+    document.body.style.overflow = 'hidden';
+    buildThumbs();
+  }
+
+  function closeLightbox() {
+    lb.classList.remove('lb-open');
+    document.body.style.overflow = '';
+  }
+
+  function showSlide(index) {
+    const slot = activeSlots[index];
+    if (!slot) return;
+
+    const img = slot.querySelector('img');
+    const label = slot.textContent.trim() || slot.querySelector('img')?.alt || '';
+
+    if (img && img.src) {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || label;
+      lbImg.style.display = 'block';
+      lbPH.style.display = 'none';
+    } else {
+      lbImg.style.display = 'none';
+      lbPH.style.display = 'flex';
+      lbLabel.textContent = label;
+    }
+
+    lbCaption.textContent = label;
+    lbCounter.textContent = (index + 1) + ' / ' + activeSlots.length;
+    currentIndex = index;
+    updateThumbs();
+  }
+
+  function buildThumbs() {
+    lbThumbs.innerHTML = '';
+    activeSlots.forEach((slot, i) => {
+      const img = slot.querySelector('img');
+      const label = slot.textContent.trim() || '';
+      let thumb;
+      if (img && img.src) {
+        thumb = document.createElement('img');
+        thumb.src = img.src;
+        thumb.className = 'lb-thumb';
+      } else {
+        thumb = document.createElement('div');
+        thumb.className = 'lb-thumb';
+        thumb.textContent = label.substring(0,6);
+      }
+      thumb.addEventListener('click', () => showSlide(i));
+      lbThumbs.appendChild(thumb);
+    });
+    updateThumbs();
+  }
+
+  function updateThumbs() {
+    document.querySelectorAll('.lb-thumb').forEach((t, i) => {
+      t.classList.toggle('lb-thumb-active', i === currentIndex);
+    });
+  }
+
+  // Attach click to every gallery slot
+  document.querySelectorAll('#galleryGrid .gallery-slot').forEach((slot, i) => {
+    slot.addEventListener('click', () => {
+      activeSlots = getVisibleSlots();
+      const visibleIndex = activeSlots.indexOf(slot);
+      openLightbox(visibleIndex >= 0 ? visibleIndex : 0);
+    });
+  });
+
+  // Controls
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', () => {
+    showSlide((currentIndex - 1 + activeSlots.length) % activeSlots.length);
+  });
+  document.getElementById('lb-next').addEventListener('click', () => {
+    showSlide((currentIndex + 1) % activeSlots.length);
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('lb-open')) return;
+    if (e.key === 'ArrowRight') showSlide((currentIndex + 1) % activeSlots.length);
+    if (e.key === 'ArrowLeft')  showSlide((currentIndex - 1 + activeSlots.length) % activeSlots.length);
+    if (e.key === 'Escape')     closeLightbox();
+  });
+
+  // Click backdrop to close
+  lb.addEventListener('click', e => {
+    if (e.target === lb) closeLightbox();
+  });
+
+  // Touch swipe support
+  let touchStartX = 0;
+  lb.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40) {
+      dx < 0
+        ? showSlide((currentIndex + 1) % activeSlots.length)
+        : showSlide((currentIndex - 1 + activeSlots.length) % activeSlots.length);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
