@@ -291,7 +291,11 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, #1a2328 0%, #29353C 40%, #2e4050 100%);
+    background-color: var(--deep);
+    background-image: url("images/Hero%20Page%20Options/6.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .hero-mountain {
     position: absolute;
@@ -546,6 +550,20 @@
   .wing-features li { font-size: 14px; font-weight: 300; color: var(--charcoal); padding: 8px 0; border-bottom: 1px solid var(--stone); display: flex; gap: 10px; }
   .wing-features li:last-child { border-bottom: none; }
   .wing-features li::before { content: '—'; color: var(--deep); flex-shrink: 0; }
+  .wing-card-photo {
+    margin: 0 0 24px 0;
+    padding: 0;
+    border: 1px solid var(--stone);
+    background: var(--stone);
+    overflow: hidden;
+  }
+  .wing-card-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
 
   /* ── GALLERY ── */
   #gallery { background: var(--deep); }
@@ -1290,7 +1308,7 @@
         <p class="section-body">The lodge is thoughtfully divided into private, guest, and venue zones — allowing simultaneous operations or conversion to a single-use model.</p>
       </div>
       <figure class="layout-intro-frame">
-        <img src="images/layout-intro.png" alt="Belle View lodge and grounds" width="960" height="720" loading="lazy" decoding="async" />
+        <img src="images/Hero%20Page%20Options/2.jpg" alt="Belle View main lodge with covered porch, accessibility ramp, and Blue Ridge views" width="1600" height="1200" loading="lazy" decoding="async" />
       </figure>
     </div>
     <div class="layout-wings">
@@ -1308,6 +1326,9 @@
       <div class="wing-card">
         <div class="wing-num">02</div>
         <div class="wing-title">Dedicated Guest Accommodations</div>
+        <figure class="wing-card-photo">
+          <img src="images/Venue%20-%20Event/Grounds%20-%20Land/9.jpg" alt="Belle View guest wing: brick patio, outdoor dining, and accessibility ramp to the covered porch" width="1600" height="1200" loading="lazy" decoding="async" />
+        </figure>
         <ul class="wing-features">
           <li>Private entrance</li>
           <li>4 bedrooms with private baths (1st floor)</li>
@@ -1375,28 +1396,131 @@
     </div>
     <div class="gallery-categories">
       <button class="gallery-cat active" data-cat="all">All</button>
+      <button class="gallery-cat" data-cat="apartment">Apartment</button>
+      <button class="gallery-cat" data-cat="floorplan">Floorplans</button>
       <button class="gallery-cat" data-cat="resident">Resident Wing</button>
       <button class="gallery-cat" data-cat="guest">Guest Wing</button>
-      <button class="gallery-cat" data-cat="event">Event Spaces</button>
+      <button class="gallery-cat" data-cat="event">Venue &amp; Event</button>
       <button class="gallery-cat" data-cat="grounds">Grounds &amp; Land</button>
-      <button class="gallery-cat" data-cat="aerial">Aerial</button>
     </div>
   </div>
-  <!-- Replace .gallery-slot divs with <img> tags when photos are ready -->
-  <!-- Use data-cat attribute to enable category filtering -->
   <div class="gallery-grid" id="galleryGrid">
-    <div class="gallery-slot feature-wide feature-tall" data-cat="aerial">Drone / Hero</div>
-    <div class="gallery-slot" data-cat="resident">Covered Porch</div>
-    <div class="gallery-slot" data-cat="resident">Stone Fireplace</div>
-    <div class="gallery-slot" data-cat="guest">Guest Wing Entry</div>
-    <div class="gallery-slot" data-cat="guest">Bridal Suite</div>
-    <div class="gallery-slot feature-wide" data-cat="event">Event Slab &amp; Tent</div>
-    <div class="gallery-slot" data-cat="event">Outbuilding / Bar</div>
-    <div class="gallery-slot" data-cat="event">Pergola</div>
-    <div class="gallery-slot" data-cat="grounds">Mountain Views</div>
-    <div class="gallery-slot" data-cat="grounds">Grounds</div>
-    <div class="gallery-slot" data-cat="aerial">Aerial Overview</div>
-    <div class="gallery-slot" data-cat="aerial">Aerial Map</div>
+    <div class="gallery-slot" data-cat="apartment"><img src="images/Apartment/37%20(2).jpg" alt="Belle View — Apartment: 37 (2)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="apartment"><img src="images/Apartment/39.jpg" alt="Belle View — Apartment: 39" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="apartment"><img src="images/Apartment/40.jpg" alt="Belle View — Apartment: 40" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="apartment"><img src="images/Apartment/41%20(1).jpg" alt="Belle View — Apartment: 41 (1)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="apartment"><img src="images/Apartment/41%20(2).jpg" alt="Belle View — Apartment: 41 (2)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="apartment"><img src="images/Apartment/41%20(3).jpg" alt="Belle View — Apartment: 41 (3)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="apartment"><img src="images/Apartment/41%20(4).jpg" alt="Belle View — Apartment: 41 (4)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/8.jpg" alt="Belle View — Floorplan: 8" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(3).jpg" alt="Belle View — Floorplan: 11 (3)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(4).jpg" alt="Belle View — Floorplan: 11 (4)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(5).jpg" alt="Belle View — Floorplan: 11 (5)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(6).jpg" alt="Belle View — Floorplan: 11 (6)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(7).jpg" alt="Belle View — Floorplan: 11 (7)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(8).jpg" alt="Belle View — Floorplan: 11 (8)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(9).jpg" alt="Belle View — Floorplan: 11 (9)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(10).jpg" alt="Belle View — Floorplan: 11 (10)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(11).jpg" alt="Belle View — Floorplan: 11 (11)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(12).jpg" alt="Belle View — Floorplan: 11 (12)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(13).jpg" alt="Belle View — Floorplan: 11 (13)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(14).jpg" alt="Belle View — Floorplan: 11 (14)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(15).jpg" alt="Belle View — Floorplan: 11 (15)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(16).jpg" alt="Belle View — Floorplan: 11 (16)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(17).jpg" alt="Belle View — Floorplan: 11 (17)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(18).jpg" alt="Belle View — Floorplan: 11 (18)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(19).jpg" alt="Belle View — Floorplan: 11 (19)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(20).jpg" alt="Belle View — Floorplan: 11 (20)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(21).jpg" alt="Belle View — Floorplan: 11 (21)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(22).jpg" alt="Belle View — Floorplan: 11 (22)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(23).jpg" alt="Belle View — Floorplan: 11 (23)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(24).jpg" alt="Belle View — Floorplan: 11 (24)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/11%20(25).jpg" alt="Belle View — Floorplan: 11 (25)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/12%20(1).jpg" alt="Belle View — Floorplan: 12 (1)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/12%20(2).jpg" alt="Belle View — Floorplan: 12 (2)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan resident"><img src="images/Floorplan/12%20(4).jpg" alt="Belle View — Floorplan: 12 (4)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan"><img src="images/Venue%20-%20Event/Grounds%20-%20Land/Floorplan/47.jpg" alt="Belle View — Floorplan: 47" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan"><img src="images/Venue%20-%20Event/Grounds%20-%20Land/Floorplan/48.jpg" alt="Belle View — Floorplan: 48" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="floorplan"><img src="images/Venue%20-%20Event/Grounds%20-%20Land/Floorplan/49.jpg" alt="Belle View — Floorplan: 49" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/4.jpg" alt="Belle View — Grounds &amp; land: 4" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds guest"><img src="images/Grounds%20-%20Land/9.jpg" alt="Belle View — Grounds &amp; land: 9" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds guest"><img src="images/Grounds%20-%20Land/12%20(3).jpg" alt="Belle View — Grounds &amp; land: 12 (3)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds guest"><img src="images/Grounds%20-%20Land/21.jpg" alt="Belle View — Grounds &amp; land: 21" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds guest"><img src="images/Grounds%20-%20Land/29.jpg" alt="Belle View — Grounds &amp; land: 29" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds guest"><img src="images/Grounds%20-%20Land/43.jpg" alt="Belle View — Grounds &amp; land: 43" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds guest"><img src="images/Grounds%20-%20Land/44.jpg" alt="Belle View — Grounds &amp; land: 44" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds guest"><img src="images/Grounds%20-%20Land/45.jpg" alt="Belle View — Grounds &amp; land: 45" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds guest"><img src="images/Grounds%20-%20Land/46.jpg" alt="Belle View — Grounds &amp; land: 46" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest"><img src="images/Guest%20Wing/33.jpg" alt="Belle View — Guest wing: 33" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest"><img src="images/Guest%20Wing/35.jpg" alt="Belle View — Guest wing: 35" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest"><img src="images/Guest%20Wing/36.jpg" alt="Belle View — Guest wing: 36" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/15%20(1).jpg" alt="Belle View — Guest wing &amp; hospitality: 15 (1)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/15%20(2).jpg" alt="Belle View — Guest wing &amp; hospitality: 15 (2)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/15%20(3).jpg" alt="Belle View — Guest wing &amp; hospitality: 15 (3)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/15%20(4).jpg" alt="Belle View — Guest wing &amp; hospitality: 15 (4)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/17.jpg" alt="Belle View — Guest wing &amp; hospitality: 17" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/18.jpg" alt="Belle View — Guest wing &amp; hospitality: 18" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/19%20(2).jpg" alt="Belle View — Guest wing &amp; hospitality: 19 (2)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/19%20(3).jpg" alt="Belle View — Guest wing &amp; hospitality: 19 (3)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/19%20(4).jpg" alt="Belle View — Guest wing &amp; hospitality: 19 (4)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/19%20(5).jpg" alt="Belle View — Guest wing &amp; hospitality: 19 (5)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/19%20(6).jpg" alt="Belle View — Guest wing &amp; hospitality: 19 (6)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/19%20(7).jpg" alt="Belle View — Guest wing &amp; hospitality: 19 (7)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/19%20(8).jpg" alt="Belle View — Guest wing &amp; hospitality: 19 (8)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/19%20(9).jpg" alt="Belle View — Guest wing &amp; hospitality: 19 (9)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/20.jpg" alt="Belle View — Guest wing &amp; hospitality: 20" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/24.jpg" alt="Belle View — Guest wing &amp; hospitality: 24" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/25.jpg" alt="Belle View — Guest wing &amp; hospitality: 25" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/26.jpg" alt="Belle View — Guest wing &amp; hospitality: 26" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/27.jpg" alt="Belle View — Guest wing &amp; hospitality: 27" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/30.jpg" alt="Belle View — Guest wing &amp; hospitality: 30" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/31.jpg" alt="Belle View — Guest wing &amp; hospitality: 31" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/32.jpg" alt="Belle View — Guest wing &amp; hospitality: 32" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="guest event"><img src="images/Venue%20-%20Event/34.jpg" alt="Belle View — Guest wing &amp; hospitality: 34" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/7.jpg" alt="Belle View — Resident wing: 7" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/10.jpg" alt="Belle View — Resident wing: 10" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/11%20(2).jpg" alt="Belle View — Resident wing: 11 (2)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/13.jpg" alt="Belle View — Resident wing: 13" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/14.jpg" alt="Belle View — Resident wing: 14" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(5).jpg" alt="Belle View — Resident wing: 15 (5)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(6).jpg" alt="Belle View — Resident wing: 15 (6)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(7).jpg" alt="Belle View — Resident wing: 15 (7)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(8).jpg" alt="Belle View — Resident wing: 15 (8)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(9).jpg" alt="Belle View — Resident wing: 15 (9)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(10).jpg" alt="Belle View — Resident wing: 15 (10)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(11).jpg" alt="Belle View — Resident wing: 15 (11)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(12).jpg" alt="Belle View — Resident wing: 15 (12)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(13).jpg" alt="Belle View — Resident wing: 15 (13)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(14).jpg" alt="Belle View — Resident wing: 15 (14)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(15).jpg" alt="Belle View — Resident wing: 15 (15)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(16).jpg" alt="Belle View — Resident wing: 15 (16)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(17).jpg" alt="Belle View — Resident wing: 15 (17)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(18).jpg" alt="Belle View — Resident wing: 15 (18)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(19).jpg" alt="Belle View — Resident wing: 15 (19)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(20).jpg" alt="Belle View — Resident wing: 15 (20)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(21).jpg" alt="Belle View — Resident wing: 15 (21)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(22).jpg" alt="Belle View — Resident wing: 15 (22)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(23).jpg" alt="Belle View — Resident wing: 15 (23)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(24).jpg" alt="Belle View — Resident wing: 15 (24)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(25).jpg" alt="Belle View — Resident wing: 15 (25)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(26).jpg" alt="Belle View — Resident wing: 15 (26)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(27).jpg" alt="Belle View — Resident wing: 15 (27)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(28).jpg" alt="Belle View — Resident wing: 15 (28)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(29).jpg" alt="Belle View — Resident wing: 15 (29)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(30).jpg" alt="Belle View — Resident wing: 15 (30)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(31).jpg" alt="Belle View — Resident wing: 15 (31)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(32).jpg" alt="Belle View — Resident wing: 15 (32)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(33).jpg" alt="Belle View — Resident wing: 15 (33)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(34).jpg" alt="Belle View — Resident wing: 15 (34)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(35).jpg" alt="Belle View — Resident wing: 15 (35)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(36).jpg" alt="Belle View — Resident wing: 15 (36)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(37).jpg" alt="Belle View — Resident wing: 15 (37)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(38).jpg" alt="Belle View — Resident wing: 15 (38)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(39).jpg" alt="Belle View — Resident wing: 15 (39)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(42).jpg" alt="Belle View — Resident wing: 15 (42)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(43).jpg" alt="Belle View — Resident wing: 15 (43)" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/15%20(44).jpg" alt="Belle View — Resident wing: 15 (44)" loading="lazy" decoding="async" /></div>
+
   </div>
 </section>
 
@@ -1676,7 +1800,8 @@
       btn.classList.add('active');
       const cat = btn.dataset.cat;
       document.querySelectorAll('#galleryGrid .gallery-slot').forEach(slot => {
-        if (cat === 'all' || slot.dataset.cat === cat) {
+        const slotCats = (slot.dataset.cat || '').split(/\s+/).filter(Boolean);
+        if (cat === 'all' || slotCats.includes(cat)) {
           slot.style.display = '';
         } else {
           slot.style.display = 'none';
