@@ -735,6 +735,7 @@
     aspect-ratio: 3 / 4;
     overflow: hidden;
     background: #e8eef2;
+    cursor: zoom-in;
   }
   .property-gallery-cell img {
     width: 100%;
@@ -1155,7 +1156,8 @@
   }
   #lb-thumbs { display: none; }
   /* Gallery slot cursor hint */
-  .gallery-slot { cursor: zoom-in; }
+  .gallery-slot,
+  .property-gallery-cell { cursor: zoom-in; }
   @media (max-width: 768px) {
     #lb-prev { left: 8px; width: 40px; height: 40px; }
     #lb-next { right: 8px; width: 40px; height: 40px; }
@@ -2164,7 +2166,8 @@
   }
   #lb-thumbs { display: none; }
   /* Gallery slot cursor hint */
-  .gallery-slot { cursor: zoom-in; }
+  .gallery-slot,
+  .property-gallery-cell { cursor: zoom-in; }
   @media (max-width: 768px) {
     #lb-prev { left: 8px; width: 40px; height: 40px; }
     #lb-next { right: 8px; width: 40px; height: 40px; }
@@ -2227,14 +2230,17 @@
 
 <script>
 (function() {
-  // ── Gather all visible gallery slots ──
+  let lightboxMode = 'gallery';
+  let currentIndex = 0;
+  let activeSlots = [];
+
   function getVisibleSlots() {
+    if (lightboxMode === 'lifestyle') {
+      return Array.from(document.querySelectorAll('#property-gallery .property-gallery-cell'));
+    }
     return Array.from(document.querySelectorAll('#galleryGrid .gallery-slot'))
       .filter(s => s.style.display !== 'none');
   }
-
-  let currentIndex = 0;
-  let activeSlots = [];
 
   const lb        = document.getElementById('lightbox');
   const lbImg     = document.getElementById('lightbox-img');
@@ -2299,7 +2305,26 @@
     return { section, desc };
   }
 
+  function renderLifestyleCaption(slot) {
+    const section = 'On the grounds';
+    const desc = slot.querySelector('img')?.getAttribute('alt') || '';
+    const sectionEl = document.createElement('span');
+    sectionEl.className = 'lb-caption-section';
+    sectionEl.textContent = section;
+    lbCaption.replaceChildren(sectionEl);
+    if (desc) {
+      const descEl = document.createElement('span');
+      descEl.className = 'lb-caption-desc';
+      descEl.textContent = desc;
+      lbCaption.appendChild(descEl);
+    }
+    return { section, desc };
+  }
+
   function renderGalleryCaption(slot) {
+    if (slot.classList.contains('property-gallery-cell')) {
+      return renderLifestyleCaption(slot);
+    }
     const { section, desc } = buildGalleryCaption(slot);
     const sectionEl = document.createElement('span');
     sectionEl.className = 'lb-caption-section';
@@ -2314,7 +2339,8 @@
     return { section, desc };
   }
 
-  function openLightbox(index) {
+  function openLightbox(index, mode) {
+    lightboxMode = mode || 'gallery';
     activeSlots = getVisibleSlots();
     currentIndex = Math.max(0, Math.min(index, activeSlots.length - 1));
     showSlide(currentIndex);
@@ -2379,12 +2405,22 @@
     });
   }
 
+  // Attach click to property gallery
+  document.querySelectorAll('#property-gallery .property-gallery-cell').forEach((cell) => {
+    cell.addEventListener('click', () => {
+      const cells = Array.from(document.querySelectorAll('#property-gallery .property-gallery-cell'));
+      const visibleIndex = cells.indexOf(cell);
+      openLightbox(visibleIndex >= 0 ? visibleIndex : 0, 'lifestyle');
+    });
+  });
+
   // Attach click to every gallery slot
-  document.querySelectorAll('#galleryGrid .gallery-slot').forEach((slot, i) => {
+  document.querySelectorAll('#galleryGrid .gallery-slot').forEach((slot) => {
     slot.addEventListener('click', () => {
-      activeSlots = getVisibleSlots();
-      const visibleIndex = activeSlots.indexOf(slot);
-      openLightbox(visibleIndex >= 0 ? visibleIndex : 0);
+      lightboxMode = 'gallery';
+      const visible = getVisibleSlots();
+      const visibleIndex = visible.indexOf(slot);
+      openLightbox(visibleIndex >= 0 ? visibleIndex : 0, 'gallery');
     });
   });
 
