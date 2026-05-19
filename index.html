@@ -565,6 +565,48 @@
     object-fit: cover;
   }
 
+  .mechanical-block {
+    margin-top: 80px;
+    background: #FFFFFF;
+    border: 1px solid var(--stone);
+    padding: 72px 64px;
+  }
+  .mechanical-block .section-eyebrow { font-size: 12px; margin-bottom: 20px; }
+  .mechanical-heading {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3.2vw, 42px);
+    font-weight: 300;
+    color: var(--deep);
+    margin-bottom: 40px;
+    line-height: 1.15;
+  }
+  .mechanical-heading em { font-style: italic; }
+  .mechanical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--stone);
+  }
+  .mechanical-cell {
+    background: #FFFFFF;
+    padding: 28px 32px;
+  }
+  .mechanical-cell-title {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .mechanical-cell ul {
+    list-style: none;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
   /* ── GALLERY ── */
   #gallery { background: var(--deep); }
   .gallery-header { padding: 80px 64px 40px; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 24px; background: var(--deep); }
@@ -857,10 +899,13 @@
     .wing-card { padding: 36px 24px; }
     .wing-num { font-size: 52px; }
 
-    /* Mechanical inline block */
-    .section-inner > div[style*="padding: 56px 48px"] {
-      padding: 32px 24px !important;
+    .mechanical-block {
+      margin-top: 48px;
+      padding: 40px 24px !important;
     }
+    .mechanical-heading { font-size: 26px; margin-bottom: 28px; }
+    .mechanical-cell { padding: 22px 20px !important; }
+    .mechanical-cell ul { font-size: 15px; }
 
     /* ── Gallery ── */
     .gallery-header {
@@ -939,14 +984,6 @@
     .hero-price-mobile .hero-price-num { font-size: 38px; line-height: 1.1; margin: 4px 0; }
     .hero-price-mobile .hero-address { font-size: 14px; color: rgba(223,235,246,0.85); }
 
-    /* ── Mechanical systems block ── */
-    #layout .section-inner > div:last-child {
-      padding: 32px 20px !important;
-      margin-top: 40px !important;
-    }
-    #layout .section-inner > div:last-child > div {
-      padding: 16px 20px !important;
-    }
 
     /* ── Proximity table cells ── */
     .proximity-list li { flex-direction: column; gap: 4px; }
@@ -1052,14 +1089,28 @@
   }
   #lightbox-caption {
     position: absolute;
-    bottom: -40px;
+    bottom: -48px;
     left: 0; right: 0;
     text-align: center;
+    color: rgba(223,235,246,0.55);
+    line-height: 1.45;
+  }
+  #lightbox-caption .lb-caption-section {
+    display: block;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(223,235,246,0.55);
+  }
+  #lightbox-caption .lb-caption-desc {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    font-style: italic;
+    color: rgba(223,235,246,0.72);
   }
   /* Close button */
   #lb-close {
@@ -1339,32 +1390,32 @@
       </div>
     </div>
 
-    <div style="margin-top: 64px; background: #FFFFFF; border: 1px solid var(--stone); padding: 56px 48px;">
+    <div class="mechanical-block">
       <div class="section-eyebrow">Mechanical &amp; Systems</div>
-      <h3 style="font-family: var(--font-display); font-size: 28px; font-weight: 300; color: var(--deep); margin-bottom: 32px;">Infrastructure built for <em>commercial-grade</em> operation</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--stone);">
-        <div style="background: #FFFFFF; padding: 20px 24px;">
-          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Water</div>
-          <ul style="list-style: none; font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.8;">
+      <h3 class="mechanical-heading">Infrastructure built for <em>commercial-grade</em> operation</h3>
+      <div class="mechanical-grid">
+        <div class="mechanical-cell">
+          <div class="mechanical-cell-title">Water</div>
+          <ul>
             <li>2 wells</li><li>2,000 gal fire water storage</li><li>400 gal domestic water storage</li>
             <li>3-stage hospital-grade filtration</li><li>2 jet pumps (15 showers simultaneously)</li><li>On-demand hot water loop</li>
           </ul>
         </div>
-        <div style="background: #FFFFFF; padding: 20px 24px;">
-          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Heating &amp; Energy</div>
-          <ul style="list-style: none; font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.8;">
+        <div class="mechanical-cell">
+          <div class="mechanical-cell-title">Heating &amp; Energy</div>
+          <ul>
             <li>3 heat pumps (replaced within 3 years)</li><li>3 water heaters (electric + propane backup)</li><li>1,000-gal + 500-gal propane tanks</li>
           </ul>
         </div>
-        <div style="background: #FFFFFF; padding: 20px 24px;">
-          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Safety &amp; Life-Safety</div>
-          <ul style="list-style: none; font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.8;">
+        <div class="mechanical-cell">
+          <div class="mechanical-cell-title">Safety &amp; Life-Safety</div>
+          <ul>
             <li>Full sprinkler system</li><li>ADT security system</li><li>Intercom system</li><li>Soundproof rooms</li><li>4 septic tanks + grease tank</li>
           </ul>
         </div>
-        <div style="background: #FFFFFF; padding: 20px 24px;">
-          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;">Technology</div>
-          <ul style="list-style: none; font-size: 13px; font-weight: 300; color: var(--muted); line-height: 1.8;">
+        <div class="mechanical-cell">
+          <div class="mechanical-cell-title">Technology</div>
+          <ul>
             <li>Cat wiring throughout</li><li>Intercom system</li>
           </ul>
         </div>
@@ -1638,6 +1689,42 @@
       </figure>
       <figure class="property-gallery-cell">
         <img src="images/lifestyle-gallery-08.png" alt="Gazebo and sunset over the Blue Ridge" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-09.png" alt="Guest suite vanity and dressing area at Belle View" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-10.png" alt="Cornhole on the lawn at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-11.png" alt="Outdoor wedding ceremony setup with pavilion and mountain views" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-12.png" alt="Bride and groom overlooking the estate grounds and Blue Ridge" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-13.png" alt="Guests playing lawn games outside the lodge" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-14.png" alt="Wedding ceremony kiss with mountain backdrop" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-15.png" alt="Wedding send-off with bubbles at the lodge" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-16.png" alt="Bride with veil in the meadow at sunset" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-17.png" alt="Getting ready in the guest suite" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-18.png" alt="Live string music for an outdoor reception" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-19.png" alt="Wedding party walking the lodge approach" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-20.png" alt="Couple under the pavilion at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
     </div>
   </div>
@@ -2011,14 +2098,28 @@
   }
   #lightbox-caption {
     position: absolute;
-    bottom: -40px;
+    bottom: -48px;
     left: 0; right: 0;
     text-align: center;
+    color: rgba(223,235,246,0.55);
+    line-height: 1.45;
+  }
+  #lightbox-caption .lb-caption-section {
+    display: block;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(223,235,246,0.55);
+  }
+  #lightbox-caption .lb-caption-desc {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    font-style: italic;
+    color: rgba(223,235,246,0.72);
   }
   /* Close button */
   #lb-close {
@@ -2143,9 +2244,74 @@
   const lbCounter = document.getElementById('lb-counter');
   const lbThumbs  = document.getElementById('lb-thumbs');
 
-  function formatGalleryCaption(text) {
+  const GALLERY_SECTIONS = {
+    property: 'The Property',
+    grounds: 'Grounds & Land',
+    resident: 'Resident Wing',
+    guest: 'Guest Wing',
+    apartment: 'Apartment',
+    event: 'Venue & Event',
+    floorplan: 'Floorplans'
+  };
+  const GALLERY_CAT_ORDER = ['property', 'floorplan', 'event', 'apartment', 'resident', 'grounds', 'guest'];
+
+  function getPrimaryGalleryCategory(cats) {
+    for (const key of GALLERY_CAT_ORDER) {
+      if (cats.includes(key)) return key;
+    }
+    return cats[0] || 'property';
+  }
+
+  function normalizeGalleryLabel(text) {
+    return text.toLowerCase().replace(/\s*&\s*/g, ' and ').replace(/\s+/g, ' ').trim();
+  }
+
+  function getGalleryDescription(alt, sectionLabel) {
+    if (!alt) return '';
+    let text = alt.replace(/^Belle View\s*—\s*/i, '').trim();
     if (!text) return '';
-    return text.replace(/:\s*\d+(?:\s*\(\d+\))*(?=\s*$)/, '');
+
+    text = text.replace(/:\s*\d+(?:\s*\(\d+\))*\s*$/i, '').trim();
+
+    const colon = text.indexOf(':');
+    if (colon !== -1) {
+      const after = text.slice(colon + 1).trim();
+      if (after && !/^\d+(?:\s*\(\d+\))?$/.test(after)) return after;
+      text = text.slice(0, colon).trim();
+    }
+
+    if (normalizeGalleryLabel(text) === normalizeGalleryLabel(sectionLabel)) return '';
+    if (/^(guest wing|resident wing|grounds(?:\s*&\s*land)?|apartment|venue(?:\s*&\s*event)?|floorplans?|estate overview)$/i.test(text)) {
+      return '';
+    }
+
+    if (!/^Belle View/i.test(alt) && alt.length > 12) return alt.trim();
+    if (text.length > 12) return text;
+    return '';
+  }
+
+  function buildGalleryCaption(slot) {
+    const cats = (slot.dataset.cat || '').split(/\s+/).filter(Boolean);
+    const key = getPrimaryGalleryCategory(cats);
+    const section = GALLERY_SECTIONS[key] || 'Gallery';
+    const alt = slot.querySelector('img')?.getAttribute('alt') || '';
+    const desc = getGalleryDescription(alt, section);
+    return { section, desc };
+  }
+
+  function renderGalleryCaption(slot) {
+    const { section, desc } = buildGalleryCaption(slot);
+    const sectionEl = document.createElement('span');
+    sectionEl.className = 'lb-caption-section';
+    sectionEl.textContent = section;
+    lbCaption.replaceChildren(sectionEl);
+    if (desc) {
+      const descEl = document.createElement('span');
+      descEl.className = 'lb-caption-desc';
+      descEl.textContent = desc;
+      lbCaption.appendChild(descEl);
+    }
+    return { section, desc };
   }
 
   function openLightbox(index) {
@@ -2167,21 +2333,20 @@
     if (!slot) return;
 
     const img = slot.querySelector('img');
-    const rawLabel = slot.textContent.trim() || slot.querySelector('img')?.alt || '';
-    const label = formatGalleryCaption(rawLabel);
+    const { section, desc } = renderGalleryCaption(slot);
+    const imgAlt = [section, desc].filter(Boolean).join(' — ');
 
     if (img && img.src) {
       lbImg.src = img.src;
-      lbImg.alt = label || img.alt || rawLabel;
+      lbImg.alt = imgAlt;
       lbImg.style.display = 'block';
       lbPH.style.display = 'none';
     } else {
       lbImg.style.display = 'none';
       lbPH.style.display = 'flex';
-      lbLabel.textContent = label;
+      lbLabel.textContent = imgAlt;
     }
 
-    lbCaption.textContent = label;
     lbCounter.textContent = (index + 1) + ' / ' + activeSlots.length;
     currentIndex = index;
     updateThumbs();
