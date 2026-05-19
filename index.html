@@ -847,7 +847,7 @@
     }
     .hero-tagline {
       font-size: 16px;
-      margin-bottom: 32px;
+      margin-bottom: 20px;
     }
     .hero-eyebrow { font-size: 10px; letter-spacing: 0.16em; margin-bottom: 16px; }
     .hero-price-tag {
@@ -942,8 +942,8 @@
 
     /* ── Property lifestyle gallery ── */
     .property-gallery-intro { margin-bottom: 32px; padding: 0 4px; }
-    .property-gallery-grid { grid-template-columns: 1fr; }
-    .property-gallery-cell { aspect-ratio: 4 / 3; max-height: 78vh; }
+    .property-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .property-gallery-cell { aspect-ratio: 3 / 4; max-height: none; }
 
     /* ── Documents ── */
     .docs-grid { grid-template-columns: 1fr; }
@@ -980,7 +980,7 @@
     #heroPriceDesktop { display: none; }
     .hero-price-mobile {
       display: block;
-      margin-bottom: 20px;
+      margin: 0 0 32px;
     }
     .hero-price-mobile .hero-price-label { font-size: 12px; letter-spacing: 0.16em; }
     .hero-price-mobile .hero-price-num { font-size: 38px; line-height: 1.1; margin: 4px 0; }
@@ -1240,15 +1240,15 @@
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    <!-- Mobile-only price display (shown instead of absolute positioned version) -->
+    <div class="hero-eyebrow">Private Residence · Amherst County, Virginia · On the Monticello Wine Trail</div>
+    <h1 class="hero-title"><em>Belle View</em> —<br>a Blue Ridge estate<br>unlike any other.</h1>
+    <p class="hero-tagline">A privately offered mountain residence with 50+ mile views, 10,600 sq ft of refined living, and a proven track record across hospitality and income-producing ventures.</p>
+    <!-- Mobile-only: price & address below description -->
     <div class="hero-price-mobile">
       <span class="hero-price-label">Offered At</span>
       <div class="hero-price-num">$2,600,000</div>
       <div class="hero-address">1770 Earley Farm Rd · Amherst, VA</div>
     </div>
-    <div class="hero-eyebrow">Private Residence · Amherst County, Virginia · On the Monticello Wine Trail</div>
-    <h1 class="hero-title"><em>Belle View</em> —<br>a Blue Ridge estate<br>unlike any other.</h1>
-    <p class="hero-tagline">A privately offered mountain residence with 50+ mile views, 10,600 sq ft of refined living, and a proven track record across hospitality and income-producing ventures.</p>
     <div class="hero-stats">
       <div class="hero-stat-item">
         <span class="hero-stat-num">10,600</span>
@@ -2308,18 +2308,11 @@
 
   function renderLifestyleCaption(slot) {
     const section = 'On the grounds';
-    const desc = slot.querySelector('img')?.getAttribute('alt') || '';
     const sectionEl = document.createElement('span');
     sectionEl.className = 'lb-caption-section';
     sectionEl.textContent = section;
     lbCaption.replaceChildren(sectionEl);
-    if (desc) {
-      const descEl = document.createElement('span');
-      descEl.className = 'lb-caption-desc';
-      descEl.textContent = desc;
-      lbCaption.appendChild(descEl);
-    }
-    return { section, desc };
+    return { section, desc: '' };
   }
 
   function renderGalleryCaption(slot) {
