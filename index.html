@@ -836,20 +836,31 @@
     #section-nav .nav-cta { padding: 6px 14px; font-size: 10px; }
 
     /* ── Hero ── */
-    #hero { min-height: 100svh; }
+    #hero {
+      min-height: 100svh;
+      align-items: stretch;
+      justify-content: flex-end;
+      padding-top: 72px;
+    }
     .hero-content {
-      padding: 24px 24px 72px;
+      padding: 22vh 28px 96px;
       max-width: 100%;
     }
     .hero-title {
       font-size: clamp(30px, 8.5vw, 48px);
-      line-height: 1.06;
+      line-height: 1.12;
+      margin-bottom: 28px;
     }
     .hero-tagline {
       font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.16em;
       margin-bottom: 20px;
     }
-    .hero-eyebrow { font-size: 10px; letter-spacing: 0.16em; margin-bottom: 16px; }
     .hero-price-tag {
       position: relative;
       top: auto; right: auto;
@@ -863,17 +874,18 @@
     .hero-price-label { font-size: 12px; }
     .hero-address { font-size: 14px; }
     .hero-stats {
-      gap: 16px 24px;
+      gap: 20px 28px;
       flex-wrap: wrap;
-      margin-bottom: 36px;
+      margin-bottom: 44px;
     }
+    .hero-stat-item { gap: 8px; }
     .hero-stat-num { font-size: 24px; }
-    .hero-stat-label { font-size: 10px; }
+    .hero-stat-label { font-size: 10px; margin-top: 8px; }
     .hero-divider { display: none; }
     .hero-actions {
       flex-direction: column;
       align-items: flex-start;
-      gap: 12px;
+      gap: 16px;
     }
     .btn-primary, .btn-ghost { width: 100%; justify-content: center; text-align: center; }
 
@@ -980,11 +992,11 @@
     #heroPriceDesktop { display: none; }
     .hero-price-mobile {
       display: block;
-      margin: 0 0 32px;
+      margin: 0 0 40px;
     }
-    .hero-price-mobile .hero-price-label { font-size: 12px; letter-spacing: 0.16em; }
-    .hero-price-mobile .hero-price-num { font-size: 38px; line-height: 1.1; margin: 4px 0; }
-    .hero-price-mobile .hero-address { font-size: 14px; color: rgba(223,235,246,0.85); }
+    .hero-price-mobile .hero-price-label { font-size: 12px; letter-spacing: 0.16em; margin-bottom: 6px; }
+    .hero-price-mobile .hero-price-num { font-size: 38px; line-height: 1.15; margin: 8px 0; }
+    .hero-price-mobile .hero-address { font-size: 14px; color: rgba(223,235,246,0.85); margin-top: 6px; }
 
 
     /* ── Proximity table cells ── */
