@@ -319,7 +319,13 @@
     background-position: center;
     background-repeat: no-repeat;
   }
-  .hero-bg::after,
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 24, 28, 0.5);
+    pointer-events: none;
+  }
   .hero-overlay,
   .hero-mountain {
     display: none;
