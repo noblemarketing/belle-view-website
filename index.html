@@ -318,36 +318,28 @@
     background-position: center;
     background-repeat: no-repeat;
   }
-  .hero-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(
-      165deg,
-      rgba(38, 72, 98, 0.28) 0%,
-      rgba(32, 58, 82, 0.14) 42%,
-      rgba(28, 48, 68, 0.22) 100%
-    );
-  }
+  .hero-bg::after,
+  .hero-overlay,
   .hero-mountain {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 55%;
-    opacity: 0.18;
-  }
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(41,53,60,0.96) 0%, rgba(41,53,60,0.4) 45%, rgba(41,53,60,0.15) 100%);
+    display: none;
   }
   .hero-content {
     position: relative;
     z-index: 2;
     width: 100%;
-    padding: 36px 80px 100px;
+    padding: 36px 80px 48px;
     max-width: 1200px;
-    animation: fadeUp 1.2s ease both;
+    animation: heroContentIn 1.2s ease both;
+  }
+  .hero-title,
+  .hero-tagline,
+  .hero-stat-num,
+  .hero-stat-label {
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
+  }
+  @keyframes heroContentIn {
+    from { opacity: 0; transform: translateY(calc(4vh + 24px)); }
+    to { opacity: 1; transform: translateY(4vh); }
   }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(32px); }
@@ -428,14 +420,11 @@
   /* Hero variant — white border on dark background */
   .btn-primary--hero { background: transparent; color: #FFFFFF; border-color: #FFFFFF; }
   .btn-primary--hero:hover, .btn-primary--hero:active { background: transparent; color: #AAC7D8; border-color: #AAC7D8; }
-  #opportunity .btn-primary,
   #contact .btn-primary {
     background: transparent;
     color: #FFFFFF;
     border: 1.5px solid #FFFFFF;
   }
-  #opportunity .btn-primary:hover,
-  #opportunity .btn-primary:active,
   #contact .btn-primary:hover,
   #contact .btn-primary:active {
     background: transparent;
@@ -724,22 +713,62 @@
   .gallery-slot.feature-tall { grid-row: span 2; aspect-ratio: unset; }
   .gallery-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  /* ── OPPORTUNITY (softened) ── */
-  #opportunity { background: var(--deep); color: var(--cream); }
-  .opp-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 100px; align-items: center; }
-  .opp-left .section-title { color: var(--cream); }
-  .opp-left .section-body { color: rgba(223,235,246,0.9); }
-  .opp-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(255,255,255,0.06); }
-  .opp-card { background: rgba(255,255,255,0.04); padding: 36px 28px; transition: background 0.2s; }
-  .opp-card:hover { background: rgba(68,87,109,0.1); }
-  .opp-card-icon { width: 36px; height: 36px; margin-bottom: 20px; display: block; }
-  .opp-card-icon svg { width: 36px; height: 36px; stroke: var(--gold-light); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  .opp-card-title { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: var(--gold-light); margin-bottom: 10px; }
-  .opp-card-body { font-size: 14px; font-weight: 400; color: rgba(223,235,246,0.95); line-height: 1.7; }
+  /* ── BUSINESS HISTORY (matches Physical Layout) ── */
+  #opportunity { background: var(--white); color: var(--deep); }
+  .history-placeholder {
+    max-width: 560px;
+    margin-bottom: 0;
+    padding-left: 20px;
+    border-left: 3px solid var(--stone);
+    color: var(--warm-gray);
+  }
+  .history-uses { margin-top: 0; }
+  .history-uses .wing-card p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .property-details-block {
+    margin-top: 80px;
+    background: var(--stone);
+    padding: 40px 48px;
+  }
+  .property-details-list {
+    margin: 16px 0 0;
+    padding: 0;
+  }
+  .property-details-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 1fr) minmax(0, 1.2fr);
+    gap: 24px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(41, 53, 60, 0.18);
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .property-details-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .property-details-row dt {
+    margin: 0;
+    color: var(--muted);
+  }
+  .property-details-row dd {
+    margin: 0;
+    color: var(--charcoal);
+    text-align: right;
+  }
 
   /* ── LOCATION + SEO accordion ── */
   #location { background: #FFFFFF; }
   .location-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start; }
+  .proximity-accordion { margin-top: 40px; border-top: 1px solid var(--stone); }
+  .proximity-accordion-body.open { max-height: 560px; }
+  .proximity-accordion-inner { padding: 0 0 8px; }
+  .proximity-accordion-inner .proximity-list { margin-top: 0; }
+  .proximity-accordion-inner .proximity-list li:first-child { border-top: none; }
   .proximity-list { list-style: none; margin-top: 40px; }
   .proximity-list li { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--stone); font-size: 15px; font-weight: 400; color: var(--deep); }
   .proximity-list li:first-child { border-top: 1px solid var(--stone); }
@@ -753,9 +782,12 @@
   .region-block p { font-size: 15px; font-weight: 300; color: rgba(223,235,246,0.9); line-height: 1.8; margin-bottom: 16px; }
   .region-block p:last-child { margin-bottom: 0; }
 
-  /* SEO accordion */
-  .seo-accordion { margin-top: 64px; border-top: 1px solid var(--stone); }
-  .seo-accordion-trigger {
+  /* Accordions (SEO, proximal locations) */
+  .seo-accordion,
+  .proximity-accordion { border-top: 1px solid var(--stone); }
+  .seo-accordion { margin-top: 64px; }
+  .seo-accordion-trigger,
+  .proximity-accordion-trigger {
     width: 100%; background: none; border: none; cursor: pointer;
     display: flex; align-items: center; justify-content: space-between;
     padding: 24px 0; border-bottom: 1px solid var(--stone);
@@ -763,10 +795,14 @@
     letter-spacing: 0.16em; text-transform: uppercase; color: var(--deep);
     transition: color 0.2s;
   }
-  .seo-accordion-trigger:hover { color: var(--charcoal); }
-  .seo-accordion-trigger .acc-icon { font-size: 18px; transition: transform 0.25s; }
-  .seo-accordion-trigger.open .acc-icon { transform: rotate(45deg); }
-  .seo-accordion-body {
+  .seo-accordion-trigger:hover,
+  .proximity-accordion-trigger:hover { color: var(--charcoal); }
+  .seo-accordion-trigger .acc-icon,
+  .proximity-accordion-trigger .acc-icon { font-size: 18px; transition: transform 0.25s; }
+  .seo-accordion-trigger.open .acc-icon,
+  .proximity-accordion-trigger.open .acc-icon { transform: rotate(45deg); }
+  .seo-accordion-body,
+  .proximity-accordion-body {
     max-height: 0; overflow: hidden;
     transition: max-height 0.35s ease;
     background: var(--white);
@@ -786,14 +822,9 @@
     color: var(--deep); border: 1px solid var(--stone); padding: 6px 14px; background: #F0F4F7;
   }
 
-  /* ── PROPERTY LIFESTYLE GALLERY (replaces Instagram embed) ── */
-  #property-gallery { background: var(--white); }
-  .property-gallery-intro {
-    text-align: center;
-    max-width: 640px;
-    margin: 0 auto 48px;
-  }
-  .property-gallery-intro .section-title { margin-bottom: 0; }
+  /* ── LIFESTYLE GALLERY (under Business History) ── */
+  #opportunity #property-gallery { margin-top: 80px; padding-top: 0; }
+  .property-gallery-intro { margin-bottom: 40px; }
   .property-gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -923,12 +954,17 @@
       margin-top: -100svh;
       min-height: 100svh;
       padding-bottom: var(--hero-scroll-out);
-      padding-top: 52px;
+      padding-top: 0;
     }
-    .hero-content {
-      padding: 0 28px max(48px, calc(env(safe-area-inset-bottom, 0px) + 40px));
+    .hero-scroll-copy .hero-content {
+      padding: 0 28px max(28px, calc(env(safe-area-inset-bottom, 0px) + 20px));
       max-width: 100%;
       box-sizing: border-box;
+      animation: heroContentInMobile 1.2s ease both;
+    }
+    @keyframes heroContentInMobile {
+      from { opacity: 0; transform: translateY(calc(3vh + 20px)); }
+      to { opacity: 1; transform: translateY(3vh); }
     }
     .hero-title {
       font-size: clamp(30px, 8.5vw, 48px);
@@ -1019,11 +1055,6 @@
     .gallery-slot.feature-wide { grid-column: span 2; aspect-ratio: 8/3; }
     .gallery-slot.feature-tall { grid-row: span 1; aspect-ratio: 4/3; }
 
-    /* ── Opportunity ── */
-    .opp-grid { grid-template-columns: 1fr; gap: 40px; }
-    .opp-cards { grid-template-columns: 1fr; }
-    .opp-card { padding: 28px 24px; }
-
     /* ── Location ── */
     .location-grid { grid-template-columns: 1fr; gap: 40px; }
     .prox-label { min-width: 120px; font-size: 13px; }
@@ -1089,8 +1120,9 @@
     .use-tag, .drive-tag, .seo-tag { font-size: 10px; padding: 6px 12px; }
 
     /* ── Property details table ── */
-    .location-right table td { font-size: 12px; padding: 8px 0; }
-    .location-right > div:last-child { padding: 28px 20px; }
+    .property-details-block { margin-top: 48px; padding: 28px 24px; }
+    .property-details-row { grid-template-columns: 1fr; gap: 4px; text-align: left; }
+    .property-details-row dd { text-align: left; }
 
     /* ── Form ── */
     #inquiryForm { width: 100%; }
@@ -1115,8 +1147,6 @@
     .layout-intro-text .section-body { max-width: none; }
     .layout-wings { grid-template-columns: 1fr 1fr; }
     .layout-wings .wing-card:last-child { grid-column: span 2; }
-    .opp-grid { grid-template-columns: 1fr; gap: 48px; }
-    .opp-cards { grid-template-columns: 1fr 1fr; }
     .location-grid { gap: 48px; }
     .docs-grid { grid-template-columns: 1fr 1fr; }
     .docs-grid .doc-card:last-child { grid-column: span 2; }
@@ -1277,9 +1307,6 @@
     <div class="nav-cta-dropdown">
       <a href="#" id="snav-cta-pdf">Download Property PDF</a>
       <a href="#" id="snav-cta-plans">Floor Plans</a>
-      <a href="#" id="snav-cta-investment">Investment Summary</a>
-      <div class="dd-divider"></div>
-      <a href="#contact">Request a Showing</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -1299,11 +1326,16 @@
       <div class="nav-dropdown">
         <a href="#" id="nav-pdf">Download PDF</a>
         <a href="#" id="nav-floorplans">Floor Plans</a>
-        <a href="#" id="nav-investment">Investment Summary</a>
       </div>
     </div>
 
-    <a href="#gallery" class="nav-btn">Gallery</a>
+    <div class="nav-item">
+      <button class="nav-btn">Business <span class="caret">▾</span></button>
+      <div class="nav-dropdown">
+        <a href="#opportunity">Business History</a>
+        <a href="#property-gallery">Gallery</a>
+      </div>
+    </div>
     <a href="#location" class="nav-btn">Location</a>
     <a href="#contact" class="nav-btn">Contact</a>
   </div>
@@ -1313,9 +1345,6 @@
     <div class="nav-cta-dropdown">
       <a href="#" id="nav-cta-pdf">Download Property PDF</a>
       <a href="#" id="nav-cta-plans">Floor Plans</a>
-      <a href="#" id="nav-cta-investment">Investment Summary</a>
-      <div class="dd-divider"></div>
-      <a href="#contact">Request a Showing</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -1477,6 +1506,17 @@
         </div>
       </div>
     </div>
+
+    <div class="property-details-block">
+      <div class="section-eyebrow">Property Details</div>
+      <dl class="property-details-list">
+        <div class="property-details-row"><dt>Status</dt><dd>Privately Marketed</dd></div>
+        <div class="property-details-row"><dt>Zoning</dt><dd>A-1 Agricultural-Residential</dd></div>
+        <div class="property-details-row"><dt>Built</dt><dd>1996 (addition 2006)</dd></div>
+        <div class="property-details-row"><dt>Annual Taxes</dt><dd>$5,089</dd></div>
+        <div class="property-details-row"><dt>Deed Reference</dt><dd>Book 1189, Pages 483–486</dd></div>
+      </dl>
+    </div>
   </div>
 </section>
 
@@ -1618,129 +1658,42 @@
   </div>
 </section>
 
-<!-- ════ OPPORTUNITY ════ -->
+<!-- ════ BUSINESS HISTORY ════ -->
 <section id="opportunity" class="section-pad">
   <div class="section-inner">
-    <div class="opp-grid">
-      <div class="opp-left">
-        <div class="section-eyebrow" style="color: var(--gold-light); font-weight: 600;">Proven Business History</div>
-        <h2 class="section-title">Infrastructure already<br>in place</h2>
-        <p class="section-body">Belle View's greatest asset is its versatility. Beyond the residence itself, the property has a documented history of successful income-producing operations — each supported by the infrastructure, zoning approvals, and physical layout already in place. A new owner can continue any of these uses, or simply enjoy the estate as a private home.</p>
-        <a href="#documents" class="btn-primary" style="display: inline-block; margin-top: 8px;">Download Investment Summary</a>
+    <div class="layout-intro">
+      <div class="layout-intro-text">
+        <div class="section-eyebrow">Business History</div>
+        <p class="section-body history-placeholder">Amanda Tyson is preparing copy for this section. It will summarize Belle View&rsquo;s operating history, prior income-producing uses, and context for qualified buyers.</p>
       </div>
-      <div class="opp-cards">
-        <div class="opp-card">
-          <div class="opp-card-icon"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 22V12h6v10"/></svg></div>
-          <div class="opp-card-title">Short-Term Rental</div>
-          <div class="opp-card-body">Guest wing with 8 private accommodations and a separate 3-bedroom apartment. Prior Airbnb operating history.</div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-card-icon"><svg viewBox="0 0 24 24"><path d="M2 19h20"/><path d="M12 3L3 13h18L12 3z"/><path d="M7 13v6"/><path d="M17 13v6"/><path d="M9.5 13v6"/><path d="M14.5 13v6"/></svg></div>
-          <div class="opp-card-title">Event &amp; Gathering Space</div>
-          <div class="opp-card-body">Engineered event slab, bridal suite, catering outbuilding, and ABC-licensed use approval. Prior wedding and event hosting history — infrastructure ready for reactivation.</div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-card-icon"><svg viewBox="0 0 24 24"><path d="M8 2h8l1 8a5 5 0 01-10 0L8 2z"/><path d="M12 15v7"/><path d="M8 22h8"/></svg></div>
-          <div class="opp-card-title">Winery Tasting Destination</div>
-          <div class="opp-card-body">Previously operated as a satellite tasting room on the edge of the Monticello Wine Trail. ABC approval and prior tasting room history make re-establishing or expanding this use a viable path.</div>
-        </div>
-        <div class="opp-card">
-          <div class="opp-card-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="3" x2="12" y2="21"/><line x1="5" y1="9" x2="19" y2="9"/></svg></div>
-          <div class="opp-card-title">Retreat, Ministry &amp; Care</div>
-          <div class="opp-card-body">Prior approvals for ministry retreat, church use, and recovery &amp; rehabilitation. Hospital-grade water and life-safety systems already operational.</div>
-        </div>
-      </div>
+      <figure class="layout-intro-frame">
+        <img src="images/lifestyle-gallery-12.png" alt="Wedding and events on the Belle View grounds" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
     </div>
-  </div>
-</section>
-
-<!-- ════ LOCATION ════ -->
-<section id="location" class="section-pad">
-  <div class="section-inner">
-    <div class="location-grid">
-      <div class="location-left">
-        <div class="section-eyebrow">Location &amp; Market Context</div>
-        <h2 class="section-title">Positioned in Virginia's<br>experiential travel corridor</h2>
-        <p class="section-body">Located along Virginia's Blue Ridge with direct access to one of the country's most visited scenic byways. Strong regional draw from multiple major markets — all within day-trip or short-drive distance.</p>
-        <ul class="proximity-list">
-          <li><span class="prox-label">Blue Ridge Parkway</span><span>One of the most visited scenic routes in the U.S.</span></li>
-          <li><span class="prox-label">Liberty University</span><span>Lynchburg, VA — major regional institutional anchor</span></li>
-          <li><span class="prox-label">University of Virginia</span><span>Charlottesville, VA</span></li>
-          <li><span class="prox-label">Sweet Briar College</span><span>Amherst County</span></li>
-          <li><span class="prox-label">Appalachian Trail</span><span>Regional hiking destination draw</span></li>
-          <li><span class="prox-label">Wintergreen Resort</span><span>Adjacent mountain recreation region</span></li>
-          <li><span class="prox-label">George Washington National Forest</span><span>Regional outdoor recreation anchor</span></li>
-        </ul>
-        <div class="drive-markets">
-          <h4>Strong Drive-Market Access From</h4>
-          <div class="drive-tags">
-            <span class="drive-tag">Washington DC / NoVA</span>
-            <span class="drive-tag">Lynchburg</span>
-            <span class="drive-tag">Richmond</span>
-            <span class="drive-tag">Charlottesville</span>
-          </div>
-        </div>
+    <div class="layout-wings history-uses">
+      <div class="wing-card">
+        <div class="wing-title">Short-Term Rental</div>
+        <p>Guest wing with 8 private accommodations and a separate 3-bedroom apartment. Prior Airbnb operating history.</p>
       </div>
-      <div class="location-right">
-        <div class="region-block">
-          <h3>Virginia Wine Country</h3>
-          <p>Positioned on the edge of the Monticello Wine Trail and within broader Virginia wine country demand corridors — one of the most active agritourism regions on the East Coast.</p>
-          <p>The property's prior ABC license approval and tasting room use history make it a viable candidate for winery partnership or satellite destination use.</p>
-        </div>
-        <div style="background: var(--stone); padding: 40px; margin-top: 2px;">
-          <div class="section-eyebrow">Property Details</div>
-          <table style="width: 100%; font-size: 13px; font-weight: 300; border-collapse: collapse; margin-top: 16px;">
-            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted); width: 50%;">Status</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">Privately Marketed</td></tr>
-            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted);">Parcel ID</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">Map # 141-A-6</td></tr>
-            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted);">Zoning</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">A-1 Agricultural-Residential</td></tr>
-            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted);">Built</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">1996 (addition 2006)</td></tr>
-            <tr><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--muted);">Annual Taxes</td><td style="padding: 10px 0; border-bottom: 1px solid var(--warm-gray); color: var(--charcoal);">$5,089</td></tr>
-            <tr><td style="padding: 10px 0; color: var(--muted);">Deed Reference</td><td style="padding: 10px 0; color: var(--charcoal);">Book 1189, Pages 483–486</td></tr>
-          </table>
-        </div>
+      <div class="wing-card">
+        <div class="wing-title">Event &amp; Gathering Space</div>
+        <p>Engineered event slab, bridal suite, catering outbuilding, and ABC-licensed use approval. Prior wedding and event hosting history — infrastructure ready for reactivation.</p>
+      </div>
+      <div class="wing-card">
+        <div class="wing-title">Winery Tasting Destination</div>
+        <p>Previously operated as a satellite tasting room on the edge of the Monticello Wine Trail. ABC approval and prior tasting room history support re-establishing or expanding this use.</p>
+      </div>
+      <div class="wing-card">
+        <div class="wing-title">Retreat, Ministry &amp; Care</div>
+        <p>Prior approvals for ministry retreat, church use, and recovery &amp; rehabilitation. Hospital-grade water and life-safety systems already operational.</p>
       </div>
     </div>
 
-    <!-- SEO Accordion -->
-    <div class="seo-accordion">
-      <button class="seo-accordion-trigger" id="seoTrigger" onclick="toggleSeo()">
-        <span>Additional Info</span>
-        <span class="acc-icon">+</span>
-      </button>
-      <div class="seo-accordion-body" id="seoBody">
-        <div class="seo-accordion-inner">
-          <h3>About this property &amp; region</h3>
-          <p>This privately marketed estate is positioned within one of Virginia's most sought-after experiential travel and agritourism corridors. Buyers searching for a winery for sale in Virginia, a wedding venue for sale in Amherst County, or a venue property near the Monticello Wine Trail will find this property uniquely positioned — with zoning approvals, operating history, and infrastructure already in place.</p>
-          <p>The property sits in Amherst County, VA, on the edge of the Blue Ridge and within the broader Monticello Wine Trail region — a corridor that draws visitors from Washington DC, Northern Virginia, Richmond, and Charlottesville year-round. Its prior operating history as an event venue, winery tasting destination, rehabilitation facility, assisted living facility, and short-term rental makes it one of the most versatile hospitality properties currently available in Central Virginia.</p>
-          <div class="seo-tags">
-            <span class="seo-tag">Winery for sale Virginia</span>
-            <span class="seo-tag">Wedding venue for sale Virginia</span>
-            <span class="seo-tag">Venue for sale Amherst County</span>
-            <span class="seo-tag">Monticello Wine Trail property</span>
-            <span class="seo-tag">Blue Ridge estate for sale</span>
-            <span class="seo-tag">Retreat center for sale Virginia</span>
-            <span class="seo-tag">Event venue Virginia</span>
-            <span class="seo-tag">Hospitality property Virginia</span>
-            <span class="seo-tag">Rehabilitation facility for sale</span>
-            <span class="seo-tag">Mountain lodge for sale Virginia</span>
-            <span class="seo-tag">Amherst County VA real estate</span>
-            <span class="seo-tag">Privately marketed</span>
-          </div>
-        </div>
+    <div id="property-gallery">
+      <div class="property-gallery-intro">
+        <div class="section-eyebrow">Gallery</div>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ════ PROPERTY LIFESTYLE GALLERY ════ -->
-<section id="property-gallery" class="section-pad" style="background: var(--white);">
-  <div class="section-inner">
-    <div class="property-gallery-intro">
-      <div class="section-eyebrow">On the grounds</div>
-      <h2 class="section-title">A few moments on the estate</h2>
-    </div>
-    <div class="property-gallery-grid">
+      <div class="property-gallery-grid">
       <figure class="property-gallery-cell">
         <img src="images/lifestyle-gallery-01.png" alt="Covered porch with rocking chairs at Belle View" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
@@ -1801,7 +1754,86 @@
       <figure class="property-gallery-cell">
         <img src="images/lifestyle-gallery-20.png" alt="Couple under the pavilion at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ════ LOCATION ════ -->
+<section id="location" class="section-pad">
+  <div class="section-inner">
+    <div class="location-grid">
+      <div class="location-left">
+        <div class="section-eyebrow">Location &amp; Market Context</div>
+        <h2 class="section-title">Positioned in Virginia's<br>experiential travel corridor</h2>
+        <p class="section-body">Located along Virginia's Blue Ridge with direct access to one of the country's most visited scenic byways. Strong regional draw from multiple major markets — all within day-trip or short-drive distance.</p>
+        <div class="proximity-accordion">
+          <button type="button" class="proximity-accordion-trigger seo-accordion-trigger" id="proximityTrigger" onclick="toggleProximity()" aria-expanded="false" aria-controls="proximityBody">
+            <span>Proximal Locations</span>
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="proximity-accordion-body seo-accordion-body" id="proximityBody">
+            <div class="proximity-accordion-inner">
+              <ul class="proximity-list">
+                <li><span class="prox-label">Blue Ridge Parkway</span><span>One of the most visited scenic routes in the U.S.</span></li>
+                <li><span class="prox-label">Liberty University</span><span>Lynchburg, VA — major regional institutional anchor</span></li>
+                <li><span class="prox-label">University of Virginia</span><span>Charlottesville, VA</span></li>
+                <li><span class="prox-label">Sweet Briar College</span><span>Amherst County</span></li>
+                <li><span class="prox-label">Appalachian Trail</span><span>Regional hiking destination draw</span></li>
+                <li><span class="prox-label">Wintergreen Resort</span><span>Adjacent mountain recreation region</span></li>
+                <li><span class="prox-label">George Washington National Forest</span><span>Regional outdoor recreation anchor</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="drive-markets">
+          <h4>Strong Drive-Market Access From</h4>
+          <div class="drive-tags">
+            <span class="drive-tag">Washington DC / NoVA</span>
+            <span class="drive-tag">Lynchburg</span>
+            <span class="drive-tag">Richmond</span>
+            <span class="drive-tag">Charlottesville</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-right">
+        <div class="region-block">
+          <h3>Virginia Wine Country</h3>
+          <p>Positioned on the edge of the Monticello Wine Trail and within broader Virginia wine country demand corridors — one of the most active agritourism regions on the East Coast.</p>
+          <p>The property's prior ABC license approval and tasting room use history make it a viable candidate for winery partnership or satellite destination use.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Accordion -->
+    <div class="seo-accordion">
+      <button class="seo-accordion-trigger" id="seoTrigger" onclick="toggleSeo()">
+        <span>Additional Info</span>
+        <span class="acc-icon">+</span>
+      </button>
+      <div class="seo-accordion-body" id="seoBody">
+        <div class="seo-accordion-inner">
+          <h3>About this property &amp; region</h3>
+          <p>This privately marketed estate is positioned within one of Virginia's most sought-after experiential travel and agritourism corridors. Buyers searching for a winery for sale in Virginia, a wedding venue for sale in Amherst County, or a venue property near the Monticello Wine Trail will find this property uniquely positioned — with zoning approvals, operating history, and infrastructure already in place.</p>
+          <p>The property sits in Amherst County, VA, on the edge of the Blue Ridge and within the broader Monticello Wine Trail region — a corridor that draws visitors from Washington DC, Northern Virginia, Richmond, and Charlottesville year-round. Its prior operating history as an event venue, winery tasting destination, rehabilitation facility, assisted living facility, and short-term rental makes it one of the most versatile hospitality properties currently available in Central Virginia.</p>
+          <div class="seo-tags">
+            <span class="seo-tag">Winery for sale Virginia</span>
+            <span class="seo-tag">Wedding venue for sale Virginia</span>
+            <span class="seo-tag">Venue for sale Amherst County</span>
+            <span class="seo-tag">Monticello Wine Trail property</span>
+            <span class="seo-tag">Blue Ridge estate for sale</span>
+            <span class="seo-tag">Retreat center for sale Virginia</span>
+            <span class="seo-tag">Event venue Virginia</span>
+            <span class="seo-tag">Hospitality property Virginia</span>
+            <span class="seo-tag">Rehabilitation facility for sale</span>
+            <span class="seo-tag">Mountain lodge for sale Virginia</span>
+            <span class="seo-tag">Amherst County VA real estate</span>
+            <span class="seo-tag">Privately marketed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1809,7 +1841,6 @@
 <section id="documents" class="section-pad" style="background: var(--white);">
   <div class="section-inner">
     <div class="section-eyebrow">Downloadable Documents</div>
-    <h2 class="section-title">Resources</h2>
     <div class="docs-grid">
       <a href="#" class="doc-card" id="dl-pdf">
         <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
@@ -1822,12 +1853,6 @@
         <div class="doc-title">Floor Plans</div>
         <div class="doc-desc">Architectural floor plans for the main lodge including owner's quarters, guest wing, and venue areas.</div>
         <div class="doc-link">Download Plans</div>
-      </a>
-      <a href="#" class="doc-card" id="dl-investment">
-        <div class="doc-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
-        <div class="doc-title">Investment Summary</div>
-        <div class="doc-desc">Revenue model overview, historic use history, and business opportunity analysis for qualified buyers.</div>
-        <div class="doc-link">Download Summary</div>
       </a>
     </div>
   </div>
@@ -1848,24 +1873,17 @@
         </div>
       </div>
       <!-- ═══════════════════════════════════════════════════════════
-           FORMSPREE SETUP (one-time, 2 minutes):
-           1. Go to https://formspree.io and sign up (free)
-           2. Create a new form → set email to amanda.tyson.trr@gmail.com
-           3. Copy your form ID (looks like: xpznkgvb)
-           4. Replace YOUR_FORM_ID below with that ID
+           Inquiries are sent to amanda.tyson.trr@gmail.com via FormSubmit.
            ═══════════════════════════════════════════════════════════ -->
       <div class="contact-form">
         <div class="form-title">Request Information</div>
         <form id="inquiryForm"
-              action="https://formspree.io/f/YOUR_FORM_ID"
+              action="https://formsubmit.co/ajax/amanda.tyson.trr@gmail.com"
               method="POST">
 
-          <!-- Routes reply emails back to the submitter -->
-          <input type="hidden" name="_replyto" id="replyto-field" />
-          <!-- Subject line in Amanda's inbox -->
           <input type="hidden" name="_subject" value="Belle View — New Inquiry" />
-          <!-- Redirect suppressed — we handle success in JS -->
-          <input type="hidden" name="_next" value="about:blank" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
 
           <div class="form-group">
             <label class="form-label" for="name">Full Name</label>
@@ -1918,8 +1936,7 @@
 
 <!-- ════ FOOTER ════ -->
 <footer>
-  <p>1770 Earley Farm Road · Amherst, VA 24521 · Map # 141-A-6</p>
-  <p>© 2025 Belle View · Offered For Sale By Owner</p>
+  <p>1770 Earley Farm Road · Amherst, VA 24521</p>
 </footer>
 
 <script>
@@ -1940,6 +1957,17 @@
     });
   });
 
+  // Proximal locations accordion
+  function toggleProximity() {
+    const trigger = document.getElementById('proximityTrigger');
+    const body = document.getElementById('proximityBody');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open');
+    trigger.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    trigger.querySelector('.acc-icon').textContent = isOpen ? '+' : '×';
+  }
+
   // SEO accordion
   function toggleSeo() {
     const trigger = document.getElementById('seoTrigger');
@@ -1950,8 +1978,7 @@
     trigger.querySelector('.acc-icon').textContent = isOpen ? '+' : '×';
   }
 
-  // Form submit
-  // Formspree async submission
+  // Form submit (FormSubmit → amanda.tyson.trr@gmail.com)
   const inquiryForm = document.getElementById('inquiryForm');
   if (inquiryForm) {
     inquiryForm.addEventListener('submit', async function(e) {
@@ -1969,9 +1996,6 @@
         });
         return;
       }
-
-      // Sync replyto hidden field
-      document.getElementById('replyto-field').value = email;
 
       const btn = document.getElementById('formSubmitBtn');
       btn.textContent = 'Sending…';
@@ -2039,7 +2063,6 @@
   // Update these hrefs to your actual file paths
   const PDF_URL = 'documents/property-summary.pdf';
   const PLANS_URL = 'https://drive.google.com/file/d/1Th7Q3H9nfq91E3G4eOEMAitb7pBCVuNg/view?usp=sharing';
-  const INVEST_URL = 'documents/investment-summary.pdf';
   document.getElementById('nav-pdf').href = PDF_URL;
   const plansLinks = [
     document.getElementById('nav-floorplans'),
@@ -2052,14 +2075,10 @@
     el.target = '_blank';
     el.rel = 'noopener noreferrer';
   });
-  document.getElementById('nav-investment').href = INVEST_URL;
   document.getElementById('nav-cta-pdf').href = PDF_URL;
   if(document.getElementById('snav-cta-pdf')) document.getElementById('snav-cta-pdf').href = PDF_URL;
-  document.getElementById('nav-cta-investment').href = INVEST_URL;
-  if(document.getElementById('snav-cta-investment')) document.getElementById('snav-cta-investment').href = INVEST_URL;
   document.getElementById('hero-pdf-link').href = PDF_URL;
   document.getElementById('dl-pdf').href = PDF_URL;
-  document.getElementById('dl-investment').href = INVEST_URL;
 </script>
 <!-- ════ SCROLL TO TOP ════ -->
 <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
