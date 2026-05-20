@@ -303,9 +303,10 @@
     z-index: 2;
     margin-top: -100vh;
     min-height: max(700px, 100vh);
+    padding-top: 32vh;
     padding-bottom: var(--hero-scroll-out);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     box-sizing: border-box;
   }
@@ -451,7 +452,7 @@
   .btn-ghost:hover, .btn-ghost:active { color: #AAC7D8; border-color: #AAC7D8; background: rgba(170,199,216,0.06); }
   .hero-price-tag {
     position: absolute;
-    top: calc(var(--nav-h) + 40px);
+    top: 34vh;
     right: 64px;
     z-index: 3;
     text-align: right;
@@ -474,8 +475,9 @@
       margin-top: 0;
       min-height: 100vh;
       min-height: max(700px, 100vh);
+      padding-top: 32vh;
       padding-bottom: 0;
-      align-items: center;
+      align-items: flex-start;
     }
   }
   .hero-price-label {
@@ -1002,8 +1004,8 @@
       margin-top: -100svh;
       min-height: 100svh;
       padding-bottom: var(--hero-scroll-out);
-      padding-top: 0;
-      align-items: center;
+      padding-top: 22vh;
+      align-items: flex-start;
     }
     .hero-scroll-copy .hero-content {
       padding: 28px;
