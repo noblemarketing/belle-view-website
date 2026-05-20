@@ -661,8 +661,10 @@
     object-fit: cover;
   }
   .mechanical-block .section-eyebrow { margin-bottom: 16px; }
-  .mechanical-detail .bullet-list { border-top: none; }
-  .mechanical-detail .bullet-list li:has(+ li.is-category) { border-bottom: none; }
+  .mechanical-accordions { margin-top: 8px; }
+  .mechanical-accordion-body.open { max-height: 420px; }
+  .mechanical-accordion-list { margin: 0; border-top: none; }
+  .mechanical-accordion-list li:first-child { border-top: none; }
   .mechanical-heading {
     font-family: var(--font-display);
     font-size: clamp(32px, 3.2vw, 42px);
@@ -817,12 +819,17 @@
   .region-block p { font-size: 15px; font-weight: 300; color: rgba(223,235,246,0.9); line-height: 1.8; margin-bottom: 16px; }
   .region-block p:last-child { margin-bottom: 0; }
 
-  /* Accordions (SEO, proximal locations) */
+  /* Accordions (SEO, proximal locations, mechanical) */
   .seo-accordion,
-  .proximity-accordion { border-top: 1px solid var(--stone); }
-  .location-left .location-accordion { margin-top: 40px; }
+  .proximity-accordion,
+  .mechanical-accordion { border-top: 1px solid var(--stone); }
+  .location-left .proximity-accordion + .location-accordion {
+    margin-top: 0;
+    border-top: none;
+  }
   .seo-accordion-trigger,
-  .proximity-accordion-trigger {
+  .proximity-accordion-trigger,
+  .mechanical-accordion-trigger {
     width: 100%; background: none; border: none; cursor: pointer;
     display: flex; align-items: center; justify-content: space-between;
     padding: 24px 0; border-bottom: 1px solid var(--stone);
@@ -831,13 +838,17 @@
     transition: color 0.2s;
   }
   .seo-accordion-trigger:hover,
-  .proximity-accordion-trigger:hover { color: var(--charcoal); }
+  .proximity-accordion-trigger:hover,
+  .mechanical-accordion-trigger:hover { color: var(--charcoal); }
   .seo-accordion-trigger .acc-icon,
-  .proximity-accordion-trigger .acc-icon { font-size: 18px; transition: transform 0.25s; }
+  .proximity-accordion-trigger .acc-icon,
+  .mechanical-accordion-trigger .acc-icon { font-size: 18px; transition: transform 0.25s; }
   .seo-accordion-trigger.open .acc-icon,
-  .proximity-accordion-trigger.open .acc-icon { transform: rotate(45deg); }
+  .proximity-accordion-trigger.open .acc-icon,
+  .mechanical-accordion-trigger.open .acc-icon { transform: rotate(45deg); }
   .seo-accordion-body,
-  .proximity-accordion-body {
+  .proximity-accordion-body,
+  .mechanical-accordion-body {
     max-height: 0; overflow: hidden;
     transition: max-height 0.35s ease;
     background: var(--white);
@@ -885,7 +896,7 @@
 
   /* ── DOCUMENTS ── */
   #documents { background: var(--white); }
-  .docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--stone); margin-top: 64px; }
+  .docs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--stone); margin-top: 64px; }
   .doc-card { background: var(--white); padding: 48px 36px; display: flex; flex-direction: column; transition: background 0.2s; text-decoration: none; cursor: pointer; }
   .doc-card:hover { background: var(--cream); }
   .doc-icon { width: 32px; height: 32px; margin-bottom: 24px; display: block; }
@@ -911,21 +922,6 @@
   }
   .doc-link:hover, .doc-link:active { background: transparent; color: #AAC7D8; border-color: #AAC7D8; }
   .doc-link::after { content: '→'; }
-  .docs-photo {
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-    background: var(--stone);
-    min-height: 100%;
-  }
-  .docs-photo img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
 
   /* ── CONTACT ── */
   #contact { background: var(--deep); color: var(--cream); }
@@ -1124,7 +1120,6 @@
     /* ── Documents ── */
     .docs-grid { grid-template-columns: 1fr; }
     .doc-card { padding: 36px 24px; }
-    .docs-photo { min-height: 280px; }
 
     /* ── Contact ── */
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1202,7 +1197,6 @@
     .layout-wings .wing-card:last-child { grid-column: span 2; }
     .location-grid { gap: 48px; }
     .docs-grid { grid-template-columns: 1fr 1fr; }
-    .docs-photo { grid-column: 1 / -1; min-height: 320px; }
     .contact-grid { gap: 48px; }
     .gallery-grid { grid-template-columns: repeat(3, 1fr); padding: 0 40px 64px; }
     .gallery-slot.feature-wide { grid-column: span 2; aspect-ratio: 8/3; }
@@ -1534,28 +1528,64 @@
         <div class="mechanical-detail">
           <div class="section-eyebrow">Mechanical &amp; Systems</div>
           <h3 class="mechanical-heading">Infrastructure built for commercial operation</h3>
-          <ul class="bullet-list">
-            <li class="is-category">Water</li>
-            <li>2 wells</li>
-            <li>2,000 gal fire water storage</li>
-            <li>400 gal domestic water storage</li>
-            <li>3-stage hospital-grade filtration</li>
-            <li>2 jet pumps (15 showers simultaneously)</li>
-            <li>On-demand hot water loop</li>
-            <li class="is-category">Heating &amp; Energy</li>
-            <li>3 heat pumps (replaced within 3 years)</li>
-            <li>3 water heaters (electric + propane backup)</li>
-            <li>1,000-gal + 500-gal propane tanks</li>
-            <li class="is-category">Safety &amp; Life-Safety</li>
-            <li>Full sprinkler system</li>
-            <li>ADT security system</li>
-            <li>Intercom system</li>
-            <li>Soundproof rooms</li>
-            <li>4 septic tanks + grease tank</li>
-            <li class="is-category">Technology</li>
-            <li>Cat wiring throughout</li>
-            <li>Intercom system</li>
-          </ul>
+          <div class="mechanical-accordions">
+            <div class="mechanical-accordion">
+              <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalWater" data-mechanical-accordion>
+                <span>Water</span>
+                <span class="acc-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="mechanical-accordion-body seo-accordion-body" id="mechanicalWater">
+                <ul class="bullet-list mechanical-accordion-list">
+                  <li>2 wells</li>
+                  <li>2,000 gal fire water storage</li>
+                  <li>400 gal domestic water storage</li>
+                  <li>3-stage hospital-grade filtration</li>
+                  <li>2 jet pumps (15 showers simultaneously)</li>
+                  <li>On-demand hot water loop</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mechanical-accordion">
+              <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalHeating" data-mechanical-accordion>
+                <span>Heating &amp; Energy</span>
+                <span class="acc-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="mechanical-accordion-body seo-accordion-body" id="mechanicalHeating">
+                <ul class="bullet-list mechanical-accordion-list">
+                  <li>3 heat pumps (replaced within 3 years)</li>
+                  <li>3 water heaters (electric + propane backup)</li>
+                  <li>1,000-gal + 500-gal propane tanks</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mechanical-accordion">
+              <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalSafety" data-mechanical-accordion>
+                <span>Safety &amp; Life-Safety</span>
+                <span class="acc-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="mechanical-accordion-body seo-accordion-body" id="mechanicalSafety">
+                <ul class="bullet-list mechanical-accordion-list">
+                  <li>Full sprinkler system</li>
+                  <li>ADT security system</li>
+                  <li>Intercom system</li>
+                  <li>Soundproof rooms</li>
+                  <li>4 septic tanks + grease tank</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mechanical-accordion">
+              <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalTechnology" data-mechanical-accordion>
+                <span>Technology</span>
+                <span class="acc-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="mechanical-accordion-body seo-accordion-body" id="mechanicalTechnology">
+                <ul class="bullet-list mechanical-accordion-list">
+                  <li>Cat wiring throughout</li>
+                  <li>Intercom system</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1593,7 +1623,13 @@
     <div class="gallery-slot feature-wide" data-cat="property"><img src="images/Hero%20Page%20Options/6.jpg" alt="Belle View — Estate overview: lodge and Blue Ridge views" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="property"><img src="images/Hero%20Page%20Options/2.jpg" alt="Belle View main lodge with covered porch, accessibility ramp, and Blue Ridge views" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/4.jpg" alt="Belle View — Grounds &amp; land" loading="lazy" decoding="async" /></div>
-    <div class="gallery-slot" data-cat="grounds guest"><img src="images/Grounds%20-%20Land/12%20(3).jpg" alt="Belle View — Guest access and mountain views" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/12%20(3).jpg" alt="Belle View — Mountain meadow and valley views from the grounds" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/21.jpg" alt="Belle View — Main lodge and grounds from the rear lawn" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/29.jpg" alt="Belle View — Rocking chairs overlooking the Blue Ridge valley" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/43.jpg" alt="Belle View — Aerial view of lodge, outbuilding, and grounds" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/44.jpg" alt="Belle View — Aerial view of estate buildings and surrounding forest" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/45.jpg" alt="Belle View — Overhead view of property, driveway, and wooded acreage" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/46.jpg" alt="Belle View — Aerial property boundary and grounds overview" loading="lazy" decoding="async" /></div>
 
 
 
@@ -1723,7 +1759,7 @@
         <p class="section-body history-placeholder">Amanda Tyson is preparing copy for this section. It will summarize Belle View&rsquo;s operating history, prior income-producing uses, and context for qualified buyers.</p>
       </div>
       <figure class="layout-intro-frame">
-        <img src="images/business-history.jpg" alt="Belle View tasting room building with mountain views through the entrance" width="1600" height="1200" loading="lazy" decoding="async" />
+        <img src="images/Venue%20-%20Event/31.jpg" alt="Belle View covered pavilion with fire pit and Blue Ridge valley views" width="1600" height="1200" loading="lazy" decoding="async" />
       </figure>
     </div>
     <div class="layout-wings history-uses">
@@ -1908,9 +1944,6 @@
         <div class="doc-desc">Architectural floor plans for the main lodge including owner's quarters, guest wing, and venue areas.</div>
         <div class="doc-link">Download Plans</div>
       </a>
-      <figure class="docs-photo">
-        <img src="images/Hero%20Page%20Options/6.jpg" alt="Belle View lodge with Blue Ridge mountain views" width="1600" height="1200" loading="lazy" decoding="async" />
-      </figure>
     </div>
   </div>
 </section>
@@ -1998,7 +2031,7 @@
 
 <script>
   // Gallery filter + load more (first 20, then rest)
-  const GALLERY_INITIAL_COUNT = 20;
+  const GALLERY_INITIAL_COUNT = 23;
   let galleryExpanded = false;
   let galleryActiveCat = 'all';
   const galleryLoadMoreWrap = document.getElementById('galleryLoadMoreWrap');
@@ -2062,6 +2095,19 @@
     trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
     trigger.querySelector('.acc-icon').textContent = isOpen ? '+' : '×';
   }
+
+  // Mechanical & Systems accordions
+  document.querySelectorAll('[data-mechanical-accordion]').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const body = document.getElementById(trigger.getAttribute('aria-controls'));
+      if (!body) return;
+      const isOpen = body.classList.contains('open');
+      body.classList.toggle('open');
+      trigger.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      trigger.querySelector('.acc-icon').textContent = isOpen ? '+' : '×';
+    });
+  });
 
   // SEO accordion
   function toggleSeo() {
