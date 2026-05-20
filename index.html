@@ -659,6 +659,8 @@
     object-fit: cover;
   }
   .mechanical-block .section-eyebrow { margin-bottom: 16px; }
+  .mechanical-detail .bullet-list { border-top: none; }
+  .mechanical-detail .bullet-list li:has(+ li.is-category) { border-bottom: none; }
   .mechanical-heading {
     font-family: var(--font-display);
     font-size: clamp(32px, 3.2vw, 42px);
@@ -713,6 +715,32 @@
   .gallery-slot.feature-wide { grid-column: span 2; aspect-ratio: 8/3; }
   .gallery-slot.feature-tall { grid-row: span 2; aspect-ratio: unset; }
   .gallery-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gallery-load-more-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 8px 64px 80px;
+    background: var(--deep);
+  }
+  .gallery-load-more-wrap.is-hidden { display: none; }
+  .gallery-load-more {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    padding: 14px 32px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .gallery-load-more:hover,
+  .gallery-load-more:active {
+    color: #AAC7D8;
+    border-color: #AAC7D8;
+    background: rgba(170, 199, 216, 0.07);
+  }
 
   /* ── BUSINESS HISTORY (matches Physical Layout) ── */
   #opportunity { background: var(--white); color: var(--deep); }
@@ -723,7 +751,11 @@
     border-left: 3px solid var(--stone);
     color: var(--warm-gray);
   }
-  .history-uses { margin-top: 0; }
+  .history-uses {
+    margin-top: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .history-uses .wing-card:last-child { grid-column: auto; }
   .history-uses .wing-card p {
     font-size: 14px;
     font-weight: 400;
@@ -774,7 +806,7 @@
   .proximity-list li { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--stone); font-size: 15px; font-weight: 400; color: var(--deep); }
   .proximity-list li:first-child { border-top: 1px solid var(--stone); }
   .prox-label { font-weight: 500; color: var(--deep); min-width: 160px; }
-  .drive-markets { margin-top: 40px; }
+  .location-right .drive-markets { margin-top: 40px; }
   .drive-markets h4 { font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
   .drive-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .drive-tag { font-size: 13px; font-weight: 400; color: var(--deep); background: #FFFFFF; border: 1px solid var(--stone); padding: 8px 18px; }
@@ -786,7 +818,7 @@
   /* Accordions (SEO, proximal locations) */
   .seo-accordion,
   .proximity-accordion { border-top: 1px solid var(--stone); }
-  .seo-accordion { margin-top: 64px; }
+  .location-left .location-accordion { margin-top: 40px; }
   .seo-accordion-trigger,
   .proximity-accordion-trigger {
     width: 100%; background: none; border: none; cursor: pointer;
@@ -877,6 +909,21 @@
   }
   .doc-link:hover, .doc-link:active { background: transparent; color: #AAC7D8; border-color: #AAC7D8; }
   .doc-link::after { content: '→'; }
+  .docs-photo {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    background: var(--stone);
+    min-height: 100%;
+  }
+  .docs-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
 
   /* ── CONTACT ── */
   #contact { background: var(--deep); color: var(--cream); }
@@ -1054,6 +1101,7 @@
       padding: 0 0 0 0;
       gap: 2px;
     }
+    .gallery-load-more-wrap { padding: 8px 0 48px; }
     .gallery-slot.feature-wide { grid-column: span 2; aspect-ratio: 8/3; }
     .gallery-slot.feature-tall { grid-row: span 1; aspect-ratio: 4/3; }
 
@@ -1074,6 +1122,7 @@
     /* ── Documents ── */
     .docs-grid { grid-template-columns: 1fr; }
     .doc-card { padding: 36px 24px; }
+    .docs-photo { min-height: 280px; }
 
     /* ── Contact ── */
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1151,7 +1200,7 @@
     .layout-wings .wing-card:last-child { grid-column: span 2; }
     .location-grid { gap: 48px; }
     .docs-grid { grid-template-columns: 1fr 1fr; }
-    .docs-grid .doc-card:last-child { grid-column: span 2; }
+    .docs-photo { grid-column: 1 / -1; min-height: 320px; }
     .contact-grid { gap: 48px; }
     .gallery-grid { grid-template-columns: repeat(3, 1fr); padding: 0 40px 64px; }
     .gallery-slot.feature-wide { grid-column: span 2; aspect-ratio: 8/3; }
@@ -1658,6 +1707,9 @@
     <div class="gallery-slot" data-cat="floorplan"><img src="images/Floorplan/48.jpg" alt="Belle View — Floorplan" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="floorplan"><img src="images/Floorplan/49.jpg" alt="Belle View — Floorplan" loading="lazy" decoding="async" /></div>
   </div>
+  <div class="gallery-load-more-wrap" id="galleryLoadMoreWrap">
+    <button type="button" class="gallery-load-more" id="galleryLoadMore">Load more</button>
+  </div>
 </section>
 
 <!-- ════ BUSINESS HISTORY ════ -->
@@ -1669,7 +1721,7 @@
         <p class="section-body history-placeholder">Amanda Tyson is preparing copy for this section. It will summarize Belle View&rsquo;s operating history, prior income-producing uses, and context for qualified buyers.</p>
       </div>
       <figure class="layout-intro-frame">
-        <img src="images/lifestyle-gallery-12.png" alt="Wedding and events on the Belle View grounds" width="1200" height="1600" loading="lazy" decoding="async" />
+        <img src="images/business-history.jpg" alt="Belle View tasting room building with mountain views through the entrance" width="1600" height="1200" loading="lazy" decoding="async" />
       </figure>
     </div>
     <div class="layout-wings history-uses">
@@ -1788,13 +1840,31 @@
             </div>
           </div>
         </div>
-        <div class="drive-markets">
-          <h4>Strong Drive-Market Access From</h4>
-          <div class="drive-tags">
-            <span class="drive-tag">Washington DC / NoVA</span>
-            <span class="drive-tag">Lynchburg</span>
-            <span class="drive-tag">Richmond</span>
-            <span class="drive-tag">Charlottesville</span>
+        <div class="seo-accordion location-accordion">
+          <button class="seo-accordion-trigger" id="seoTrigger" onclick="toggleSeo()">
+            <span>Additional Info</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="seo-accordion-body" id="seoBody">
+            <div class="seo-accordion-inner">
+              <h3>About this property &amp; region</h3>
+              <p>This privately marketed estate is positioned within one of Virginia's most sought-after experiential travel and agritourism corridors. Buyers searching for a winery for sale in Virginia, a wedding venue for sale in Amherst County, or a venue property near the Monticello Wine Trail will find this property uniquely positioned — with zoning approvals, operating history, and infrastructure already in place.</p>
+              <p>The property sits in Amherst County, VA, on the edge of the Blue Ridge and within the broader Monticello Wine Trail region — a corridor that draws visitors from Washington DC, Northern Virginia, Richmond, and Charlottesville year-round. Its prior operating history as an event venue, winery tasting destination, rehabilitation facility, assisted living facility, and short-term rental makes it one of the most versatile hospitality properties currently available in Central Virginia.</p>
+              <div class="seo-tags">
+                <span class="seo-tag">Winery for sale Virginia</span>
+                <span class="seo-tag">Wedding venue for sale Virginia</span>
+                <span class="seo-tag">Venue for sale Amherst County</span>
+                <span class="seo-tag">Monticello Wine Trail property</span>
+                <span class="seo-tag">Blue Ridge estate for sale</span>
+                <span class="seo-tag">Retreat center for sale Virginia</span>
+                <span class="seo-tag">Event venue Virginia</span>
+                <span class="seo-tag">Hospitality property Virginia</span>
+                <span class="seo-tag">Rehabilitation facility for sale</span>
+                <span class="seo-tag">Mountain lodge for sale Virginia</span>
+                <span class="seo-tag">Amherst County VA real estate</span>
+                <span class="seo-tag">Privately marketed</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1804,33 +1874,13 @@
           <p>Positioned on the edge of the Monticello Wine Trail and within broader Virginia wine country demand corridors — one of the most active agritourism regions on the East Coast.</p>
           <p>The property's prior ABC license approval and tasting room use history make it a viable candidate for winery partnership or satellite destination use.</p>
         </div>
-      </div>
-    </div>
-
-    <!-- SEO Accordion -->
-    <div class="seo-accordion">
-      <button class="seo-accordion-trigger" id="seoTrigger" onclick="toggleSeo()">
-        <span>Additional Info</span>
-        <span class="acc-icon">+</span>
-      </button>
-      <div class="seo-accordion-body" id="seoBody">
-        <div class="seo-accordion-inner">
-          <h3>About this property &amp; region</h3>
-          <p>This privately marketed estate is positioned within one of Virginia's most sought-after experiential travel and agritourism corridors. Buyers searching for a winery for sale in Virginia, a wedding venue for sale in Amherst County, or a venue property near the Monticello Wine Trail will find this property uniquely positioned — with zoning approvals, operating history, and infrastructure already in place.</p>
-          <p>The property sits in Amherst County, VA, on the edge of the Blue Ridge and within the broader Monticello Wine Trail region — a corridor that draws visitors from Washington DC, Northern Virginia, Richmond, and Charlottesville year-round. Its prior operating history as an event venue, winery tasting destination, rehabilitation facility, assisted living facility, and short-term rental makes it one of the most versatile hospitality properties currently available in Central Virginia.</p>
-          <div class="seo-tags">
-            <span class="seo-tag">Winery for sale Virginia</span>
-            <span class="seo-tag">Wedding venue for sale Virginia</span>
-            <span class="seo-tag">Venue for sale Amherst County</span>
-            <span class="seo-tag">Monticello Wine Trail property</span>
-            <span class="seo-tag">Blue Ridge estate for sale</span>
-            <span class="seo-tag">Retreat center for sale Virginia</span>
-            <span class="seo-tag">Event venue Virginia</span>
-            <span class="seo-tag">Hospitality property Virginia</span>
-            <span class="seo-tag">Rehabilitation facility for sale</span>
-            <span class="seo-tag">Mountain lodge for sale Virginia</span>
-            <span class="seo-tag">Amherst County VA real estate</span>
-            <span class="seo-tag">Privately marketed</span>
+        <div class="drive-markets">
+          <h4>Strong Drive-Market Access From</h4>
+          <div class="drive-tags">
+            <span class="drive-tag">Washington DC / NoVA</span>
+            <span class="drive-tag">Lynchburg</span>
+            <span class="drive-tag">Richmond</span>
+            <span class="drive-tag">Charlottesville</span>
           </div>
         </div>
       </div>
@@ -1856,6 +1906,9 @@
         <div class="doc-desc">Architectural floor plans for the main lodge including owner's quarters, guest wing, and venue areas.</div>
         <div class="doc-link">Download Plans</div>
       </a>
+      <figure class="docs-photo">
+        <img src="images/Hero%20Page%20Options/6.jpg" alt="Belle View lodge with Blue Ridge mountain views" width="1600" height="1200" loading="lazy" decoding="async" />
+      </figure>
     </div>
   </div>
 </section>
@@ -1942,22 +1995,60 @@
 </footer>
 
 <script>
-  // Gallery category filter
+  // Gallery filter + load more (first 20, then rest)
+  const GALLERY_INITIAL_COUNT = 20;
+  let galleryExpanded = false;
+  let galleryActiveCat = 'all';
+  const galleryLoadMoreWrap = document.getElementById('galleryLoadMoreWrap');
+  const galleryLoadMoreBtn = document.getElementById('galleryLoadMore');
+
+  function slotMatchesCategory(slot, cat) {
+    const slotCats = (slot.dataset.cat || '').split(/\s+/).filter(Boolean);
+    return cat === 'all' || slotCats.includes(cat);
+  }
+
+  function applyGalleryView() {
+    const slots = document.querySelectorAll('#galleryGrid .gallery-slot');
+    let shownCount = 0;
+    let hiddenByLimit = 0;
+
+    slots.forEach(slot => {
+      if (!slotMatchesCategory(slot, galleryActiveCat)) {
+        slot.style.display = 'none';
+        return;
+      }
+      if (galleryExpanded || shownCount < GALLERY_INITIAL_COUNT) {
+        slot.style.display = '';
+        shownCount++;
+      } else {
+        slot.style.display = 'none';
+        hiddenByLimit++;
+      }
+    });
+
+    if (galleryLoadMoreWrap) {
+      const showBtn = !galleryExpanded && hiddenByLimit > 0;
+      galleryLoadMoreWrap.classList.toggle('is-hidden', !showBtn);
+    }
+  }
+
   document.querySelectorAll('.gallery-cat').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.gallery-cat').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      document.querySelectorAll('#galleryGrid .gallery-slot').forEach(slot => {
-        const slotCats = (slot.dataset.cat || '').split(/\s+/).filter(Boolean);
-        if (cat === 'all' || slotCats.includes(cat)) {
-          slot.style.display = '';
-        } else {
-          slot.style.display = 'none';
-        }
-      });
+      galleryActiveCat = btn.dataset.cat;
+      applyGalleryView();
     });
   });
+
+  if (galleryLoadMoreBtn) {
+    galleryLoadMoreBtn.addEventListener('click', () => {
+      galleryExpanded = true;
+      applyGalleryView();
+    });
+  }
+
+  applyGalleryView();
 
   // Proximal locations accordion
   function toggleProximity() {
