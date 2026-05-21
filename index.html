@@ -740,30 +740,40 @@
     padding: 0;
     background: transparent;
     border: none;
-  }
-  .mechanical-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-    gap: 56px;
-    align-items: end;
+    column-gap: 56px;
+    row-gap: 16px;
+    align-items: stretch;
+  }
+  .mechanical-eyebrow {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 0;
   }
   .mechanical-photo {
+    grid-column: 1;
+    grid-row: 2;
     margin: 0;
     border: 1px solid var(--stone);
     background: var(--stone);
     overflow: hidden;
-    align-self: end;
+    min-height: 0;
+    height: 100%;
   }
   .mechanical-photo img {
     display: block;
     width: 100%;
-    height: auto;
-    min-height: 520px;
-    aspect-ratio: 4 / 5;
+    height: 100%;
+    min-height: 100%;
     object-fit: cover;
-    object-position: center bottom;
+    object-position: center;
   }
-  .mechanical-block .section-eyebrow { margin-bottom: 16px; }
+  .mechanical-detail {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 0;
+  }
   .mechanical-accordions { margin-top: 8px; }
   .mechanical-accordion-body.open { max-height: 420px; }
   .mechanical-accordion-list { margin: 0; border-top: none; }
@@ -1184,10 +1194,23 @@
     .wing-card { padding: 36px 24px; }
     .wing-num { font-size: 52px; }
 
-    .mechanical-block { margin-top: 48px; }
-    .mechanical-layout { grid-template-columns: 1fr; gap: 40px; align-items: start; }
-    .mechanical-photo { align-self: auto; }
-    .mechanical-photo img { min-height: 0; aspect-ratio: 16 / 10; object-position: center; }
+    .mechanical-block {
+      margin-top: 48px;
+      grid-template-columns: 1fr;
+      row-gap: 24px;
+    }
+    .mechanical-eyebrow { grid-column: 1; grid-row: 1; }
+    .mechanical-photo {
+      grid-column: 1;
+      grid-row: 2;
+      height: auto;
+    }
+    .mechanical-photo img {
+      height: auto;
+      min-height: 0;
+      aspect-ratio: 16 / 10;
+    }
+    .mechanical-detail { grid-column: 1; grid-row: 3; }
     .mechanical-heading { font-size: 26px; margin-bottom: 24px; }
 
     /* ── Gallery ── */
@@ -1645,13 +1668,12 @@
     </div>
 
     <div class="mechanical-block">
-      <div class="mechanical-layout">
-        <figure class="mechanical-photo">
-          <img src="images/Venue%20-%20Event/17.jpg" alt="Belle View venue building with breezeway entrance, landscaped grounds, and mountain views" width="1600" height="1200" loading="lazy" decoding="async" />
-        </figure>
-        <div class="mechanical-detail">
-          <div class="section-eyebrow">Mechanical &amp; Systems</div>
-          <h3 class="mechanical-heading">Infrastructure built for commercial operation</h3>
+      <div class="section-eyebrow mechanical-eyebrow">Mechanical &amp; Systems</div>
+      <figure class="mechanical-photo">
+        <img src="images/Venue%20-%20Event/17.jpg" alt="Belle View venue building with breezeway entrance, landscaped grounds, and mountain views" width="1600" height="1200" loading="lazy" decoding="async" />
+      </figure>
+      <div class="mechanical-detail">
+        <h3 class="mechanical-heading">Infrastructure built for commercial operation</h3>
           <div class="mechanical-accordions">
             <div class="mechanical-accordion">
               <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalWater" data-mechanical-accordion>
@@ -1710,7 +1732,6 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
