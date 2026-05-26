@@ -1618,11 +1618,10 @@
         <span class="use-tag">Ministry Retreat</span>
       </div>
     </div>
-    <div class="overview-video-wrap" id="overviewVideoWrap">
+    <div class="overview-video-wrap is-paused" id="overviewVideoWrap">
       <video
         id="overviewVideo"
         class="overview-video"
-        autoplay
         muted
         loop
         playsinline
@@ -1631,7 +1630,7 @@
       >
         <source src="images/Hero%20Video.mp4?v=2" type="video/mp4" />
       </video>
-      <button type="button" class="overview-video-control" id="overviewVideoToggle" aria-label="Pause video" aria-pressed="true">
+      <button type="button" class="overview-video-control" id="overviewVideoToggle" aria-label="Play video" aria-pressed="false">
         <svg class="overview-video-icon overview-video-icon--pause" viewBox="0 0 24 24" aria-hidden="true"><rect fill="currentColor" x="6" y="5" width="4" height="14" rx="1"/><rect fill="currentColor" x="14" y="5" width="4" height="14" rx="1"/></svg>
         <svg class="overview-video-icon overview-video-icon--play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
       </button>
@@ -1893,19 +1892,10 @@
         <img src="images/lifestyle-gallery-04.png" alt="Couple embracing under the pavilion at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-05.png" alt="Couple walking through the meadow toward the treeline" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
         <img src="images/lifestyle-gallery-06.png" alt="Mother and daughter by the fire pit at sunset" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-07.png" alt="Family taking in the view from the hillside meadow" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
         <img src="images/lifestyle-gallery-08.png" alt="Gazebo and sunset over the Blue Ridge" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-10.png" alt="Cornhole on the lawn at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       <figure class="property-gallery-cell">
         <img src="images/lifestyle-gallery-11.png" alt="Outdoor wedding ceremony setup with pavilion and mountain views" width="1200" height="1600" loading="lazy" decoding="async" />
@@ -1914,28 +1904,28 @@
         <img src="images/lifestyle-gallery-12.png" alt="Bride and groom overlooking the estate grounds and Blue Ridge" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-13.png" alt="Guests playing lawn games outside the lodge" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-14.png" alt="Wedding ceremony kiss with mountain backdrop" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-15.png" alt="Wedding send-off with bubbles at the lodge" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
         <img src="images/lifestyle-gallery-16.png" alt="Bride with veil in the meadow at sunset" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-17.png" alt="Getting ready in the guest suite" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       <figure class="property-gallery-cell">
         <img src="images/lifestyle-gallery-18.png" alt="Live string music for an outdoor reception" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-19.png" alt="Wedding party walking the lodge approach" width="1200" height="1600" loading="lazy" decoding="async" />
+        <img src="images/lifestyle-gallery-20.png" alt="Couple under the pavilion at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-20.png" alt="Couple under the pavilion at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
+        <img src="images/lifestyle-gallery-21.png" alt="Wedding ceremony seating under tent with Blue Ridge mountain views" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-22.png" alt="Evening reception under event tent beside the pavilion" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-23.png" alt="Sunset reception under tent overlooking the mountains" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-24.png" alt="Reception table under tent framing Blue Ridge mountain views" width="1200" height="1600" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="property-gallery-cell">
+        <img src="images/lifestyle-gallery-25.png" alt="Sunset over the Blue Ridge from Belle View" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       </div>
     </div>
@@ -2121,12 +2111,15 @@
 </footer>
 
 <script>
-  // Overview property video — autoplay with hover play/pause control
+  // Overview property video — play when scrolled into view; manual play/pause control
   (function initOverviewVideo() {
     const wrap = document.getElementById('overviewVideoWrap');
     const video = document.getElementById('overviewVideo');
     const btn = document.getElementById('overviewVideoToggle');
     if (!wrap || !video || !btn) return;
+
+    let userWantsPaused = false;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const setPlayingState = (playing) => {
       wrap.classList.toggle('is-paused', !playing);
@@ -2136,8 +2129,10 @@
 
     btn.addEventListener('click', () => {
       if (video.paused) {
+        userWantsPaused = false;
         video.play();
       } else {
+        userWantsPaused = true;
         video.pause();
       }
     });
@@ -2145,16 +2140,31 @@
     video.addEventListener('play', () => setPlayingState(true));
     video.addEventListener('pause', () => setPlayingState(false));
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      video.pause();
-      setPlayingState(false);
+    video.pause();
+    setPlayingState(false);
+
+    if (reducedMotion) {
+      userWantsPaused = true;
       return;
     }
 
-    const p = video.play();
-    if (p && typeof p.catch === 'function') {
-      p.catch(() => setPlayingState(false));
-    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !userWantsPaused) {
+            const p = video.play();
+            if (p && typeof p.catch === 'function') {
+              p.catch(() => setPlayingState(false));
+            }
+          } else if (!entry.isIntersecting) {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(wrap);
   })();
 
   // Gallery filter + load more (first 20, then rest)
