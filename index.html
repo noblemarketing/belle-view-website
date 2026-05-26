@@ -1424,11 +1424,21 @@
     font-size: 20px;
     color: rgba(223,235,246,0.5);
   }
-  #lightbox-caption {
-    position: absolute;
-    bottom: -48px;
-    left: 0; right: 0;
+  #lb-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: min(90vw, 640px);
     text-align: center;
+    pointer-events: none;
+  }
+  #lightbox-caption {
     color: rgba(223,235,246,0.55);
     line-height: 1.45;
   }
@@ -1483,11 +1493,8 @@
   #lb-next { right: 20px; }
   /* Counter */
   #lb-counter {
-    position: fixed;
-    bottom: 24px; left: 50%; transform: translateX(-50%);
     font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
     text-transform: uppercase; color: rgba(223,235,246,0.5);
-    z-index: 1001;
   }
   #lb-thumbs { display: none; }
   /* Gallery slot cursor hint */
@@ -1498,6 +1505,7 @@
     #lb-next { right: 8px; width: 40px; height: 40px; }
     #lb-close { top: 16px; right: 16px; }
     #lightbox-placeholder { width: 90vw; height: 50vh; }
+    #lb-footer { bottom: max(16px, env(safe-area-inset-bottom)); gap: 8px; }
   }
 </style>
 </head>
@@ -2514,11 +2522,21 @@
     font-size: 20px;
     color: rgba(223,235,246,0.5);
   }
-  #lightbox-caption {
-    position: absolute;
-    bottom: -48px;
-    left: 0; right: 0;
+  #lb-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: min(90vw, 640px);
     text-align: center;
+    pointer-events: none;
+  }
+  #lightbox-caption {
     color: rgba(223,235,246,0.55);
     line-height: 1.45;
   }
@@ -2573,11 +2591,8 @@
   #lb-next { right: 20px; }
   /* Counter */
   #lb-counter {
-    position: fixed;
-    bottom: 24px; left: 50%; transform: translateX(-50%);
     font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
     text-transform: uppercase; color: rgba(223,235,246,0.5);
-    z-index: 1001;
   }
   #lb-thumbs { display: none; }
   /* Gallery slot cursor hint */
@@ -2588,6 +2603,7 @@
     #lb-next { right: 8px; width: 40px; height: 40px; }
     #lb-close { top: 16px; right: 16px; }
     #lightbox-placeholder { width: 90vw; height: 50vh; }
+    #lb-footer { bottom: max(16px, env(safe-area-inset-bottom)); gap: 8px; }
   }
 </style>
 
@@ -2636,10 +2652,12 @@
       </svg>
       <p id="lightbox-slot-label">Photo placeholder</p>
     </div>
-    <div id="lightbox-caption"></div>
   </div>
   <button class="lb-arrow" id="lb-next" aria-label="Next image">&#8594;</button>
-  <div id="lb-counter"></div>
+  <div id="lb-footer">
+    <div id="lightbox-caption"></div>
+    <div id="lb-counter"></div>
+  </div>
   <div id="lb-thumbs"></div>
 </div>
 
