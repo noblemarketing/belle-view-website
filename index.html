@@ -535,9 +535,12 @@
   }
   .overview-simple {
     max-width: 820px;
-    margin-left: auto;
+    margin-left: 0;
     margin-right: auto;
     text-align: left;
+  }
+  .overview-simple > .section-eyebrow {
+    margin-bottom: 16px;
   }
   .overview-description { margin-bottom: 0; }
   .overview-copy .section-body + .section-body { margin-top: 24px; }
@@ -557,13 +560,29 @@
     object-fit: cover;
     object-position: center;
   }
-  .overview-video-control {
+  .overview-video-controls {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 72px;
-    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+  }
+  .overview-video-wrap:hover .overview-video-controls,
+  .overview-video-wrap:focus-within .overview-video-controls,
+  .overview-video-wrap.is-paused .overview-video-controls {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .overview-video-control {
+    width: 56px;
+    height: 56px;
     margin: 0;
     padding: 0;
     border: 2px solid #FFFFFF;
@@ -574,9 +593,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    transition: opacity 0.25s ease, background 0.2s ease, border-color 0.2s ease;
-    z-index: 2;
+    flex-shrink: 0;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .overview-video-control--primary {
+    width: 72px;
+    height: 72px;
   }
   .overview-video-control:hover,
   .overview-video-control:focus-visible {
@@ -584,21 +606,20 @@
     border-color: #AAC7D8;
     outline: none;
   }
-  .overview-video-wrap:hover .overview-video-control,
-  .overview-video-wrap:focus-within .overview-video-control,
-  .overview-video-wrap.is-paused .overview-video-control {
-    opacity: 1;
-  }
   .overview-video-icon {
     display: block;
     width: 22px;
     height: 22px;
     fill: currentColor;
   }
+  .overview-video-control--primary .overview-video-icon {
+    width: 24px;
+    height: 24px;
+  }
   .overview-video-wrap.is-paused .overview-video-icon--pause { display: none; }
   .overview-video-wrap:not(.is-paused) .overview-video-icon--play { display: none; }
   @media (hover: none) {
-    .overview-video-control { opacity: 0.9; }
+    .overview-video-controls { opacity: 0.95; pointer-events: auto; }
   }
   .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
   .section-eyebrow {
@@ -741,13 +762,15 @@
     background: transparent;
     border: none;
   }
-  .mechanical-top {
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-    column-gap: 56px;
+  .mechanical-simple {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  .mechanical-simple > .section-eyebrow {
     margin-bottom: 16px;
   }
-  .mechanical-eyebrow { margin-bottom: 0; }
   .mechanical-row {
     display: flex;
     align-items: stretch;
@@ -777,9 +800,6 @@
   }
   .mechanical-row--no-photo {
     display: block;
-  }
-  .mechanical-row--no-photo .mechanical-detail {
-    max-width: 820px;
   }
   .layout-intro--text-only {
     display: block;
@@ -1208,10 +1228,6 @@
     .wing-num { font-size: 52px; }
 
     .mechanical-block { margin-top: 48px; }
-    .mechanical-top {
-      display: block;
-      margin-bottom: 16px;
-    }
     .mechanical-row {
       flex-direction: column;
       gap: 32px;
@@ -1601,8 +1617,8 @@
 <!-- ════ OVERVIEW ════ -->
 <section id="overview" class="section-pad">
   <div class="section-inner">
-    <div class="section-eyebrow">Property Overview</div>
     <div class="overview-simple">
+      <div class="section-eyebrow">Property Overview</div>
       <div class="overview-copy">
         <p class="section-body overview-description">Set above 50+ mile Blue Ridge Mountain views, Belle View is a 10,600± sq ft mountain residence on 15 private acres situated among Virginia&rsquo;s renowned wine country. Currently enjoyed as a private residence, the property also carries a remarkable history and even greater operational potential. Originally built in 1996 and expanded over time, the estate is currently enjoyed primarily as a private residence while operating at limited short-term rental capacity. The lodge includes 8 private guest accommodations with en-suite bathrooms and a 3 bedroom apartment unit, alongside a separate 3-bedroom owner&rsquo;s residence, offering flexibility for owner-operators, on-site management, or hybrid residential and hospitality use.</p>
         <p class="section-body">Consistent with its historical use as both an assisted living facility and a recovery lodge operated by Centra Health, the estate was designed to support live-in occupancy with the institutional-grade systems, robust utilities, and a layout that naturally accommodates group stays, retreats, and guest turnover. Beyond lodging, the property has also attracted weddings, retreats, and private events with little formal advertising due to its one-of-a-kind backdrop and existing event infrastructure. The property is undoubtedly equipped to support weddings and large-scale gatherings, featuring multiple ceremony location options, a dedicated bridal suite, ample on-site parking, a secondary building with bar and restroom facilities, and a 40&times;60 concrete slab featuring integrated tent anchoring and pre-fabricated engineering for future structural expansion if desired.</p>
@@ -1630,10 +1646,18 @@
       >
         <source src="images/Hero%20Video.mp4?v=2" type="video/mp4" />
       </video>
-      <button type="button" class="overview-video-control" id="overviewVideoToggle" aria-label="Play video" aria-pressed="false">
-        <svg class="overview-video-icon overview-video-icon--pause" viewBox="0 0 24 24" aria-hidden="true"><rect fill="currentColor" x="6" y="5" width="4" height="14" rx="1"/><rect fill="currentColor" x="14" y="5" width="4" height="14" rx="1"/></svg>
-        <svg class="overview-video-icon overview-video-icon--play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-      </button>
+      <div class="overview-video-controls" role="group" aria-label="Video playback controls">
+        <button type="button" class="overview-video-control" id="overviewVideoRewind" aria-label="Rewind 10 seconds">
+          <svg class="overview-video-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11.99 5V1l-5 5 5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+        </button>
+        <button type="button" class="overview-video-control overview-video-control--primary" id="overviewVideoToggle" aria-label="Play video" aria-pressed="false">
+          <svg class="overview-video-icon overview-video-icon--pause" viewBox="0 0 24 24" aria-hidden="true"><rect fill="currentColor" x="6" y="5" width="4" height="14" rx="1"/><rect fill="currentColor" x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="overview-video-icon overview-video-icon--play" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button type="button" class="overview-video-control" id="overviewVideoForward" aria-label="Fast forward 10 seconds">
+          <svg class="overview-video-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -1641,9 +1665,6 @@
 <!-- ════ PHYSICAL LAYOUT ════ -->
 <section id="layout" class="section-pad" style="background: var(--white);">
   <div class="section-inner">
-    <figure class="layout-image">
-      <img src="images/Grounds%20-%20Land/21.jpg" alt="Main lodge and grounds from the rear lawn" width="1600" height="1000" loading="lazy" decoding="async" />
-    </figure>
     <div class="layout-wings">
       <div class="wing-card">
         <div class="wing-title">Owner's Residence &amp; Quarters</div>
@@ -1680,14 +1701,10 @@
     </div>
 
     <div class="mechanical-block">
-      <div class="mechanical-top">
-        <div class="mechanical-top-spacer" aria-hidden="true"></div>
-        <div class="section-eyebrow mechanical-eyebrow">Mechanical &amp; Systems</div>
-      </div>
-      <div class="mechanical-row mechanical-row--no-photo">
-        <div class="mechanical-detail">
-          <h3 class="mechanical-heading">Infrastructure built for commercial operation</h3>
-          <div class="mechanical-accordions">
+      <div class="mechanical-simple">
+        <div class="section-eyebrow">Mechanical &amp; Systems</div>
+        <h3 class="mechanical-heading">Infrastructure built for commercial operation</h3>
+        <div class="mechanical-accordions">
             <div class="mechanical-accordion">
               <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalWater" data-mechanical-accordion>
                 <span>Water</span>
@@ -1745,7 +1762,6 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
 
@@ -1892,7 +1908,7 @@
         <img src="images/lifestyle-gallery-04.png" alt="Couple embracing under the pavilion at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-06.png" alt="Mother and daughter by the fire pit at sunset" width="1200" height="1600" loading="lazy" decoding="async" />
+        <img src="images/lifestyle-gallery-06.png?v=2" alt="Mother and daughter by the fire pit at sunset" width="1200" height="1600" loading="lazy" decoding="async" />
       </figure>
       <figure class="property-gallery-cell">
         <img src="images/lifestyle-gallery-08.png" alt="Gazebo and sunset over the Blue Ridge" width="1200" height="1600" loading="lazy" decoding="async" />
@@ -2116,8 +2132,11 @@
     const wrap = document.getElementById('overviewVideoWrap');
     const video = document.getElementById('overviewVideo');
     const btn = document.getElementById('overviewVideoToggle');
+    const rewindBtn = document.getElementById('overviewVideoRewind');
+    const forwardBtn = document.getElementById('overviewVideoForward');
     if (!wrap || !video || !btn) return;
 
+    const SEEK_STEP = 10;
     let userWantsPaused = false;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -2126,6 +2145,17 @@
       btn.setAttribute('aria-label', playing ? 'Pause video' : 'Play video');
       btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
     };
+
+    const seekBy = (seconds) => {
+      const duration = Number.isFinite(video.duration) ? video.duration : null;
+      const next = video.currentTime + seconds;
+      video.currentTime = duration == null
+        ? Math.max(0, next)
+        : Math.min(duration, Math.max(0, next));
+    };
+
+    rewindBtn?.addEventListener('click', () => seekBy(-SEEK_STEP));
+    forwardBtn?.addEventListener('click', () => seekBy(SEEK_STEP));
 
     btn.addEventListener('click', () => {
       if (video.paused) {
