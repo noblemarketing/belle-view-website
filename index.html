@@ -898,28 +898,6 @@
     background: rgba(170, 199, 216, 0.07);
   }
 
-  /* ── BUSINESS HISTORY (matches Physical Layout) ── */
-  #opportunity { background: var(--white); color: var(--deep); }
-  .history-placeholder {
-    max-width: 560px;
-    margin-bottom: 0;
-    padding-left: 20px;
-    border-left: 3px solid var(--stone);
-    color: var(--warm-gray);
-  }
-  .history-uses {
-    margin-top: 0;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .history-uses .wing-card:last-child { grid-column: auto; }
-  .history-uses .wing-card p {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--charcoal);
-    line-height: 1.7;
-    margin: 0;
-  }
-
   .property-details-block {
     margin-top: 80px;
     background: var(--stone);
@@ -1020,32 +998,6 @@
     color: var(--deep); border: 1px solid var(--stone); padding: 6px 14px; background: #F0F4F7;
   }
 
-  /* ── LIFESTYLE GALLERY (under Business History) ── */
-  #opportunity #property-gallery { margin-top: 80px; padding-top: 0; }
-  .property-gallery-intro { margin-bottom: 40px; }
-  .property-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3px;
-    background: var(--stone);
-  }
-  .property-gallery-cell {
-    margin: 0;
-    position: relative;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-    background: #e8eef2;
-    cursor: zoom-in;
-  }
-  .property-gallery-cell img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-  .property-gallery-cell:hover img { transform: scale(1.035); }
-
   /* ── DOCUMENTS ── */
   #documents { background: var(--white); }
   .docs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--stone); margin-top: 64px; }
@@ -1095,24 +1047,6 @@
   .form-textarea { resize: vertical; min-height: 100px; }
   .form-submit { width: 100%; background: var(--deep); color: #FFFFFF; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 18px 32px; border: 1.5px solid #FFFFFF; cursor: pointer; margin-top: 8px; transition: background 0.2s, color 0.2s, border-color 0.2s; }
   .form-submit:hover, .form-submit:active { background: transparent; color: #AAC7D8; border-color: #AAC7D8; }
-
-  /* ── SOCIAL BAR ── */
-  .social-bar { background: #1e2a30; padding: 32px 64px; display: flex; align-items: center; justify-content: center; gap: 40px; }
-  .social-label { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(223,235,246,0.95); }
-  .social-links { display: flex; gap: 24px; }
-  .social-link {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    text-decoration: none;
-    border: 1px solid #FFFFFF;
-    padding: 9px 20px;
-    transition: color 0.2s, border-color 0.2s, background 0.2s;
-    cursor: pointer;
-  }
-  .social-link:hover, .social-link:active { color: #AAC7D8; border-color: #AAC7D8; background: rgba(170,199,216,0.07); }
 
   /* ── DISCLOSURE ── */
   .disclosure { background: var(--deep); border-top: 1px solid rgba(255,255,255,0.08); padding: 40px 64px; }
@@ -1279,10 +1213,6 @@
     .seo-accordion-trigger { font-size: 11px; }
 
     /* ── Property lifestyle gallery ── */
-    .property-gallery-intro { margin-bottom: 32px; padding: 0 4px; }
-    .property-gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .property-gallery-cell { aspect-ratio: 3 / 4; max-height: none; }
-
     /* ── Documents ── */
     .docs-grid { grid-template-columns: 1fr; }
     .doc-card { padding: 36px 24px; }
@@ -1291,15 +1221,6 @@
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     .contact-form { padding: 32px 24px; }
     .contact-name { font-size: 26px; }
-
-    /* ── Social ── */
-    .social-bar {
-      padding: 24px;
-      flex-direction: column;
-      gap: 16px;
-      text-align: center;
-    }
-    .social-links { flex-wrap: wrap; justify-content: center; gap: 10px; }
 
     /* ── Disclosure / Footer ── */
     .disclosure { padding: 32px 24px; }
@@ -1367,12 +1288,8 @@
     .gallery-grid { grid-template-columns: repeat(3, 1fr); padding: 0 40px 64px; }
     .gallery-slot.feature-wide { grid-column: span 2; aspect-ratio: 8/3; }
     .gallery-header { padding: 64px 40px 32px; }
-    .social-bar { padding: 28px 40px; }
     .disclosure { padding: 32px 40px; }
     footer { padding: 28px 40px; }
-    .property-gallery-intro { margin-bottom: 40px; }
-    .property-gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .property-gallery-cell { aspect-ratio: 3 / 4; max-height: none; }
   }
 
   /* ── LIGHTBOX ── */
@@ -1498,8 +1415,7 @@
   }
   #lb-thumbs { display: none; }
   /* Gallery slot cursor hint */
-  .gallery-slot,
-  .property-gallery-cell { cursor: zoom-in; }
+  .gallery-slot { cursor: zoom-in; }
   @media (max-width: 768px) {
     #lb-prev { left: 8px; width: 40px; height: 40px; }
     #lb-next { right: 8px; width: 40px; height: 40px; }
@@ -1518,7 +1434,6 @@
     <a href="#overview" class="snav-link" data-section="overview">Overview</a>
     <a href="#layout" class="snav-link" data-section="layout">Physical Layout</a>
     <a href="#gallery" class="snav-link" data-section="gallery">Gallery</a>
-    <a href="#opportunity" class="snav-link" data-section="opportunity">Business History</a>
     <a href="#location" class="snav-link" data-section="location">Location</a>
     <a href="#documents" class="snav-link" data-section="documents">Documents</a>
     <a href="#contact" class="snav-link" data-section="contact">Contact</a>
@@ -1550,13 +1465,6 @@
       </div>
     </div>
 
-    <div class="nav-item">
-      <button class="nav-btn">Business <span class="caret">▾</span></button>
-      <div class="nav-dropdown">
-        <a href="#opportunity">Business History</a>
-        <a href="#property-gallery">Gallery</a>
-      </div>
-    </div>
     <a href="#location" class="nav-btn">Location</a>
     <a href="#contact" class="nav-btn">Contact</a>
   </div>
@@ -1658,7 +1566,7 @@
         preload="metadata"
         poster="images/Hero%20Page%20Options/2.jpg"
       >
-        <source src="images/Hero%20Video.mp4?v=2" type="video/mp4" />
+        <source src="images/Hero%20Video.mp4?v=3" type="video/mp4" />
       </video>
       <div class="overview-video-controls" role="group" aria-label="Video playback controls">
         <button type="button" class="overview-video-control" id="overviewVideoRewind" aria-label="Rewind 10 seconds">
@@ -1726,10 +1634,10 @@
               </button>
               <div class="mechanical-accordion-body seo-accordion-body" id="mechanicalWater">
                 <ul class="bullet-list mechanical-accordion-list">
-                  <li>2 wells</li>
+                  <li>3 wells</li>
                   <li>2,000 gal fire water storage</li>
                   <li>400 gal domestic water storage</li>
-                  <li>3-stage hospital-grade filtration</li>
+                  <li>3-stage commercial-grade filtration</li>
                   <li>2 jet pumps (15 showers simultaneously)</li>
                   <li>On-demand hot water loop</li>
                 </ul>
@@ -1782,7 +1690,7 @@
     <div class="property-details-block">
       <div class="section-eyebrow">Property Details</div>
       <dl class="property-details-list">
-        <div class="property-details-row"><dt>Status</dt><dd>Privately Marketed</dd></div>
+        <div class="property-details-row"><dt>Status</dt><dd>For Sale By Owner</dd></div>
         <div class="property-details-row"><dt>Zoning</dt><dd>A-1 Agricultural-Residential</dd></div>
         <div class="property-details-row"><dt>Built</dt><dd>1996 (addition 2006)</dd></div>
         <div class="property-details-row"><dt>Annual Taxes</dt><dd>$5,089</dd></div>
@@ -1804,6 +1712,7 @@
       <button class="gallery-cat" data-cat="resident">Resident Wing</button>
       <button class="gallery-cat" data-cat="guest">Guest Wing</button>
       <button class="gallery-cat" data-cat="event">Venue &amp; Event</button>
+      <button class="gallery-cat" data-cat="history">Business History</button>
       <button class="gallery-cat" data-cat="floorplan">Floorplans</button>
     </div>
   </div>
@@ -1815,6 +1724,12 @@
     <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/25.jpg" alt="Belle View — Grounds &amp; land" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/27.jpg" alt="Belle View — Grounds &amp; land" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/30.jpg" alt="Belle View — Grounds &amp; land" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/gazebo-view.png" alt="Gazebo overlook with autumn forest and mountain views" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/porch-rockers.png" alt="Rocking chairs on the covered porch overlooking the Blue Ridge" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/mountain-vista.png" alt="Snow-capped Blue Ridge peaks at sunset from the grounds" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/walkway-gazebo.png" alt="Brick walkway to the gazebo with valley and mountain views" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/aerial-estate.png" alt="Aerial view of the 15-acre Belle View estate and surrounding forest" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="grounds"><img src="images/Grounds%20-%20Land/field-fence-vista.png" alt="Pasture and post-and-rail fence with distant mountain ridgeline" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/11%20(4).jpg" alt="Belle View — Resident wing" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/11%20(6).jpg" alt="Belle View — Resident wing" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="resident"><img src="images/Resident%20Wing/11%20(7).jpg" alt="Belle View — Resident wing" loading="lazy" decoding="async" /></div>
@@ -1867,99 +1782,25 @@
     <div class="gallery-slot" data-cat="floorplan"><img src="images/Floorplan/47.jpg" alt="Belle View — Floorplan" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="floorplan"><img src="images/Floorplan/48.jpg" alt="Belle View — Floorplan" loading="lazy" decoding="async" /></div>
     <div class="gallery-slot" data-cat="floorplan"><img src="images/Floorplan/49.jpg" alt="Belle View — Floorplan" loading="lazy" decoding="async" /></div>
-  
-  
-  
-  
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-01.png" alt="Covered porch with rocking chairs at Belle View" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-02.png" alt="Couple on the grounds with Blue Ridge views at Belle View" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-03.png" alt="Guest enjoying the Blue Ridge vista from the porch" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-04.png" alt="Couple embracing under the pavilion at golden hour" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-06.png?v=2" alt="Mother and daughter by the fire pit at sunset" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-08.png" alt="Gazebo and sunset over the Blue Ridge" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-11.png" alt="Outdoor wedding ceremony setup with pavilion and mountain views" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-12.png" alt="Bride and groom overlooking the estate grounds and Blue Ridge" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-16.png" alt="Bride with veil in the meadow at sunset" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-18.png" alt="Live string music for an outdoor reception" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-20.png" alt="Couple under the pavilion at golden hour" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-21.png" alt="Wedding ceremony seating under tent with Blue Ridge mountain views" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-22.png" alt="Evening reception under event tent beside the pavilion" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-23.png" alt="Sunset reception under tent overlooking the mountains" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-24.png" alt="Reception table under tent framing Blue Ridge mountain views" loading="lazy" decoding="async" /></div>
+    <div class="gallery-slot" data-cat="history"><img src="images/lifestyle-gallery-25.png" alt="Sunset over the Blue Ridge from Belle View" loading="lazy" decoding="async" /></div>
   </div>
   <div class="gallery-load-more-wrap" id="galleryLoadMoreWrap">
     <button type="button" class="gallery-load-more" id="galleryLoadMore">Load more</button>
-  </div>
-</section>
-
-<!-- ════ BUSINESS HISTORY ════ -->
-<section id="opportunity" class="section-pad">
-  <div class="section-inner">
-    <div class="layout-intro layout-intro--text-only">
-      <div class="layout-intro-text">
-        <div class="section-eyebrow">Business History</div>
-        <p class="section-body history-placeholder">Amanda Tyson is preparing copy for this section. It will summarize Belle View&rsquo;s operating history, prior income-producing uses, and context for qualified buyers.</p>
-      </div>
-    </div>
-    <div class="layout-wings history-uses">
-      <div class="wing-card">
-        <div class="wing-title">Short-Term Rental</div>
-        <p>Guest wing with 8 private accommodations and a separate 3-bedroom apartment. Prior Airbnb operating history.</p>
-      </div>
-      <div class="wing-card">
-        <div class="wing-title">Event &amp; Gathering Space</div>
-        <p>Engineered event slab, bridal suite, catering outbuilding, and ABC-licensed use approval. Prior wedding and event hosting history — infrastructure ready for reactivation.</p>
-      </div>
-      <div class="wing-card">
-        <div class="wing-title">Winery Tasting Destination</div>
-        <p>Previously operated as a satellite tasting room on the edge of the Monticello Wine Trail. ABC approval and prior tasting room history support re-establishing or expanding this use.</p>
-      </div>
-      <div class="wing-card">
-        <div class="wing-title">Retreat, Ministry &amp; Care</div>
-        <p>Prior approvals for ministry retreat, church use, and recovery &amp; rehabilitation. Hospital-grade water and life-safety systems already operational.</p>
-      </div>
-    </div>
-
-    <div id="property-gallery">
-      <div class="property-gallery-intro">
-        <div class="section-eyebrow">Gallery</div>
-      </div>
-      <div class="property-gallery-grid">
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-01.png" alt="Covered porch with rocking chairs at Belle View" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-02.png" alt="Couple on the grounds with Blue Ridge views at Belle View" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-03.png" alt="Guest enjoying the Blue Ridge vista from the porch" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-04.png" alt="Couple embracing under the pavilion at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-06.png?v=2" alt="Mother and daughter by the fire pit at sunset" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-08.png" alt="Gazebo and sunset over the Blue Ridge" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-11.png" alt="Outdoor wedding ceremony setup with pavilion and mountain views" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-12.png" alt="Bride and groom overlooking the estate grounds and Blue Ridge" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-16.png" alt="Bride with veil in the meadow at sunset" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-18.png" alt="Live string music for an outdoor reception" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-20.png" alt="Couple under the pavilion at golden hour" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-21.png" alt="Wedding ceremony seating under tent with Blue Ridge mountain views" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-22.png" alt="Evening reception under event tent beside the pavilion" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-23.png" alt="Sunset reception under tent overlooking the mountains" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-24.png" alt="Reception table under tent framing Blue Ridge mountain views" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      <figure class="property-gallery-cell">
-        <img src="images/lifestyle-gallery-25.png" alt="Sunset over the Blue Ridge from Belle View" width="1200" height="1600" loading="lazy" decoding="async" />
-      </figure>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1990,39 +1831,12 @@
             </div>
           </div>
         </div>
-        <div class="seo-accordion location-accordion">
-          <button class="seo-accordion-trigger" id="seoTrigger" onclick="toggleSeo()">
-            <span>Additional Info</span>
-            <span class="acc-icon">+</span>
-          </button>
-          <div class="seo-accordion-body" id="seoBody">
-            <div class="seo-accordion-inner">
-              <h3>About this property &amp; region</h3>
-              <p>This privately marketed estate is positioned within one of Virginia's most sought-after experiential travel and agritourism corridors. Buyers searching for a winery for sale in Virginia, a wedding venue for sale in Amherst County, or a venue property near the Monticello Wine Trail will find this property uniquely positioned — with zoning approvals, operating history, and infrastructure already in place.</p>
-              <p>The property sits in Amherst County, VA, on the edge of the Blue Ridge and within the broader Monticello Wine Trail region — a corridor that draws visitors from Washington DC, Northern Virginia, Richmond, and Charlottesville year-round. Its prior operating history as an event venue, winery tasting destination, rehabilitation facility, assisted living facility, and short-term rental makes it one of the most versatile hospitality properties currently available in Central Virginia.</p>
-              <div class="seo-tags">
-                <span class="seo-tag">Winery for sale Virginia</span>
-                <span class="seo-tag">Wedding venue for sale Virginia</span>
-                <span class="seo-tag">Venue for sale Amherst County</span>
-                <span class="seo-tag">Monticello Wine Trail property</span>
-                <span class="seo-tag">Blue Ridge estate for sale</span>
-                <span class="seo-tag">Retreat center for sale Virginia</span>
-                <span class="seo-tag">Event venue Virginia</span>
-                <span class="seo-tag">Hospitality property Virginia</span>
-                <span class="seo-tag">Rehabilitation facility for sale</span>
-                <span class="seo-tag">Mountain lodge for sale Virginia</span>
-                <span class="seo-tag">Amherst County VA real estate</span>
-                <span class="seo-tag">Privately marketed</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <div class="location-right">
         <div class="region-block">
           <h3>Virginia Wine Country</h3>
           <p>Positioned on the edge of the Monticello Wine Trail and within broader Virginia wine country demand corridors — one of the most active agritourism regions on the East Coast.</p>
-          <p>The property's prior ABC license approval and tasting room use history make it a viable candidate for winery partnership or satellite destination use.</p>
+          <p>The property's prior ABC license approval and history as a winery tasting location make it a viable candidate for winery partnership or satellite destination use.</p>
         </div>
         <div class="drive-markets">
           <h4>Strong Drive-Market Access From</h4>
@@ -2120,16 +1934,6 @@
     </div>
   </div>
 </section>
-
-<!-- ════ SOCIAL ════ -->
-<div class="social-bar">
-  <span class="social-label">Follow the Property</span>
-  <div class="social-links">
-    <a href="#" class="social-link" id="link-instagram">Instagram</a>
-    <a href="#" class="social-link" id="link-facebook">Facebook</a>
-    <a href="#" class="social-link" id="link-reels">Video Reels</a>
-  </div>
-</div>
 
 <!-- ════ DISCLOSURE ════ -->
 <div class="disclosure">
@@ -2291,16 +2095,6 @@
     });
   });
 
-  // SEO accordion
-  function toggleSeo() {
-    const trigger = document.getElementById('seoTrigger');
-    const body = document.getElementById('seoBody');
-    const isOpen = body.classList.contains('open');
-    body.classList.toggle('open');
-    trigger.classList.toggle('open');
-    trigger.querySelector('.acc-icon').textContent = isOpen ? '+' : '×';
-  }
-
   // Form submit (FormSubmit → amanda.tyson.trr@gmail.com)
   const inquiryForm = document.getElementById('inquiryForm');
   if (inquiryForm) {
@@ -2368,7 +2162,7 @@
     }
 
     // Active section highlight
-    const sections = ['overview','layout','gallery','opportunity','location','documents','contact'];
+    const sections = ['overview','layout','gallery','location','documents','contact'];
     let current = '';
     sections.forEach(id => {
       const el = document.getElementById(id);
@@ -2596,8 +2390,7 @@
   }
   #lb-thumbs { display: none; }
   /* Gallery slot cursor hint */
-  .gallery-slot,
-  .property-gallery-cell { cursor: zoom-in; }
+  .gallery-slot { cursor: zoom-in; }
   @media (max-width: 768px) {
     #lb-prev { left: 8px; width: 40px; height: 40px; }
     #lb-next { right: 8px; width: 40px; height: 40px; }
@@ -2663,14 +2456,10 @@
 
 <script>
 (function() {
-  let lightboxMode = 'gallery';
   let currentIndex = 0;
   let activeSlots = [];
 
   function getVisibleSlots() {
-    if (lightboxMode === 'lifestyle') {
-      return Array.from(document.querySelectorAll('#property-gallery .property-gallery-cell'));
-    }
     return Array.from(document.querySelectorAll('#galleryGrid .gallery-slot'))
       .filter(s => s.style.display !== 'none');
   }
@@ -2689,9 +2478,10 @@
     resident: 'Resident Wing',
     guest: 'Guest Wing',
     event: 'Venue & Event',
-    floorplan: 'Floorplans'
+    floorplan: 'Floorplans',
+    history: 'Business History'
   };
-  const GALLERY_CAT_ORDER = ['property', 'floorplan', 'event', 'resident', 'grounds', 'guest'];
+  const GALLERY_CAT_ORDER = ['property', 'floorplan', 'event', 'resident', 'grounds', 'guest', 'history'];
 
   function getPrimaryGalleryCategory(cats) {
     for (const key of GALLERY_CAT_ORDER) {
@@ -2737,19 +2527,7 @@
     return { section, desc };
   }
 
-  function renderLifestyleCaption(slot) {
-    const section = 'On the grounds';
-    const sectionEl = document.createElement('span');
-    sectionEl.className = 'lb-caption-section';
-    sectionEl.textContent = section;
-    lbCaption.replaceChildren(sectionEl);
-    return { section, desc: '' };
-  }
-
   function renderGalleryCaption(slot) {
-    if (slot.classList.contains('property-gallery-cell')) {
-      return renderLifestyleCaption(slot);
-    }
     const { section, desc } = buildGalleryCaption(slot);
     const sectionEl = document.createElement('span');
     sectionEl.className = 'lb-caption-section';
@@ -2764,8 +2542,7 @@
     return { section, desc };
   }
 
-  function openLightbox(index, mode) {
-    lightboxMode = mode || 'gallery';
+  function openLightbox(index) {
     activeSlots = getVisibleSlots();
     currentIndex = Math.max(0, Math.min(index, activeSlots.length - 1));
     showSlide(currentIndex);
@@ -2830,22 +2607,12 @@
     });
   }
 
-  // Attach click to property gallery
-  document.querySelectorAll('#property-gallery .property-gallery-cell').forEach((cell) => {
-    cell.addEventListener('click', () => {
-      const cells = Array.from(document.querySelectorAll('#property-gallery .property-gallery-cell'));
-      const visibleIndex = cells.indexOf(cell);
-      openLightbox(visibleIndex >= 0 ? visibleIndex : 0, 'lifestyle');
-    });
-  });
-
   // Attach click to every gallery slot
   document.querySelectorAll('#galleryGrid .gallery-slot').forEach((slot) => {
     slot.addEventListener('click', () => {
-      lightboxMode = 'gallery';
       const visible = getVisibleSlots();
       const visibleIndex = visible.indexOf(slot);
-      openLightbox(visibleIndex >= 0 ? visibleIndex : 0, 'gallery');
+      openLightbox(visibleIndex >= 0 ? visibleIndex : 0);
     });
   });
 
