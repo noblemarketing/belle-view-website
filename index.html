@@ -625,23 +625,24 @@
   .overview-video-wrap.is-paused .overview-video-icon--pause { display: none; }
   .overview-video-wrap:not(.is-paused) .overview-video-icon--play { display: none; }
   @media (max-width: 768px) {
-    .overview-video-wrap {
-      display: flex;
-      flex-direction: column;
-    }
     .overview-video {
       cursor: pointer;
     }
-    .overview-video-controls {
-      position: static;
-      left: auto;
-      top: auto;
-      transform: none;
+    .overview-video-wrap .overview-video-controls {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .overview-video-wrap.show-controls .overview-video-controls {
       opacity: 1;
       pointer-events: auto;
-      padding: 20px 16px 24px;
-      gap: 12px;
-      background: var(--deep);
+    }
+    .overview-video-wrap.is-paused .overview-video-controls {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .overview-video-wrap.is-paused.show-controls .overview-video-controls {
+      opacity: 1;
+      pointer-events: auto;
     }
     .overview-video-control {
       width: 48px;
@@ -1593,7 +1594,7 @@
         playsinline
         preload="metadata"
         poster="images/Hero%20Page%20Options/2.jpg"
-        aria-label="Property overview video. Tap to view fullscreen."
+        aria-label="Property overview video. Tap to show playback controls."
       >
         <source src="images/Hero%20Video.mp4?v=3" type="video/mp4" />
       </video>
@@ -1989,20 +1990,23 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const mobileVideo = window.matchMedia('(max-width: 768px)');
 
-    const requestVideoFullscreen = () => {
-      if (video.webkitEnterFullscreen) {
-        video.webkitEnterFullscreen();
-        return;
-      }
-      const req = video.requestFullscreen || video.webkitRequestFullscreen || video.msRequestFullscreen;
-      if (req) {
-        Promise.resolve(req.call(video)).catch(() => {});
-      }
+    const controlsEl = wrap.querySelector('.overview-video-controls');
+
+    const setControlsVisible = (visible) => {
+      wrap.classList.toggle('show-controls', visible);
     };
 
     video.addEventListener('click', () => {
       if (!mobileVideo.matches) return;
-      requestVideoFullscreen();
+      setControlsVisible(!wrap.classList.contains('show-controls'));
+    });
+
+    controlsEl?.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    mobileVideo.addEventListener('change', () => {
+      setControlsVisible(false);
     });
 
     const setPlayingState = (playing) => {
