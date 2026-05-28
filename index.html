@@ -624,7 +624,35 @@
   }
   .overview-video-wrap.is-paused .overview-video-icon--pause { display: none; }
   .overview-video-wrap:not(.is-paused) .overview-video-icon--play { display: none; }
-  @media (hover: none) {
+  @media (max-width: 768px) {
+    .overview-video-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    .overview-video {
+      cursor: pointer;
+    }
+    .overview-video-controls {
+      position: static;
+      left: auto;
+      top: auto;
+      transform: none;
+      opacity: 1;
+      pointer-events: auto;
+      padding: 20px 16px 24px;
+      gap: 12px;
+      background: var(--deep);
+    }
+    .overview-video-control {
+      width: 48px;
+      height: 48px;
+    }
+    .overview-video-control--primary {
+      width: 56px;
+      height: 56px;
+    }
+  }
+  @media (hover: none) and (min-width: 769px) {
     .overview-video-controls { opacity: 0.95; pointer-events: auto; }
   }
   .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -1565,6 +1593,7 @@
         playsinline
         preload="metadata"
         poster="images/Hero%20Page%20Options/2.jpg"
+        aria-label="Property overview video. Tap to view fullscreen."
       >
         <source src="images/Hero%20Video.mp4?v=3" type="video/mp4" />
       </video>
@@ -1958,6 +1987,23 @@
     const SEEK_STEP = 10;
     let userWantsPaused = false;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mobileVideo = window.matchMedia('(max-width: 768px)');
+
+    const requestVideoFullscreen = () => {
+      if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+        return;
+      }
+      const req = video.requestFullscreen || video.webkitRequestFullscreen || video.msRequestFullscreen;
+      if (req) {
+        Promise.resolve(req.call(video)).catch(() => {});
+      }
+    };
+
+    video.addEventListener('click', () => {
+      if (!mobileVideo.matches) return;
+      requestVideoFullscreen();
+    });
 
     const setPlayingState = (playing) => {
       wrap.classList.toggle('is-paused', !playing);
