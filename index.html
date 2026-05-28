@@ -652,6 +652,26 @@
       width: 56px;
       height: 56px;
     }
+    .overview-video-wrap:fullscreen .overview-video-controls,
+    .overview-video-wrap:-webkit-full-screen .overview-video-controls {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .overview-video-wrap:fullscreen,
+    .overview-video-wrap:-webkit-full-screen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+    .overview-video-wrap:fullscreen .overview-video,
+    .overview-video-wrap:-webkit-full-screen .overview-video {
+      width: 100%;
+      height: 100%;
+      max-height: 100vh;
+      aspect-ratio: auto;
+      object-fit: contain;
+    }
   }
   @media (hover: none) and (min-width: 769px) {
     .overview-video-controls { opacity: 0.95; pointer-events: auto; }
@@ -1594,7 +1614,7 @@
         playsinline
         preload="metadata"
         poster="images/Hero%20Page%20Options/2.jpg"
-        aria-label="Property overview video. Tap to show playback controls."
+        aria-label="Property overview video. Tap to view fullscreen."
       >
         <source src="images/Hero%20Video.mp4?v=3" type="video/mp4" />
       </video>
@@ -1996,14 +2016,35 @@
       wrap.classList.toggle('show-controls', visible);
     };
 
+    const requestVideoFullscreen = () => {
+      if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+        return;
+      }
+      const req = wrap.requestFullscreen || wrap.webkitRequestFullscreen || wrap.msRequestFullscreen;
+      if (req) {
+        Promise.resolve(req.call(wrap))
+          .then(() => setControlsVisible(true))
+          .catch(() => {});
+      }
+    };
+
     video.addEventListener('click', () => {
       if (!mobileVideo.matches) return;
-      setControlsVisible(!wrap.classList.contains('show-controls'));
+      requestVideoFullscreen();
     });
 
     controlsEl?.addEventListener('click', (e) => {
       e.stopPropagation();
     });
+
+    const onFullscreenChange = () => {
+      const active = document.fullscreenElement === wrap
+        || document.webkitFullscreenElement === wrap;
+      if (!active) setControlsVisible(false);
+    };
+    document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
 
     mobileVideo.addEventListener('change', () => {
       setControlsVisible(false);
