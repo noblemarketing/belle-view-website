@@ -862,18 +862,21 @@
   .layout-intro--text-only .layout-intro-text .section-body {
     max-width: 820px;
   }
-  .mechanical-accordions { margin-top: 8px; }
-  .mechanical-accordion-body.open { max-height: 420px; }
-  .mechanical-accordion-list { margin: 0; border-top: none; }
-  .mechanical-accordion-list li:first-child { border-top: none; }
-  .mechanical-heading {
-    font-family: var(--font-display);
-    font-size: clamp(32px, 3.2vw, 42px);
-    font-weight: 300;
-    color: var(--deep);
-    margin-bottom: 28px;
-    line-height: 1.15;
+  .mechanical-groups {
+    margin-top: 8px;
+    display: grid;
+    gap: 40px;
   }
+  .mechanical-subheading {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--deep);
+    margin-bottom: 16px;
+  }
+  .mechanical-group .bullet-list { margin: 0; }
 
   /* ── GALLERY ── */
   #gallery { background: var(--deep); }
@@ -1232,7 +1235,7 @@
       height: 100%;
     }
     .mechanical-detail { flex: none; }
-    .mechanical-heading { font-size: 26px; margin-bottom: 24px; }
+    .mechanical-groups { gap: 32px; }
 
     /* ── Gallery ── */
     .gallery-header {
@@ -1675,65 +1678,34 @@
     <div class="mechanical-block">
       <div class="mechanical-simple">
         <div class="section-eyebrow">Mechanical &amp; Systems</div>
-        <h3 class="mechanical-heading">Infrastructure built for commercial operation</h3>
-        <div class="mechanical-accordions">
-            <div class="mechanical-accordion">
-              <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalWater" data-mechanical-accordion>
-                <span>Water</span>
-                <span class="acc-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="mechanical-accordion-body seo-accordion-body" id="mechanicalWater">
-                <ul class="bullet-list mechanical-accordion-list">
-                  <li>3 wells</li>
-                  <li>2,000 gal fire water storage</li>
-                  <li>400 gal domestic water storage</li>
-                  <li>3-stage commercial-grade filtration</li>
-                  <li>Dual jet pumps supporting high-volume occupancy demand</li>
-                  <li>On-demand hot water loop</li>
-                </ul>
-              </div>
-            </div>
-            <div class="mechanical-accordion">
-              <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalHeating" data-mechanical-accordion>
-                <span>Heating &amp; Energy</span>
-                <span class="acc-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="mechanical-accordion-body seo-accordion-body" id="mechanicalHeating">
-                <ul class="bullet-list mechanical-accordion-list">
-                  <li>3 heat pumps (replaced within 3 years)</li>
-                  <li>3 water heaters (electric + propane backup)</li>
-                  <li>1,000-gal + 500-gal propane tanks</li>
-                </ul>
-              </div>
-            </div>
-            <div class="mechanical-accordion">
-              <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalSafety" data-mechanical-accordion>
-                <span>Safety &amp; Life-Safety</span>
-                <span class="acc-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="mechanical-accordion-body seo-accordion-body" id="mechanicalSafety">
-                <ul class="bullet-list mechanical-accordion-list">
-                  <li>Full sprinkler system</li>
-                  <li>ADT security system</li>
-                  <li>Intercom system</li>
-                  <li>Soundproof rooms</li>
-                  <li>4 septic tanks + grease tank</li>
-                </ul>
-              </div>
-            </div>
-            <div class="mechanical-accordion">
-              <button type="button" class="mechanical-accordion-trigger seo-accordion-trigger" aria-expanded="false" aria-controls="mechanicalTechnology" data-mechanical-accordion>
-                <span>Technology</span>
-                <span class="acc-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="mechanical-accordion-body seo-accordion-body" id="mechanicalTechnology">
-                <ul class="bullet-list mechanical-accordion-list">
-                  <li>Cat wiring throughout</li>
-                  <li>Intercom system</li>
-                </ul>
-              </div>
-            </div>
+        <div class="mechanical-groups">
+          <div class="mechanical-group">
+            <h3 class="mechanical-subheading">Water &amp; Energy</h3>
+            <ul class="bullet-list">
+              <li>3 wells</li>
+              <li>2,000 gal fire water storage</li>
+              <li>400 gal domestic water storage</li>
+              <li>3-stage filtration system</li>
+              <li>2 jet pumps supporting all showers efficiently</li>
+              <li>On-demand hot water loop</li>
+              <li>3 heat pumps (replaced within 3 years)</li>
+              <li>3 water heaters (electric + propane backup)</li>
+              <li>1,000-gal + 500-gal propane tanks</li>
+            </ul>
           </div>
+          <div class="mechanical-group">
+            <h3 class="mechanical-subheading">Operational Infrastructure</h3>
+            <ul class="bullet-list">
+              <li>Indoor and outdoor fire prevention system</li>
+              <li>ADT security system</li>
+              <li>Intercom system</li>
+              <li>Soundproof rooms</li>
+              <li>4 septic tanks, including grease tank</li>
+              <li>Cat wiring throughout</li>
+              <li>Intercom system</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -2172,19 +2144,6 @@
     trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
     trigger.querySelector('.acc-icon').textContent = isOpen ? '+' : '×';
   }
-
-  // Mechanical & Systems accordions
-  document.querySelectorAll('[data-mechanical-accordion]').forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      const body = document.getElementById(trigger.getAttribute('aria-controls'));
-      if (!body) return;
-      const isOpen = body.classList.contains('open');
-      body.classList.toggle('open');
-      trigger.classList.toggle('open');
-      trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      trigger.querySelector('.acc-icon').textContent = isOpen ? '+' : '×';
-    });
-  });
 
   // Form submit (FormSubmit → amanda.tyson.trr@gmail.com)
   const inquiryForm = document.getElementById('inquiryForm');
